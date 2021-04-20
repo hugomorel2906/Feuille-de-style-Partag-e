@@ -5,9 +5,11 @@
   margin : 0;
 }
 
+
 .container-fluid {
   padding : 0;
 }
+
 
 .a, .a:hover {
   text-decoration: none;
@@ -16,6 +18,7 @@
 /* header */
 
 .header {
+  padding : 0;
   background-color: #F2B705;
   height : 150px;
   line-height: 200px;
