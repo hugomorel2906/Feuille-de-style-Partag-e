@@ -1,15 +1,16 @@
 @charset "UTF-8";
 
-.body, .html {
+/*.body, .html {
   padding : 0;
   margin : 0;
 }
+*/
 
-
+/*
 .container-fluid {
   padding : 0;
 }
-
+*/
 
 .a, .a:hover {
   text-decoration: none;
@@ -19,6 +20,7 @@
 
 .header {
   padding : 0;
+  margin : 0;
   background-color: #F2B705;
   height : 150px;
   line-height: 200px;
@@ -45,7 +47,7 @@
 }
 
 .logo2{
-  width: 70px;
+  width: 400px;
   margin-left: 30px;
 }
 
