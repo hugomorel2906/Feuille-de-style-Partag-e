@@ -73,7 +73,6 @@ a, a:hover {
   margin-left: 20px;
   text-align: center;
   outline-color: #52591D;
-
 }
 
 .boutons {
@@ -81,6 +80,15 @@ a, a:hover {
   justify-content: center;
   align-items: center;
   }
+
+.boutons a{
+  text-decoration: none;
+  color : #ffffff;
+}
+
+.boutons a:hover {
+  color : #000000;
+}
 
 /* end content */
 

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/style.css">
+
+  <title>Saisir NAP</title>
+</head>
+
+<!-- consignes-->
+
+  <div class="card" style="margin-left: 5%; margin-right:5%; margin-top:5%">
+  <!-- à mieux régler / center jsp mais faire qqchose-->
+
+    <div class="card-body ">
+      <h4 class="card-title "> Bienvenue dans l'onglet Saisie du Niveau d'Activité Physique </h4>
+      <p class="card-text lead" style ="text-align:justify;">
+        Chaque jour, saisissez le nombre d'heures correspondant à votre Niveau d'Activité Physique (NAP). Les correspondances sont renseignées dans le premier tableau ci-dessous
+        <br> PS : attention la somme doit faire 24, il n'y a pas plus ou moins d'heure dans une journée (de minuit à minuit)
+      </p>
+    </div>
+  </div>
+  <br>
+
+
+<table class="table table-bordered" style="text-align:center; margin-right:2em; margin-left:2em;">
+  <thead class="thead-dark">
+    <tr style="text-align:center">
+      <th scope="col">Niveau d'activité</th>
+      <th scope="col">Lundi</th>
+      <th scope="col">Mardi</th>
+      <th scope="col">Mercredi</th>
+      <th scope="col">Jeudi</th>
+      <th scope="col">Vendredi</th>
+      <th scope="col">Samedi</th>
+      <th scope="col">Dimanche</th>
+      <th scope="col">Total (nb h/sem)</th>
+      <th scope="col">Moyenne (nb h /sem)</th>
+    </tr>
+  </thead>
+
+<section class="table table-bordered">
+  <tbody>
+    <tr>
+      <th scope="row">A</th>
+      <td contenteditable="true" name="NAP[1]" type="int 2"> </td>
+      <td contenteditable="true" name="NAP[2]" type="int"> </td>
+      <td contenteditable="true" name="NAP[3]" type="int"> </td>
+      <td contenteditable="true" name="NAP[4]" type="int"> </td>
+      <td contenteditable="true" name="NAP[5]" ype="int"> </td>
+      <td contenteditable="true" name="NAP[6]" type="int"> </td>
+      <td contenteditable="true" name="NAP[7]" type="int"> </td>
+      <td contenteditable="false" name="NAP[8]" type="int"> </td>
+      <td contenteditable="false" name="NAP[9]" type="int"> </td>
+    </tr>
+
+    <tr>
+      <th scope="row">B</th>
+      <td contenteditable="true" name="NAP[1]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[2]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[3]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[4]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[5]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[6]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[7]" value="0" type="int"> </td>
+      <td contenteditable="false" name="NAP[8]" value="0" type="int"> </td>
+      <td contenteditable="false" name="NAP[9]" value="0" type="int"> </td>
+    </tr>
+
+    <tr>
+      <th scope="row">C</th>
+      <td contenteditable="true" name="NAP[1]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[2]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[3]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[4]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[5]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[6]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[7]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[8]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[9]" value="0" type="int"> </td>
+    </tr>
+
+    <tr>
+      <th scope="row">D</th>
+      <td contenteditable="true" name="NAP[1]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[2]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[3]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[4]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[5]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[6]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[7]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[8]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[9]" value="0" type="int"> </td>
+    </tr>
+
+    <tr>
+      <th scope="row">E</th>
+      <td contenteditable="true" name="NAP[1]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[2]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[3]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[4]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[5]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[6]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[7]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[8]" value="0" type="int"> </td>
+      <td contenteditable="true" name="NAP[9]" value="0" type="int"> </td>
+    </tr>
+
+    <tr>
+      <th scope="row">F</th>
+      <td contenteditable="true" name="NAP[1]" type="int"> </td>
+      <td contenteditable="true" name="NAP[2]" type="int"> </td>
+      <td contenteditable="true" name="NAP[3]" type="int"> </td>
+      <td contenteditable="true" name="NAP[4]" type="int"> </td>
+      <td contenteditable="true" name="NAP[5]" type="int"> </td>
+      <td contenteditable="true" name="NAP[6]" type="int"> </td>
+      <td contenteditable="true" name="NAP[7]" type="int"> </td>
+      <td contenteditable="true" name="NAP[8]" ype="int"> </td>
+      <td contenteditable="true" name="NAP[9]" type="int"> </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Total h</th>
+      <td contenteditable="false" name="NAP[1]" type="int"> </td>
+      <td contenteditable="false" name="NAP[2]" type="int"> </td>
+      <td contenteditable="false" name="NAP[3]" type="int"> </td>
+      <td contenteditable="false" name="NAP[4]" type="int"> </td>
+      <td contenteditable="false" name="NAP[5]" type="int"> </td>
+      <td contenteditable="false" name="NAP[6]" type="int"> </td>
+      <td contenteditable="false" name="NAP[7]" type="int"> </td>
+      <td contenteditable="false" name="NAP[8]" type="int"> </td>
+      <td contenteditable="false" name="NAP[9]" type="int"> </td>
+    </tr>
+
+  </tbody>
+</section>
+
+</table>
+
+  <br>
+  <nav class="boutons">
+    <button type="button" class="btn btn-lg text-center btn-custom"> <a href="./indexp1.html"> retour au menu </a></button>
+  </nav>
+
+</html>
