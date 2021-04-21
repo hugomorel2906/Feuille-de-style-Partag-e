@@ -3,17 +3,17 @@
 body, html {
   padding : 0;
   margin : 0;
+  font-size:
 }
 
 a, a:hover {
   text-decoration:none;
 }
 
-
 /* header */
 .header {
   background-color: #F2B705;
-  height : 15rem;
+  height : 10rem;
   text-align : center;
 }
 
@@ -30,13 +30,13 @@ a, a:hover {
 .logo{
   width: 5%;
   max-width: 20%;
-  margin-right: 1%;
+  float: right;
   position : relative;
-  top:1%;
 }
 
 .logo2{
   width: 30%;
+  float: left;
   margin-left: 1%;
   position : relative;
 }
@@ -68,6 +68,22 @@ a, a:hover {
   outline-color: #52591D;
 }
 
+.btn-custom-valider {
+  background-color: #00A917;
+  color : #ffffff ;
+  margin-left: 20px;
+  text-align: center;
+  outline-color: #00A917;
+}
+
+.btn-custom-annuler {
+  background-color: #E62719;
+  color : #ffffff ;
+  margin-left: 20px;
+  text-align: center;
+  outline-color: #E62719;
+}
+
 .boutons {
   display: flex;
   justify-content: center;
@@ -84,6 +100,39 @@ a, a:hover {
 }
 
 /* end content */
+.cadre {
+  border-width : 2px;
+  border-style: solid;
+  border-color: #000000;
+  margin: 2% 2%;
 
+}
+.contenu h1 {
+  font-size: 25px;
+  text-decoration:underline;
+  color : #52591D;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+/*
+.deux-colonnes {
+  margin : 2% 2%;
+
+} */
+
+.gauche {
+  float:left;
+  width: 50%;
+  background-color:#FF3366;
+  padding-right: 5%;
+}
+
+.droite {
+  float:right;
+  width: 50%;
+  background-color:#9966FF;
+  padding-left: 5%;
+}
 
 /* footer */
