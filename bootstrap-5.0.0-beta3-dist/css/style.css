@@ -13,12 +13,8 @@ a, a:hover {
 /* header */
 .header {
   background-color: #F2B705;
-  height : 150px;
-  line-height: 70%;
-  max-height: 70%;
-  min-height: 5%;
+  height : 15rem;
   text-align : center;
-  padding : 0;
 }
 
 .titre {
