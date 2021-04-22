@@ -10,15 +10,12 @@ a, a:hover {
   text-decoration:none;
 }
 
-<<<<<<< HEAD
 /* navbar */
 
 .navbar-brand{
   text-align: center;
 }
 
-=======
->>>>>>> 5d68cbe529c76b9ab7669c476a1f4b37ae9ad86d
 /* header */
 .header {
   background-color: #F2B705;
@@ -41,14 +38,8 @@ a, a:hover {
 .logo{
   width: 5%;
   max-width: 20%;
-<<<<<<< HEAD
-  margin-right: 1%;
-  position : absolute;
-  top:1%;
-=======
   float: right;
   position : relative;
->>>>>>> 5d68cbe529c76b9ab7669c476a1f4b37ae9ad86d
 }
 
 .logo2{
