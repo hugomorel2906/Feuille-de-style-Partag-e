@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+<body>
 
 <head>
   <!-- Required meta tags -->
@@ -8,77 +8,57 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/style.css">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
 
   <title>Page de Connexion</title>
 </head>
 
 <!-- Contenu du site-->
 
-<body>
-  <html lang="en" dir="ltr">
-    <head>
-      <meta charset="utf-8">
-      <title></title>
-    </head>
-
-  </html>
-  <!-- header-->
-  <header class="container-fluid header">
-
-    <div class="container-fluid">
-      <h1 class="mb-3 display-1 titre"> NumTrition</h1>
-      <img src="150px-Logo_Enitab.svg.png" alt="logo" class="logo float-end img-fluid" >
-      <img src="alim2.PNG" alt="logo2" class="logo2 float-start img-fluid" >
-    </div>
-  </header>
-    <!-- end header-->
-
-
 
     <!-- content-->
-    <section class="container-fluid content">
+    <div class="container-fluid">
 
-      <div class="container-fluid">
-        <h3 class="display-6 text-center mt-4"> TD n°2 : Alimentation et Santé de l'Homme </h3>
-        <h3 class="display-6 text-center mt-7"> "Calcul du besoin et analyse d'une ration alimentaire" </h3>
+      <!--div class="container-fluid"-->
+        <h2 class="text-center mt-4"> TD n°2 : Alimentation et Santé de l'Homme </h2>
+        <h2 class="text-center mt-7"> "Calcul du besoin et analyse d'une ration alimentaire" </h2>
         <br><br>
-      </div>
 
-      <div class="card" style="margin-left: 5%; margin-right:5%;">
-      <!-- à mieux régler / center jsp mais faire qqchose-->
-
-        <div class="card-body ">
-          <h4 class="card-title ">Bienvenue sur la version enseignante </h4>
-          <p class="card-text lead" style ="text-align:justify;">Vous pouvez faire visualiser le TD des étudiants grâce aux 3 premiers boutons. </p>
-          <p class="card-text lead" style ="text-align:justify";> Vous pouvez également avoir accès à un compte rendu des réponses de chaque étudiants grâce au bouton <b>"Compte Rendu Enseignant"</b>. Vous aurez la possibilité d'accéder à la page de gestion du TD en utilisant le bouton <b>"Gestion du TD"</b>. Enfin, vous aurez accès aux statistiques du test et aux notes des étudiants en cliquant sur le bouton <b>"Statistiques et Notes"</b>. </p>
+      <div class="card card-custom-text">
+        <h4 class="card-title"> Bienvenue sur la version enseignante </h4>
+          <br>
+          <p class="card-text"> <br>
+            Vous pouvez faire visualiser le TD des étudiants grâce aux 3 premiers boutons.
+           <br><br> Vous pouvez également avoir accès à un compte rendu des réponses de chaque étudiants grâce au bouton <b>"Compte Rendu Enseignant"</b>. Vous aurez la possibilité d'accéder à la page de gestion du TD en utilisant le bouton <b>"Gestion du TD"</b>. Enfin, vous aurez accès aux statistiques du test et aux notes des étudiants en cliquant sur le bouton <b>"Statistiques et Notes"</b>. </p>
       </div>
-      </div>
+    </div>
       <br><br>
 
 
-    <nav class="boutons">
-      <button type="button" class="btn btn-lg text-center btn-custom"> Saisir mes données</button>
-      <button type="button" class="btn btn-lg text-center btn-custom"> Commencer le TD </button>
-      <button type="button" class="btn btn-lg text-center btn-custom"> Accéder à mon compte rendu et mes notes</button>
-    </nav>
-    <br><<br>
-    <nav class="boutons">
-      <button type="button" class="btn btn-lg text-center btn-custom"> Compte Rendu Enseignant</button>
-      <button type="button" class="btn btn-lg text-center btn-custom"> Gestion du TD </button>
-      <button type="button" class="btn btn-lg text-center btn-custom"> Statistiques et notes</button>
-    </nav>
-    </p>
-    </section>
-    <!-- end of content -->
+      <!-- problème de mise en page de boutons - à mettre en colonnes -->
+
+    <div class="row">
+
+      <div class="col-6">
+        <nav class="boutons py-auto">
+          <button type="button" class="btn btn-lg text-center btn-custom"> <a href="./Tableau-NAP.html"> Saisir mes données </a></button>
+          <button type="button" class="btn btn-lg text-center btn-custom"> Commencer le TD </button>
+          <button type="button" class="btn btn-lg text-center btn-custom"> Accéder à mon compte rendu et mes notes</button>
 
 
-    <!-- Bas de page -->
-    <section class="container-fluid footer">
+        </nav>
+      </div>
 
-    </section>
-    <!-- end Bas de page -->
-    <br><br>
+      <div class="col-6">
+        <nav class="boutons py-auto">
+          <button type="button" class="btn btn-lg text-center btn-custom"> Compte Rendu Enseignant</button>
+          <button type="button" class="btn btn-lg text-center btn-custom"> Gestion du TD </button>
+          <button type="button" class="btn btn-lg text-center btn-custom"> Statistiques et notes</button>
+
+        </nav>
+      </div>
+
+    </div>
 
 
   </body>
