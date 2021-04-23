@@ -19,12 +19,13 @@ p {
   margin-bottom: 0.5em;
 }
 
-
+/* encadrés */
 .card-custom-text {
   margin : 2%;
   padding: 2%;
 }
 
+/* boutons */
 .btn-custom {
   background-color: #52591D;
   outline-color: #52591D;
@@ -38,6 +39,7 @@ p {
 .boutons {
   justify-content: center;
   align-items: center;
+
   }
 
 .boutons a{
@@ -49,6 +51,7 @@ p {
   color : #000000;
 }
 
+/* tableaux*/ 
 .table-custom{
   text-align: justify;
 }
