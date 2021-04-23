@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body, html {
+  padding : 0;
+  margin : 0;
+  font-size:
+}
+
+body {
+max-width:100%;
+min-width:10%;
+line-height:1.33em;
+margin:0.01em;
+color:#000000;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 0.5em;
+}
+
+
+.card-custom-text {
+  margin : 2%;
+  padding: 2%;
+}
+
+.btn-custom {
+  background-color: #52591D;
+  outline-color: #52591D;
+  height : 2.5em;
+  color : #ffffff ;
+  text-align: center;
+  outline-color: #52591D;
+  font-size : 90%;
+}
+
+.boutons {
+  justify-content: center;
+  align-items: center;
+  }
+
+.boutons a{
+  text-decoration: none;
+  color : #ffffff;
+}
+
+.boutons a:hover {
+  color : #000000;
+}
+
+.table-custom{
+  text-align: justify;
+}
