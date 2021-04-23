@@ -32,18 +32,13 @@ a, a:hover {
 /* header */
 .header {
   background-color: #F2B705;
-  height : 10rem;
-  text-align : center;
-  margin: 0;
+  height:10%;
 }
 
 
 .titre {
-  font-size:3em;
-  color : #ffffff;
-  letter-spacing: 1px;
-  float : center;
-  text-align : center;
+  font-size: 200%;
+  color : #ffffff
 }
 
 .logo{
