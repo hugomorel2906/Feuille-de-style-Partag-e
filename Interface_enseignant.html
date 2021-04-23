@@ -8,7 +8,8 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/style.css">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
 
 </head>
 
@@ -16,11 +17,7 @@
   <!-- Entête - mettre un "include" de l'entête enseignant -->
   <header class="container-fluid header">
 
-    <div class="container-fluid">
-      <h1 class="mb-3 display-1 titre"> NumTrition</h1>
-      <img src="150px-Logo_Enitab.svg.png" alt="logo" class="logo float-end img-fluid" >
-      <img src="alim2.PNG" alt="logo2" class="logo2 float-start img-fluid" >
-    </div>
+
   </header>
     <!-- fin de l'entête -->
 
@@ -29,99 +26,120 @@
   <div class="container-fluid">
 
     <!-- découpage dans des cadres -->
-    <div class="cadre">
-      <h1> Insérer les tites : mise en forme souligné </h1>
+    <div class="card card-custom-text"> <br>
+      <h2 class="card-title"> Date et durée du TD </h2>
+      <br>
 
-    <!-- Disposition en 2 colonnes - si besoin -->
-      <div class="container">
-        <p> dans le cadre  BIEN </p>
+      <form class="row g-3 needs-validation" novalidate>
 
-
-
-        <!-- de la ca beug
-
-        <div class="deux-colonnes">
-          <p>dans le cadre BIEN </p>
-          <div class="gauche">
-            <p> mais avec les float tu n'es plus dans le cadre </p>
-            <!-- insérer ce qui sera à gauche -->
-            <!--<p> j'essaie de mettre queleque chose avec un bouton et je met bcp de texte pour voir si tout va bien a la ligne dans une colonne comme je le veux  </p>
-          </div>
-
-          <div class="droite">
-          <!-- insérer ce qui sera à droite -->
-            <!--<p> j'essaie de mettre queleque chose avec un bouton et je met bcp de texte pour voir si tout va bien a la ligne dans une colonne comme je le veux  </p>
-          </div>
+      <div class="col-md-4">
+        <label for="duree_td" class="form-label"> Durée du TD </label>
+        <input type="time" class="form-control" id="duree_td" value="" required> <!-- dans les value il faut faire un code php : ifisset et vérifier que la case est remplie pour pouveoir continuer -->
+        <div class="valid-feedback"> </div>
+        <div class="invalid-feedback">
+          Merci de saisire une durée de TD.
         </div>
       </div>
 
-        A la -->
-    </div>
+      <div class="col-md-4">
+        <label for="date_td" class="form-label"> Date du TD </label>
+        <input type="date" class="form-control" id="date_td" value="" required>
+        <div class="valid-feedback">
+        </div>
+        <div class="invalid-feedback">
+          Merci de choisir une date.
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="ouv_td" class="form-label"> Date de l'ouverture de la saisie des données du TD </label>
+        <input type="date" class="form-control" id="ouv_td" value="" required>
+        <div class="valid-feedback">
+        </div>
+        <div class="invalid-feedback">
+          Merci de saisir la date d'ouverture du TD pour saisir les données personnelles.
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="h_ouv" class="form-label"> Horaire d'ouverture du TD </label>
+        <input type="time" class="form-control" id="h_ouv" value="" required>
+        <div class="valid-feedback">
+        </div>
+        <div class="invalid-feedback">
+          Merci de saisir un horaire d'ouverture du TD.
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="duree_td_pai" class="form-label"> Durée du TD pour les étudiants disposant d'un PAI </label>
+        <input type="time" class="form-control" id="duree_td_pai" value="" required>
+        <div class="valid-feedback">
+        </div>
+        <div class="invalid-feedback">
+          Merci de saisir la durée du TD pour les étudiants disposant d'un P.A.I.
+        </div>
+      </div>
+      <br>
+
+      <div class="col-12">
+        <nav class="boutons" >
+          <button class="btn btn-lg btn-custom" type="button"> Valider les informations </button>
+        </nav>
+      </div>
+
+    </form>
   </div>
 
-  <br>
 
-  <form class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom01">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-      <div class="valid-feedback">
-        Looks good!
+  <div class="card card-custom-text"> <br>
+    <h2 class="card-title"> Etudiants disposant d'un P.A.I. </h2>
+    <br>
+
+    <form class="row g-3">
+      <div class="col-md-8">
+        <label for="id_etudiant" class="form-label"> Identifiant de l'étudiant </label>
+        <input type="text" class="form-control" id="id_etudiant" value="" required>
+      </div>
+
+      <div class="col-md-4">
+        <nav class="boutons">
+          <button class="btn btn-lg btn-custom" style="margin-top: 7%" type="button"> Ajouter l'étudiant à la liste des P.A.I. </button>
+        </nav>
+      </div>
+
+    <br>
+    <div class="row">
+
+      <div class="col-12">
+
+        <table class="table table-bordred table-striped">
+          <thead>
+            <tr>
+              <th scope="col"> # </th>
+              <th scope="col"> Identifiant étudiant </th>
+              <th scope="col"> Nom </th>
+              <th scope="col"> Prénom </th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"> 1 </th> <!-- créer le tableau avec des requêtes-->
+              <td> pdupont </td>
+              <td> Dupont </td>
+              <td> Paul </td>
+              <!-- ligne pour le bouton supprimer une ligne -->
+              <!--td><p data-placement="top"  data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td-->
+            </tr>
+            <tr>
+            </tbody>
+
+          </script>
+        </table>
       </div>
     </div>
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom02">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom03">City</label>
-      <input type="text" class="form-control" id="validationCustom03" required>
-      <div class="invalid-feedback">
-        Please provide a valid city.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationCustom04">State</label>
-      <select class="custom-select" id="validationCustom04" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-      </select>
-      <div class="invalid-feedback">
-        Please select a valid state.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationCustom05">Zip</label>
-      <input type="text" class="form-control" id="validationCustom05" required>
-      <div class="invalid-feedback">
-        Please provide a valid zip.
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label" for="invalidCheck">
-        Agree to terms and conditions
-      </label>
-      <div class="invalid-feedback">
-        You must agree before submitting.
-      </div>
-    </div>
-  </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
-  </form>
 
 
-  <!-- Pour insérer des boutons valider en vert et annuler en rouge - peuvent être déplacer si besoin -->
-  <nav class="boutons">
-    <button type="button" class="btn btn-lg text-center btn-custom-valider"> <a href="#"> Valider les modifications </a></button>
-    <button type="button" class="btn btn-lg text-center btn-custom-annuler"> <a href="#"> Annuler </a></button>
-
-  </nav>
+</body>
+</html>
