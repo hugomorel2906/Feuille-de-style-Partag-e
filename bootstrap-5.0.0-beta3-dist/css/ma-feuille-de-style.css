@@ -36,6 +36,15 @@ p {
   font-size : 90%;
 }
 
+.btn-custom-valider {
+  background-color: #00A917;
+  color : #ffffff ;
+  margin-left: 20px;
+  text-align: center;
+  outline-color: #00A917;
+  font-size : 85%;
+}
+
 .boutons {
   justify-content: center;
   align-items: center;
@@ -51,7 +60,7 @@ p {
   color : #000000;
 }
 
-/* tableaux*/ 
+/* tableaux*/
 .table-custom{
   text-align: justify;
 }
