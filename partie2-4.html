@@ -19,11 +19,68 @@
   <br>
 
     <h2  style="color:#E62719"> <br> II. Estimation de vos besoins nutritionnels </h2>
-    <p> <br><b>Question 3 : Calcul de votre métabolisme de base </b>
+    <p> <br><b>Question 4 : Calcul de votre Dépense Énergétique Journalière (DEJ) </b>
     <br> </p>
-    <p> Le métabolisme de base correspond aux besoins énergétiques de l'organisme, c’est-à-dire la dépense d'énergie minimum quotidienne permettant à l'organisme de survivre. Il s'exprime en joules ou en calories par jour. <br><br>
-      Il dépend de la taille, du poids, de l’âge, du sexe et de l’activité thyroïdienne. Il peut être influencé par la température extérieure. C'est l'alimentation qui permet de subvenir à ces besoins énergétiques. <br><br>
-      Il existe de nombreuses équations qui définissent le métabolisme de base établies au fil des siècles. Les deux plus importantes sont les formules de Harris et Benedict ainsi que les formules de Black. <br></p>
+    <p> Vous avez saisie les données suivantes : <br></p>
+
+    <div class="row g-2 align-items-center">
+
+      <div class="col-auto">
+        <table class="table table-bordered table-custom">
+          <thead class="thead-dark">
+            <tr style="text-align:center">
+              <th scope="col"> Votre métablolisme de base</th>
+              <th scope="col">MJ/jour</th>
+              <th scope="col">MJ/h</th>
+              <th scope="col">kcal/j</th>
+              <th scope="col">kcal/h</th>
+            </tr>
+          </thead>
+
+          <section class="table table-bordered ">
+            <tbody>
+              <tr>
+                <th scope="row">Selon Harris et Benedict</th> <!-- ligne à remplir par php pour avoir des données perso auto-->
+                <td contenteditable="false" name="HB[1]" type=""> </td>
+                <td contenteditable="false" name="HB[2]" type=""> </td>
+                <td contenteditable="false" name="HB[3]" type=""> </td>
+                <td contenteditable="false" name="HB[4]" type=""> </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Selon Black and al.</th>
+              <td contenteditable="true" name="BA[1]" type=""> </td>
+              <td contenteditable="true" name="BA[2]" type=""> </td>
+              <td contenteditable="true" name="BA[3]" type=""> </td>
+              <td contenteditable="true" name="BA[4]" type=""> </td>
+            </tr>
+
+          </tbody>
+        </section>
+        </table>
+
+
+      </div>
+    <br>
+
+      <div class="col-auto">
+          <select class="form-select" aria-label="Default select example" type="large:5em" name="" value="">
+            <option selected> Sélectionner votre sexe </option>
+            <option value="1"> F </option>
+             <option value="2"> H </option>
+           </select>
+
+          <br>
+          <select class="form-select" type="" arial-label="Default select example" id="" value="">
+            <option selected> Sélectionner votre age </option>
+            <option value="19"> 19 </option>
+            <option value="20"> 20 </option>
+          </select>
+      </div>
+    </div>
+
+
+
 
     <p> <br><b>Formule de Harris et Bennedict </b></p>
 
