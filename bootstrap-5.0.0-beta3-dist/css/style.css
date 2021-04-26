@@ -14,6 +14,11 @@ margin:0.01em;
 color:#000000;
 }
 
+p {
+  text-align: justify;
+  margin-bottom: 0.5em;
+}
+
 .container-fluid {
   margin : 0;
   padding : 0;
@@ -32,13 +37,18 @@ a, a:hover {
 /* header */
 .header {
   background-color: #F2B705;
-  height:10%;
+  height : 10rem;
+  text-align : center;
+  margin: 0;
 }
 
 
 .titre {
-  font-size: 200%;
-  color : #ffffff
+  font-size:3em;
+  color : #ffffff;
+  letter-spacing: 1px;
+  float : center;
+  text-align : center;
 }
 
 .logo{
@@ -138,20 +148,6 @@ a, a:hover {
   margin : 2% 2%;
 
 } */
-
-.gauche {
-  float:left;
-  width: 50%;
-  background-color:#FF3366;
-  padding-right: 5%;
-}
-
-.droite {
-  float:right;
-  width: 50%;
-  background-color:#9966FF;
-  padding-left: 5%;
-}
 
 
 /* footer */

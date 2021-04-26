@@ -30,9 +30,14 @@
     <p> <br><b>Question 1 : Répartition des apports énergétiques au cours des différents repas de la journée, selon les recommendations nutritionnelles </b>
     <br> </p>
     <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
-    <p> Il est conseillé de prendre 3 repas par jour. <br><br> La part moyenne des apports énergétiques conseillés est de <input id="" type="" name="" value="" onclick=""> % pour le petit déjeuner, de <input type="" name="" value="" onclick=""> % pour le déjeuner, <input type="" name="" value="" onclick=""> % pour le goûter et de <input type="" name="" value="" onclick=""> % pour le dîner. </p>
+    <p> Il est conseillé de prendre 3 repas par jour. <br><br> La part moyenne des apports énergétiques conseillés est de <input id="" type="" name="" value="" onclick=""> % pour le petit déjeuner, de <input type="" name="" value="" onclick=""> % pour le déjeuner et de <input type="" name="" value="" onclick=""> % pour le dîner. </p>
 
     <!-- insérer le code pour les visualiser les étiquettes à placer -->
+
+    <!-- 2e version si la case collation est cochée en haut -->
+    <br> </p>
+    <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
+    <p> Il est conseillé de prendre 3 repas par jour. <br><br> La part moyenne des apports énergétiques conseillés est de <input id="" type="" name="" value="" onclick=""> % pour le petit déjeuner, de <input type="" name="" value="" onclick=""> % pour le déjeuner, <input type="" name="" value="" onclick=""> % pour le goûter et de <input type="" name="" value="" onclick=""> % pour le dîner. </p>
 
     <nav classe="boutons">
       <!-- inclure une requête pour valider et passer à la page suivante-->
@@ -40,11 +45,23 @@
     </nav>
 
     <br>
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger" role="alert" id ="" value=""> <!-- faire apparaître si erreur (le message peut changer donc faire copier coller selon les messages )-->
+      Attention vous avez fait une erreur (message à adapter selon l'erreur) !
+    </div>
+
+    <br>
+    <div class="alert alert-success" role="alert" id="" value=""> <!-- faire apparaître si tout bon -->
+      Vous avez les bonnes réponses !
+    </div>
+
+
+    <br>
+    <div class="alert alert-danger" role="alert" id "" value=""> <!-- faire apparaître une fois les lignes remplies validées et bonnes-->
       Cette répartition est à connaître !
     </div>
 
   </div>
+
 
 <!-- insérer le pied de page -->
 
