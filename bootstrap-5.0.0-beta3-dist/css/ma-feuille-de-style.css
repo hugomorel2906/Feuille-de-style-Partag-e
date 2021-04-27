@@ -75,3 +75,10 @@ p {
 .table-custom{
   text-align: justify;
 }
+
+/********** Encadrés **********/
+.cadre_droite{
+  border-right-width : 2px;
+  border-right-style: solid;
+  border-right-color: #000000;
+}

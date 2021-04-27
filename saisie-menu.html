@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
+
+  <title>Page de Connexion</title>
+</head>
+
+<!-- Contenu du site-->
+
+<body>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title> </title>
+    </head>
+
+  </html>
+  <!-- header-->
+
+  <div class="container-fluid">
+    <div class="row header align-items-center py-2">
+      <div class="col d-none d-sm-block">
+        <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
+      </div>
+      <div class="col text-center titre-header mx-4 my-4">
+        NumTrition
+      </div>
+      <div class="col d-none d-sm-block my-4 text-end">
+        <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
+      </div>
+    </div>
+  </div>
+  <!-- fin header-->
+
+
+
+    <!-- content-->
+    <section class="container-fluid">
+
+      <div class="container-fluid text-center">
+        <h2 class="mt-4"> TD n°2 : Alimentation et Santé de l'Homme </h2>
+        <h2 class="mt-7"> "Calcul du besoin et analyse d'une ration alimentaire" </h2>
+        <br>
+      </div>
+
+
+      <div class="text-center">
+           <!-- CODE: mettre les boutons d'une certaine couleur en fonction de si oui ou non, le tableau est analysable-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Lundi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Mardi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Mercredi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-danger m-3" id="" name="" value="">Jeudi</button> <!--bouton rouge-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Vendredi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Samedi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Dimanche</button> <!--bouton vert-->
+      </div>
+
+
+      <p></p>
+      <!-- inclure une condition pour ne pouvoir cocher qu'un seul élément-->
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        petit-déjeuner </label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        déjeuner </label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        collation </label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        apéro </label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        dîner </label>
+      </div>
+
+
+      <p><br><br></p>
+      <div class="row vertical-align-center">
+
+        <div class="col-3 cadre_droite">
+          <p>Choix de l'aliment ou de la boisson</p>
+          <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="" name="" value=""> <!-- lier avec la tbale ciqual-->
+            <option selected>Open this select menu</option>
+          </select>
+        </div>
+
+        <div class="col-3 text-center">
+          <p class="fs-6 text-center" style="color:#4B75F9"> <em> Saisir la quantité en grammes, à l'unité</em></p>
+          <p class="text-center">Quantité :<input type="" name="quantite" value=""> g </p>
+
+          <p><br></p><nav class="boutons">
+            <!-- Je ne sais pas si nécessaire pour mémoriser l'élément séléctionner dans la listé précedente -->
+            <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
+          </nav>
+
+        </div>
+
+        <div class="col-6 text-center">
+          <table class="table table-bordered table-custom">
+            <thead class="thead-dark">
+              <tr style="text-align:center">
+                <th scope="col">Repas</th>
+                <th scope="col">aliment</th>
+                <th scope="col">quantité</th>
+              </tr>
+            </thead>
+
+            <section class="table table-bordered ">
+              <tbody>
+                <tr name="" value="" > <!-- inclure une fonction qui ajoute une ligne remplie et en créé une nouvelle vide-->
+                  <td name="" value=""> <!-- (rempli les colonnes ligne par ligne) fonction qui reprend les données saisies juste avant-->
+                </tr>
+
+              </tbody>
+            </section>
+          </table>
+        </div>
+
+      </div>
