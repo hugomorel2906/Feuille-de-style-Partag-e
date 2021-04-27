@@ -61,15 +61,21 @@
 
 </head>
 
-<div class="container-fluid">
+<!-- CONTENU DU SITE WEB -->
   <div class="card card-custom-text">
       <h2 class="card-title text-center mt-4"> Compte rendu enseignant </h2>
       <p class="card-text text-center mt-2"> Vous trouverez ci-dessous les détails des réponses de l'étudiant sélectionné </p>
   <br>
+
+  <div> <!-- choix de l'étudiant -->
+      <p class="card-text mx-4 mb-2"> Nom de l'étudiant : </p>
+      <select id="nom_etudiant" class="form-select form-select-sm" aria-label=".form-select-sm example" name="" value=""> <!-- lier avec la liste des étudiants-->
+            <option selected="">Choisir le nom de l'étudiant</option>
+          </select>
+    </div>
   </div>
-</div>
 
-
+  <!-- INSERER COMPTE RENDU DES REPONSES AUX QUESTIONS PAR ETUDIANT -->
 
   <!-- Section "Pied de page général" à insérer sur chacune des pages-->
   <div class="row navbar container-fluid footer">
