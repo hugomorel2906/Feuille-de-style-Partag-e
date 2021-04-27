@@ -43,17 +43,17 @@
             <tbody>
               <tr>
                 <th scope="row">Âge</th> <!-- ligne à remplir pour récupérer les données perso déja saisies-->
-                <td contenteditable="false" name="perso[1]" type="" id="" value="" > </td>
+                <td contenteditable="false" name="age" type="" id="" value="" > </td>
             </tr>
 
             <tr>
               <th scope="row">Taille</th> <!-- ligne à remplir pour récupérer les données perso déja saisies-->
-              <td contenteditable="false" name="perso[2]" type="" id=""> </td>
+              <td contenteditable="false" name="taille" type="" id=""> </td>
             </tr>
 
             <tr>
               <th scope="row">Poids</th> <!-- ligne à remplir pour récupérer les données perso déja saisies-->
-              <td contenteditable="false" name="perso[3]" type="" id=""> </td>
+              <td contenteditable="false" name="poids" type="" id=""> </td>
             </tr>
 
           </tbody>
@@ -94,17 +94,26 @@
 
         <!-- Afficher les NAP saisis précédemment -->
 
-        <div class="row">
-          <div class="col-auto">
 
-            <p></p>
-            <p><br><b>Pour rappel, vos données saisies pour le lundi sont : </b></p>
-            <div class="table-responsive">
+
+        <p></p>
+        <p>Faites le calcul pour la journée du lundi les autres jours se remplieront automatiquement</p>
+        <p class="fs-6" style="color:#4B75F9"> <em> Saisir votre valeur au dixième près (1 chiffre après la virgule) </em></p>
+
+        <div class="table-responsive">
               <table class="table table-bordered table-custom" style="text-align:center">
                 <thead class="thead-dark">
                   <tr>
                     <th scope="col">Niveau d'activité</th>
                     <th scope="col">Lundi</th>
+                    <th scope="col">Mardi</th>
+                    <th scope="col">Mercredi</th>
+                    <th scope="col">Jeudi</th>
+                    <th scope="col">Vendredi</th>
+                    <th scope="col">Samedi</th>
+                    <th scope="col">Dimanche</th>
+                    <th scope="col">Total (nb h/sem)</th>
+                    <th scope="col">Moyenne (nb h /sem)</th>
                   </tr>
                 </thead>
 
@@ -112,265 +121,128 @@
                   <tbody>
                     <tr>
                       <th scope="row">A</th>
-                      <td contenteditable="false" name="NAP[1]" type="int"> données saisies dans la page NAP </td>
+                      <td contenteditable="false" name="NAP[0][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[0][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[0][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[0][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[0][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[0][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[0][6]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[0][7]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[0][8]" value= "" type="int" id=""> </td>
                       <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
                     </tr>
 
                     <tr>
                       <th scope="row">B</th>
-                      <td contenteditable="false" name="NAP[2]" type="int"> données saisies dans la page NAP </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                      <td contenteditable="false" name="NAP[1][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][6]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][7]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][8]" value="" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
                     </tr>
 
                     <tr>
                       <th scope="row">C</th>
-                      <td contenteditable="false" name="NAP[3]" type="int"> données saisies dans la page NAP </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                      <td contenteditable="false" name="NAP[2][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][6]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][7]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][8]" value="" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
                     </tr>
 
                     <tr>
                       <th scope="row">D</th>
-                      <td contenteditable="false" name="NAP[4]" type="int"> données saisies dans la page NAP </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                      <td contenteditable="false" name="NAP[3][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][6]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][7]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][8]" value= "" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
                     </tr>
 
                     <tr>
                       <th scope="row">E</th>
-                      <td contenteditable="false" name="NAP[5]" type="int"> données saisies dans la page NAP </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                      <td contenteditable="false" name="NAP[4][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][6]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][7]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][8]" value= "" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
                     </tr>
 
                     <tr>
                       <th scope="row">F</th>
-                      <td contenteditable="false" name="NAP[6]" type="int"> données saisies dans la page NAP </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                      <td contenteditable="false" name="NAP[5][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][6]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][7]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][8]" value= "" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
                     </tr>
 
                     <tr>
                       <th scope="row">DEJ en kcal/jour</th>
-                      <td contenteditable="false" name="NAP[7]" type="int"> données saisies dans la page NAP </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                      <td contenteditable="true" name="DEJ[0][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[0][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[0][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[0][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[0][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[0][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[0][6]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[0][7]" value="" type="int" id=""> /</td>
+                      <td contenteditable="true" name="DEJ[0][8]" value= "" type="int" id="">/ </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
                     </tr>
 
                     <tr>
                       <th scope="row">DEJ en MJ/jour</th>
-                      <td contenteditable="false" name="NAP[8]" type="int"> données saisies dans la page NAP </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                      <td contenteditable="true" name="DEJ[1][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[1][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[1][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[1][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[1][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[1][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[1][6]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[1][7]" value="" type="int" id=""> /</td>
+                      <td contenteditable="true" name="DEJ[1][8]" value= "" type="int" id=""> /</td>                       <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
                     </tr>
                   </tbody>
                 </section>
               </table>
             </div>
-          </div>
 
-          <div class="col-auto">
 
-            <p>Faites le calcul pour la journée du lundi les autres jours se remplieront automatiquement</p>
-            <p class="fs-6" style="color:#4B75F9"> <em> Saisir votre valeur au dixième près (1 chiffre après la virgule) </em></p>
 
-            <div class="table-responsive">
-              <table class="table table-bordered table-custom" style="text-align:center">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Niveau d'activité</th>
-                    <th scope="col">Lundi</th>
-                  </tr>
-                </thead>
-
-                <section class="table table-bordered">
-                  <tbody>
-                    <tr>
-                      <th scope="row">A</th>
-                      <td contenteditable="true" name="NAP[1]" type="int"> </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
-                    </tr>
-
-                    <tr>
-                      <th scope="row">B</th>
-                      <td contenteditable="true" name="NAP[2]" type="int"> </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
-                    </tr>
-
-                    <tr>
-                      <th scope="row">C</th>
-                      <td contenteditable="true" name="NAP[3]" type="int"> </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
-                    </tr>
-
-                    <tr>
-                      <th scope="row">D</th>
-                      <td contenteditable="true" name="NAP[4]" type="int"> </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
-                    </tr>
-
-                    <tr>
-                      <th scope="row">E</th>
-                      <td contenteditable="true" name="NAP[5]" type="int">  </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
-                    </tr>
-
-                    <tr>
-                      <th scope="row">F</th>
-                      <td contenteditable="true" name="NAP[6]" type="int"> </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
-                    </tr>
-
-                    <tr>
-                      <th scope="row">DEJ en kcal/jour</th>
-                      <td contenteditable="true" name="NAP[7]" type="int">  </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
-                    </tr>
-
-                    <tr>
-                      <th scope="row">DEJ en MJ/jour</th>
-                      <td contenteditable="true" name="NAP[8]" type="int"> </td>
-                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
-                    </tr>
-                  </tbody>
-                </section>
-              </table>
-            </div>
 
             <nav classe="boutons">
               <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
             </nav>
             <br>
-          </div>
+
 
           <div class="alert alert-danger" role="alert" id="" value=""> <!-- faire apparaître une fois les lignes remplies validées et bonnes-->
             RÉPONSE FAUSSE : Pensez à multiplier le DEJ par le coefficient correcteur calculé plus haut si votre IMC est supérieur à 24 !
           </div>
 
-          </div>
 
-          <div class="table-responsive">
-            <table class="table table-bordered table-custom"  style="text-align:center">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Niveau d'activité</th>
-                  <th scope="col">Lundi</th>
-                  <th scope="col">Mardi</th>
-                  <th scope="col">Mercredi</th>
-                  <th scope="col">Jeudi</th>
-                  <th scope="col">Vendredi</th>
-                  <th scope="col">Samedi</th>
-                  <th scope="col">Dimanche</th>
-                  <th scope="col">Nombre h NAP totales</th>
-                  <th scope="col">Nombre h NAP moyen</th>
-                </tr>
-              </thead>
 
-            <section class="table table-bordered">
-              <tbody>
-                <tr>
-                  <th scope="row">A</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
-                  <td name="NAP[1]" id="" value=""> </td>
-                  <td name="NAP[2]" id="" value=""> </td>
-                  <td name="NAP[3]" id="" value=""> </td>
-                  <td name="NAP[4]" id="" value=""> </td>
-                  <td name="NAP[5]" id="" value=""> </td>
-                  <td name="NAP[6]" id="" value=""> </td>
-                  <td name="NAP[7]" id="" value=""> </td>
-                  <td name="NAP[8]" id="" value=""> </td>
-                  <td name="NAP[9]" id="" value=""> </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">B</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
-                  <td name="NAP[1]" id="" value=""> </td>
-                  <td name="NAP[2]" id="" value=""> </td>
-                  <td name="NAP[3]" id="" value=""> </td>
-                  <td name="NAP[4]" id="" value=""> </td>
-                  <td name="NAP[5]" id="" value=""> </td>
-                  <td name="NAP[6]" id="" value=""> </td>
-                  <td name="NAP[7]" id="" value=""> </td>
-                  <td name="NAP[8]" id="" value=""> </td>
-                  <td name="NAP[9]" id="" value=""> </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">C</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
-                  <td name="NAP[1]" id="" value=""> </td>
-                  <td name="NAP[2]" id="" value=""> </td>
-                  <td name="NAP[3]" id="" value=""> </td>
-                  <td name="NAP[4]" id="" value=""> </td>
-                  <td name="NAP[5]" id="" value=""> </td>
-                  <td name="NAP[6]" id="" value=""> </td>
-                  <td name="NAP[7]" id="" value=""> </td>
-                  <td name="NAP[8]" id="" value=""> </td>
-                  <td name="NAP[9]" id="" value=""> </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">D</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
-                  <td name="NAP[1]" id="" value=""> </td>
-                  <td name="NAP[2]" id="" value=""> </td>
-                  <td name="NAP[3]" id="" value=""> </td>
-                  <td name="NAP[4]" id="" value=""> </td>
-                  <td name="NAP[5]" id="" value=""> </td>
-                  <td name="NAP[6]" id="" value=""> </td>
-                  <td name="NAP[7]" id="" value=""> </td>
-                  <td name="NAP[8]" id="" value=""> </td>
-                  <td name="NAP[9]" id="" value=""> </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">E</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
-                  <td name="NAP[1]" id="" value=""> </td>
-                  <td name="NAP[2]" id="" value=""> </td>
-                  <td name="NAP[3]" id="" value=""> </td>
-                  <td name="NAP[4]" id="" value=""> </td>
-                  <td name="NAP[5]" id="" value=""> </td>
-                  <td name="NAP[6]" id="" value=""> </td>
-                  <td name="NAP[7]" id="" value=""> </td>
-                  <td name="NAP[8]" id="" value=""> </td>
-                  <td name="NAP[9]" id="" value=""> </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">F</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
-                  <td name="NAP[1]" id="" value=""> </td>
-                  <td name="NAP[2]" id="" value=""> </td>
-                  <td name="NAP[3]" id="" value=""> </td>
-                  <td name="NAP[4]" id="" value=""> </td>
-                  <td name="NAP[5]" id="" value=""> </td>
-                  <td name="NAP[6]" id="" value=""> </td>
-                  <td name="NAP[7]" id="" value=""> </td>
-                  <td name="NAP[8]" id="" value=""> </td>
-                  <td name="NAP[9]" id="" value=""> </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">DEJ en kcal/jour</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
-                  <td name="NAP[1]" id="" value=""> </td>
-                  <td name="NAP[2]" id="" value=""> </td>
-                  <td name="NAP[3]" id="" value=""> </td>
-                  <td name="NAP[4]" id="" value=""> </td>
-                  <td name="NAP[5]" id="" value=""> </td>
-                  <td name="NAP[6]" id="" value=""> </td>
-                  <td name="NAP[7]" id="" value=""> </td>
-                  <td name="NAP[8]" id="" value="/"> </td>
-                  <td name="NAP[9]" id="" value="/"> </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">DEJ en MJ/jour</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
-                  <td name="NAP[1]" id="" value=""> </td>
-                  <td name="NAP[2]" id="" value=""> </td>
-                  <td name="NAP[3]" id="" value=""> </td>
-                  <td name="NAP[4]" id="" value=""> </td>
-                  <td name="NAP[5]" id="" value=""> </td>
-                  <td name="NAP[6]" id="" value=""> </td>
-                  <td name="NAP[7]" id="" value=""> </td>
-                  <td name="NAP[8]" id="" value="/"> </td>
-                  <td name="NAP[9]" id="" value="/"> </td>
-                </tr>
-
-              </tbody>
-            </section>
-
-            </table>
-          </div>
 
         </div>
   </body>
