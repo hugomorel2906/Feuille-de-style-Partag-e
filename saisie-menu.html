@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
 
-  <title>Page de Connexion</title>
+  <title> Saisie menu  </title>
 </head>
 
 <!-- Contenu du site-->
@@ -62,6 +62,17 @@
               <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Samedi</button> <!--bouton vert-->
               <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Dimanche</button> <!--bouton vert-->
       </div>
+
+
+
+      <p style="text-align:right"><a href="" >Besoin d'aide pour estimer les quantités ?</a></p> <!-- lien à ajouter une fois al base de données créée-->
+
+
+          <br>
+      <div class="alert alert-danger" role="alert" id="" value=""> <!-- faire apparaître si tout bon -->
+            ATTENTION : Pensez à saisir vos boissons (eau du robinet, eau minérale, alcool etc..). <br>
+            Toutes les quantités sont à saisir en grammes (pour rappel : 33 cl = 330 g)
+      </div><br>
 
 
       <p></p>
@@ -137,6 +148,43 @@
               </tbody>
             </section>
           </table>
+
+          <br><p class="fs-6 text-center" style="color:#4B75F9"> <em> Une fois que vous avez fini de remplir un repas, pensez à enregistrer avant de séléctionner un autre repas</em></p>
+          <br>
+          <nav class="boutons">
+            <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Enregistrer </button>
+          </nav>
+
         </div>
 
+        <p><br></p>
+        <nav class="boutons text-center">
+          <button type="button" class="btn btn-lg text-center btn-custom" value=""> <a href="./menu-saisies-donnees.html"> Retour</a></button>
+          <button type="button" class="btn btn-lg text-center btn-custom" value=""> <a href="./page-accueil.html">Accueil </a></button>
+        </nav>
+        <p><br></p>
+
       </div>
+    </section>
+
+      <!-- Section "Pied de page général" à insérer sur chacune des pages-->
+      <div class="row navbar container-fluid" style="background-color:#F2B705">
+        <div class="row">
+          <p class="text-right small">
+            Contact : <A HREF="mailto:patrick.sauvant@agro-bordeaux.fr">Patrick SAUVANT</A>
+          </p>
+        </div>
+        <div class="row">
+          <p class="text-left small">
+                 Bordeaux Sciences Agro &mdash; Projet NumTrition &mdash; <A HREF="mentionslegales.html">Mentions légales</A>
+          </p>
+        </div>
+        <div class="row">
+          <p class="text-right small">
+                 Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
+          </p>
+        </div>
+      </div>
+
+    </body>
+  </html>
