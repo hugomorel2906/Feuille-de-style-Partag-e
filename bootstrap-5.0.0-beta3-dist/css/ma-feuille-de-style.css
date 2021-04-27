@@ -75,3 +75,10 @@ p {
 .table-custom{
   text-align: justify;
 }
+
+/********* Menu ********/
+.element_menu ul li
+{
+  display:inline;
+  margin:0 5px 0 5px; /* décalage a gauche des liens de ton menu de 15 px */
+}
