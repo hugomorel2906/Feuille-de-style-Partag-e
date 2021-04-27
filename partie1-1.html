@@ -11,11 +11,9 @@
     <title>TD q1</title>
   </head>
 
-<!-- Contenu du site-->
-
-
 <body>
-  <!-- insérer l'entête-->
+
+  <!-- CODE : insérer "header" sur cahque page (include?)-->
   <div class="container-fluid">
     <div class="row header align-items-center py-2">
       <div class="col d-none d-sm-block">
@@ -29,15 +27,15 @@
       </div>
     </div>
   </div>
+  <!-- fin entête-->
 
   <!-- Contenu de page-->
-
-
   <div class="container-fluid">
 
   <br>
+  <!-- CODE : dans le value, mettre du code pour que quand la case est cochée, la case collation apparaît dans la q1 -->
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
     <label class="form-check-label" for="flexCheckDefault">
       Prenez-vous habituellement une collation dans la journée ?
       <br>
@@ -46,45 +44,48 @@
 
     <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
     <p class="fs-6" style="color:#4B75F9"> Chercher sur internet les informations suivantes : </p>
+
+    <!-- CODE : ce paragraphe apparaît si la case collation n'est pas cochée-->
     <p> <br><b>Question 1 : Répartition des apports énergétiques au cours des différents repas de la journée, selon les recommendations nutritionnelles </b>
     <br> </p>
-    <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
+    <!-- CODE : lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
     <p> Il est conseillé de prendre 3 repas par jour. <br><br> La part moyenne des apports énergétiques conseillés est de <input id="" type="" name="" value="" onclick="" dragzone="" draggable="auto"> % pour le petit déjeuner, de <input type="" name="" value="" onclick=""> % pour le déjeuner et de <input type="" name="" value="" onclick=""> % pour le dîner. </p>
 
-    <!-- insérer le code pour les visualiser les étiquettes à placer -->
+    <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
 
-    <!-- 2e version si la case collation est cochée en haut -->
+    <!-- CODE : 2e version si la case collation est cochée en haut -->
     <br> </p>
     <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
     <p> Il est conseillé de prendre 3 repas par jour. <br><br> La part moyenne des apports énergétiques conseillés est de <input id="" type="" name="" value="" onclick=""> % pour le petit déjeuner, de <input type="" name="" value="" onclick=""> % pour le déjeuner, <input type="" name="" value="" onclick=""> % pour le goûter et de <input type="" name="" value="" onclick=""> % pour le dîner. </p>
 
     <nav classe="boutons">
-      <!-- inclure une requête pour valider et passer à la page suivante-->
+      <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
       <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
     </nav>
 
     <br>
-    <div class="alert alert-danger" role="alert" id ="" value=""> <!-- faire apparaître si erreur (le message peut changer donc faire copier coller selon les messages )-->
-      Attention vous avez fait une erreur (message à adapter selon l'erreur) !
+    <!-- CODE : faire apparaître si erreur -->
+    <div class="alert alert-danger" role="alert" id ="" value="">
+      Attention vous avez fait une erreur !
     </div>
 
     <br>
-    <div class="alert alert-success" role="alert" id="" value=""> <!-- faire apparaître si tout bon -->
+    <!-- CODE : faire apparaître aucune erreur -->
+    <div class="alert alert-success" role="alert" id="" value="">
       Vous avez les bonnes réponses !
     </div>
 
 
     <br>
-    <div class="alert alert-danger" role="alert" id="" value=""> <!-- faire apparaître une fois les lignes remplies validées et bonnes-->
+    <!-- CODE : faire apparaître aucune erreur -->
+    <div class="alert alert-danger" role="alert" id="" value="">
       Cette répartition est à connaître !
     </div>
 
   </div>
 
 
-<!-- insérer le pied de page -->
-
-
+    <!-- CODE : insérer "Pied de page général" sur chacune des pages (via include?)-->
     <br><br>
     <div class="row align-items-center">
 
@@ -138,5 +139,8 @@
         </p>
       </div>
     </div>
+    <!-- fin du pied de page-->
+
+
   </body>
 </html>

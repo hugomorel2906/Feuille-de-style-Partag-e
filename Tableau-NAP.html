@@ -13,7 +13,7 @@
   <title> Saisir NAP </title>
 </head>
 
-<!-- entête-->
+    <!-- CODE : insérer "header" sur cahque page (include?)-->
     <div class="container-fluid">
       <div class="row header align-items-center py-2">
         <div class="col d-none d-sm-block">
@@ -27,11 +27,12 @@
         </div>
       </div>
     </div>
-
-<!-- fin entête-->
+    <!-- fin entête-->
 
 
 <!-- contenu de la page-->
+
+  <!-- Encadré avec les consignes -->
   <div class="container-fluid">
 
     <div class="card card-custom-text">
@@ -42,9 +43,9 @@
         <br><br> PS : attention la somme doit faire 24, il n'y a pas plus ou moins d'heure dans une journée (de minuit à minuit)
       </p>
     </div>
-
   <br>
 
+  <!-- Tableau -->
   <div class="table-responsive">
     <table class="table table-bordered table-custom">
       <thead class="thead-dark">
@@ -62,6 +63,7 @@
         </tr>
       </thead>
 
+  <!-- CODE : pouvoir récupérer les informations saisies -->
     <section class="table table-bordered">
       <tbody>
         <tr>
@@ -70,7 +72,7 @@
           <td contenteditable="true" name="NAP[0][1]" type="int" id=""> </td>
           <td contenteditable="true" name="NAP[0][2]" type="int" id=""> </td>
           <td contenteditable="true" name="NAP[0][3]" type="int" id=""> </td>
-          <td contenteditable="true" name="NAP[0][4]" ype="int" id=""> </td>
+          <td contenteditable="true" name="NAP[0][4]" type="int" id=""> </td>
           <td contenteditable="true" name="NAP[0][5]" type="int" id=""> </td>
           <td contenteditable="true" name="NAP[0][6]" type="int" id=""> </td>
           <td contenteditable="false" name="NAP[0][7]" value="" type="int" id=""> </td> <!-- dans les lignes ou il y a false, il faut entrer un code php dans value qui calcule selon les besoins-->
@@ -162,30 +164,33 @@
   </div>
 
   <br>
+    <!-- CODE : fonction qui permet de sauvegarder les avancées quand on click sur le retour au menu -->
   <nav class="boutons text-center">
     <button type="button" class="btn btn-lg text-center btn-custom"> <a href="./page-accueil.html"> retour au menu </a></button>
   </nav>
   <p><br></p>
   </div>
 
-  <!-- pied de page -->
+      <!-- CODE : insérer "Pied de page général" sur chacune des pages (via include?)-->
+      <div class="row navbar container-fluid footer" style="margin:0">
+        <div class="row">
+          <p class="text-right small">
+            Contact : <A HREF="mailto:patrick.sauvant@agro-bordeaux.fr">Patrick SAUVANT</A>
+          </p>
+        </div>
+        <div class="row">
+          <p class="text-left small">
+                 Bordeaux Sciences Agro &mdash; Projet NumTrition &mdash; <A HREF="mentionslegales.html">Mentions légales</A>
+          </p>
+        </div>
+        <div class="row">
+          <p class="text-right small">
+                 Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
+          </p>
+        </div>
+      </div>
+      <!-- fin du pied de page-->
 
-  <div class="row navbar container-fluid footer" style="margin:0">
-    <div class="row">
-      <p class="text-right small">
-        Contact : <A HREF="mailto:patrick.sauvant@agro-bordeaux.fr">Patrick SAUVANT</A>
-      </p>
-    </div>
-    <div class="row">
-      <p class="text-left small">
-             Bordeaux Sciences Agro &mdash; Projet NumTrition &mdash; <A HREF="mentionslegales.html">Mentions légales</A>
-      </p>
-    </div>
-    <div class="row">
-      <p class="text-right small">
-             Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
-      </p>
-    </div>
-  </div>
-  </body>
+
+    </body>
   </html>
