@@ -32,11 +32,11 @@
       <div class="mx-2 mt-2">
            <div class="element_menu">
              <ul>
-               <li><A HREF="Pageenseignant.html">Accueil</A></li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+               <li><A HREF="page-accueil.html">Accueil</A></li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
   <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
 </svg>
-               <li><A HREF=#>Compte rendu enseignant</A>
-             <!-- insérer à la place de #, l'onglet ouvert-->
+               <li><A HREF=#>Compte rendu et notes</A></li>
+             <!-- insérer à la place de #, l'onglet compte-rendu -->
              </ul>
            </div>
          </div>
@@ -46,24 +46,13 @@
 
 <!-- CONTENU DU SITE WEB -->
   <div class="card card-custom-text">
-      <h2 class="card-title text-center mt-4"> Compte rendu enseignant </h2>
-      <p class="card-text text-center mt-2"> Vous trouverez ci-dessous les détails des réponses de l'étudiant sélectionné </p>
+      <h2 class="card-title text-center mt-4"> Compte rendu et notes </h2>
+      <p class="card-text text-center mt-2"> Vous trouverez ci-dessous un lien pour télécharger le compte rendu du TD et pour avoir accès à votre note.</p>
   <br>
-
-  <div> <!-- choix de l'étudiant -->
-      <p class="card-text mx-2 mb-2"> Nom de l'étudiant : </p>
-      <select id="nom_etudiant" class="form-select form-select-sm" aria-label=".form-select-sm example" name="" value=""> <!-- lier avec la liste des étudiants-->
-            <option selected="">Choisir le nom de l'étudiant</option>
-          </select>
-    </div>
-
-    <br>
-      <p class="mx-2 fs-6"><A HREF=#>Télécharger le PDF</A></p> <!-- lier au CR enseignant -->
+      <p class="text-center mx-2 fs-6"><A HREF=#>Télécharger mon compte rendu</A></p> <!-- lier au CR étudiant -->
   </div>
 
-  <!-- INSERER COMPTE RENDU DES REPONSES AUX QUESTIONS PAR ETUDIANT -->
-
-  <!-- Section "Pied de page général" à insérer sur chacune des pages avec un include-->
+<!-- PIED DE PAGE GENERAL (à insérer avec un include) -->
   <div class="row navbar container-fluid footer" style="margin:0">
     <div class="row">
       <p class="text-right small">
@@ -81,5 +70,5 @@
       </p>
     </div>
   </div>
-  </body>
+</body>
 </html>
