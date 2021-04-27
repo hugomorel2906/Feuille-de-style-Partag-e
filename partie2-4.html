@@ -60,6 +60,7 @@
         </section>
         </table>
       </div>
+    </div>
 
         <p>A l'aide de vos connaissances ou en retrouvant la formule sur internet, calculez votre IMC : </p>
         <p class="fs-6" style="color:#4B75F9"> <em> Saisir votre IMC au dixième près (1 chiffre après la virgule) </em></p>
@@ -67,7 +68,6 @@
         <br>
 
         <nav classe="boutons">
-          <br>
           <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
         </nav>
 
@@ -77,10 +77,301 @@
             <br> Pour rappel : <img src="IMC.jpg" class="img-fluid" style="width:20em">
         </div>
 
+        <p class="fs-6" style="color:#4B75F9"> <em> Saisir votre valeur au dixième près (1 chiffre après la virgule) </em></p>
         <p>Si votre IMC est supérieur à 24, il faut calculer un coefficient correcteur. <br>
                      Coefficient correcteur = 1 - (22-IMC) x 0,01 : <input id="" type="" name="" value=""> </p> <!-- afficher ssi IMC > 24 -->
 
         <nav classe="boutons">
-          <br>
           <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
         </nav>
+
+        <br>
+        <p>À l'aide de la formule ci-dessous et du tableau récapitulatif de votre NAP (Niveau d'activité physique) calculez votre DEJ.</p>
+        <p class="fs-6" style="color:#4B75F9"> <em> Pensez à multiplier ce résultat par le coefficient correcteur calculé plus haut si votre IMC est supérieur à 24. </em></p>
+
+        <img src="DEJ.55.19.png" class="img-fluid" style="width:30em">
+        <br><br>
+
+        <!-- Afficher les NAP saisis précédemment -->
+
+        <div class="row">
+          <div class="col-auto">
+
+            <p></p>
+            <p><br><b>Pour rappel, vos données saisies pour le lundi sont : </b></p>
+            <div class="table-responsive">
+              <table class="table table-bordered table-custom" style="text-align:center">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Niveau d'activité</th>
+                    <th scope="col">Lundi</th>
+                  </tr>
+                </thead>
+
+                <section class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th scope="row">A</th>
+                      <td contenteditable="false" name="NAP[1]" type="int"> données saisies dans la page NAP </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">B</th>
+                      <td contenteditable="false" name="NAP[2]" type="int"> données saisies dans la page NAP </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">C</th>
+                      <td contenteditable="false" name="NAP[3]" type="int"> données saisies dans la page NAP </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">D</th>
+                      <td contenteditable="false" name="NAP[4]" type="int"> données saisies dans la page NAP </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">E</th>
+                      <td contenteditable="false" name="NAP[5]" type="int"> données saisies dans la page NAP </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">F</th>
+                      <td contenteditable="false" name="NAP[6]" type="int"> données saisies dans la page NAP </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">DEJ en kcal/jour</th>
+                      <td contenteditable="false" name="NAP[7]" type="int"> données saisies dans la page NAP </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">DEJ en MJ/jour</th>
+                      <td contenteditable="false" name="NAP[8]" type="int"> données saisies dans la page NAP </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+                  </tbody>
+                </section>
+              </table>
+            </div>
+          </div>
+
+          <div class="col-auto">
+
+            <p>Faites le calcul pour la journée du lundi les autres jours se remplieront automatiquement</p>
+            <p class="fs-6" style="color:#4B75F9"> <em> Saisir votre valeur au dixième près (1 chiffre après la virgule) </em></p>
+
+            <div class="table-responsive">
+              <table class="table table-bordered table-custom" style="text-align:center">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Niveau d'activité</th>
+                    <th scope="col">Lundi</th>
+                  </tr>
+                </thead>
+
+                <section class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th scope="row">A</th>
+                      <td contenteditable="true" name="NAP[1]" type="int"> </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">B</th>
+                      <td contenteditable="true" name="NAP[2]" type="int"> </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">C</th>
+                      <td contenteditable="true" name="NAP[3]" type="int"> </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">D</th>
+                      <td contenteditable="true" name="NAP[4]" type="int"> </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">E</th>
+                      <td contenteditable="true" name="NAP[5]" type="int">  </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">F</th>
+                      <td contenteditable="true" name="NAP[6]" type="int"> </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">DEJ en kcal/jour</th>
+                      <td contenteditable="true" name="NAP[7]" type="int">  </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">DEJ en MJ/jour</th>
+                      <td contenteditable="true" name="NAP[8]" type="int"> </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+                  </tbody>
+                </section>
+              </table>
+            </div>
+
+            <nav classe="boutons">
+              <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
+            </nav>
+            <br>
+          </div>
+
+          <div class="alert alert-danger" role="alert" id="" value=""> <!-- faire apparaître une fois les lignes remplies validées et bonnes-->
+            RÉPONSE FAUSSE : Pensez à multiplier le DEJ par le coefficient correcteur calculé plus haut si votre IMC est supérieur à 24 !
+          </div>
+
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-custom"  style="text-align:center">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Niveau d'activité</th>
+                  <th scope="col">Lundi</th>
+                  <th scope="col">Mardi</th>
+                  <th scope="col">Mercredi</th>
+                  <th scope="col">Jeudi</th>
+                  <th scope="col">Vendredi</th>
+                  <th scope="col">Samedi</th>
+                  <th scope="col">Dimanche</th>
+                  <th scope="col">Nombre h NAP totales</th>
+                  <th scope="col">Nombre h NAP moyen</th>
+                </tr>
+              </thead>
+
+            <section class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th scope="row">A</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
+                  <td name="NAP[1]" id="" value=""> </td>
+                  <td name="NAP[2]" id="" value=""> </td>
+                  <td name="NAP[3]" id="" value=""> </td>
+                  <td name="NAP[4]" id="" value=""> </td>
+                  <td name="NAP[5]" id="" value=""> </td>
+                  <td name="NAP[6]" id="" value=""> </td>
+                  <td name="NAP[7]" id="" value=""> </td>
+                  <td name="NAP[8]" id="" value=""> </td>
+                  <td name="NAP[9]" id="" value=""> </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">B</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
+                  <td name="NAP[1]" id="" value=""> </td>
+                  <td name="NAP[2]" id="" value=""> </td>
+                  <td name="NAP[3]" id="" value=""> </td>
+                  <td name="NAP[4]" id="" value=""> </td>
+                  <td name="NAP[5]" id="" value=""> </td>
+                  <td name="NAP[6]" id="" value=""> </td>
+                  <td name="NAP[7]" id="" value=""> </td>
+                  <td name="NAP[8]" id="" value=""> </td>
+                  <td name="NAP[9]" id="" value=""> </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">C</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
+                  <td name="NAP[1]" id="" value=""> </td>
+                  <td name="NAP[2]" id="" value=""> </td>
+                  <td name="NAP[3]" id="" value=""> </td>
+                  <td name="NAP[4]" id="" value=""> </td>
+                  <td name="NAP[5]" id="" value=""> </td>
+                  <td name="NAP[6]" id="" value=""> </td>
+                  <td name="NAP[7]" id="" value=""> </td>
+                  <td name="NAP[8]" id="" value=""> </td>
+                  <td name="NAP[9]" id="" value=""> </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">D</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
+                  <td name="NAP[1]" id="" value=""> </td>
+                  <td name="NAP[2]" id="" value=""> </td>
+                  <td name="NAP[3]" id="" value=""> </td>
+                  <td name="NAP[4]" id="" value=""> </td>
+                  <td name="NAP[5]" id="" value=""> </td>
+                  <td name="NAP[6]" id="" value=""> </td>
+                  <td name="NAP[7]" id="" value=""> </td>
+                  <td name="NAP[8]" id="" value=""> </td>
+                  <td name="NAP[9]" id="" value=""> </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">E</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
+                  <td name="NAP[1]" id="" value=""> </td>
+                  <td name="NAP[2]" id="" value=""> </td>
+                  <td name="NAP[3]" id="" value=""> </td>
+                  <td name="NAP[4]" id="" value=""> </td>
+                  <td name="NAP[5]" id="" value=""> </td>
+                  <td name="NAP[6]" id="" value=""> </td>
+                  <td name="NAP[7]" id="" value=""> </td>
+                  <td name="NAP[8]" id="" value=""> </td>
+                  <td name="NAP[9]" id="" value=""> </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">F</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
+                  <td name="NAP[1]" id="" value=""> </td>
+                  <td name="NAP[2]" id="" value=""> </td>
+                  <td name="NAP[3]" id="" value=""> </td>
+                  <td name="NAP[4]" id="" value=""> </td>
+                  <td name="NAP[5]" id="" value=""> </td>
+                  <td name="NAP[6]" id="" value=""> </td>
+                  <td name="NAP[7]" id="" value=""> </td>
+                  <td name="NAP[8]" id="" value=""> </td>
+                  <td name="NAP[9]" id="" value=""> </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">DEJ en kcal/jour</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
+                  <td name="NAP[1]" id="" value=""> </td>
+                  <td name="NAP[2]" id="" value=""> </td>
+                  <td name="NAP[3]" id="" value=""> </td>
+                  <td name="NAP[4]" id="" value=""> </td>
+                  <td name="NAP[5]" id="" value=""> </td>
+                  <td name="NAP[6]" id="" value=""> </td>
+                  <td name="NAP[7]" id="" value=""> </td>
+                  <td name="NAP[8]" id="" value="/"> </td>
+                  <td name="NAP[9]" id="" value="/"> </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">DEJ en MJ/jour</th> <!-- récupérer les données saisies pour le lundi et faire des caluls automatiques pour les autres jours -->
+                  <td name="NAP[1]" id="" value=""> </td>
+                  <td name="NAP[2]" id="" value=""> </td>
+                  <td name="NAP[3]" id="" value=""> </td>
+                  <td name="NAP[4]" id="" value=""> </td>
+                  <td name="NAP[5]" id="" value=""> </td>
+                  <td name="NAP[6]" id="" value=""> </td>
+                  <td name="NAP[7]" id="" value=""> </td>
+                  <td name="NAP[8]" id="" value="/"> </td>
+                  <td name="NAP[9]" id="" value="/"> </td>
+                </tr>
+
+              </tbody>
+            </section>
+
+            </table>
+          </div>
+
+        </div>
+  </body>
+</html>
