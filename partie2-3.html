@@ -66,7 +66,7 @@
     <br>
     <p>Saisir votre poids (P) :<input id="" type="" name="poids" value=""> kg </p>
 
-    <nav classe="boutons">
+    <nav class="boutons">
       <br>
       <!-- inclure une requête pour valider et passer à la page suivante-->
       <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
@@ -97,18 +97,18 @@
             <tbody>
               <tr>
                 <th scope="row">Selon Harris et Benedict</th> <!-- ligne à remplir par php pour avoir des données perso auto-->
+                <td contenteditable="false" name="HB[0]" type=""> </td>
                 <td contenteditable="false" name="HB[1]" type=""> </td>
                 <td contenteditable="false" name="HB[2]" type=""> </td>
                 <td contenteditable="false" name="HB[3]" type=""> </td>
-                <td contenteditable="false" name="HB[4]" type=""> </td>
             </tr>
 
             <tr>
               <th scope="row">Selon Black and al.</th>
+              <td contenteditable="true" name="BA[0]" type=""> </td>
               <td contenteditable="true" name="BA[1]" type=""> </td>
               <td contenteditable="true" name="BA[2]" type=""> </td>
               <td contenteditable="true" name="BA[3]" type=""> </td>
-              <td contenteditable="true" name="BA[4]" type=""> </td>
             </tr>
 
           </tbody>
@@ -124,7 +124,7 @@
 
     </div>
 
-    <nav classe="boutons">
+    <nav class="boutons">
       <!-- inclure une requête pour valider et passer à la page suivante-->
       <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
     </nav>
