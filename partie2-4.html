@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
+
+    <title></title>
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row header align-items-center py-2">
+        <div class="col d-none d-sm-block">
+          <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
+        </div>
+        <div class="col text-center titre-header mx-4 my-4">
+          NumTrition
+        </div>
+        <div class="col d-none d-sm-block my-4 text-end">
+          <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
+        </div>
+      </div>
+    </div>
+
+  <div class="container-fluid">
+
+  <br>
+
+    <h2  style="color:#E62719"> <br> II. Estimation de vos besoins nutritionnels </h2>
+    <p> <br><b>Question 4 : Calcul de votre Dépense Énergétique Journalière (DEJ) </b>
+    <br> </p>
+    <p> Vous avez saisie les données suivantes : <br></p>
+
+    <div class="row g-2 align-items-center">
+
+      <div class="col-auto">
+        <table class="table table-bordered table-custom" style="text-align:center">
+          <section class="table table-bordered ">
+            <tbody>
+              <tr>
+                <th scope="row">Âge</th> <!-- ligne à remplir pour récupérer les données perso déja saisies-->
+                <td contenteditable="false" name="perso[1]" type="" id="" value="" > </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Taille</th> <!-- ligne à remplir pour récupérer les données perso déja saisies-->
+              <td contenteditable="false" name="perso[2]" type="" id=""> </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Poids</th> <!-- ligne à remplir pour récupérer les données perso déja saisies-->
+              <td contenteditable="false" name="perso[3]" type="" id=""> </td>
+            </tr>
+
+          </tbody>
+        </section>
+        </table>
+      </div>
+
+        <p>A l'aide de vos connaissances ou en retrouvant la formule sur internet, calculez votre IMC : </p>
+        <p class="fs-6" style="color:#4B75F9"> <em> Saisir votre IMC au dixième près (1 chiffre après la virgule) </em></p>
+        <p>Votre IMC :<input id="" type="" name="" value=""> </p> <!-- mettre des tests pour vérifier qu'il s'agit d'un chiffre-->
+        <br>
+
+        <nav classe="boutons">
+          <br>
+          <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
+        </nav>
+
+        <!-- Si calcul bon : -->
+        <br><div class="alert alert-success" role="alert" id="" value="">
+          La formule de calcul de l'IMC est à connaître
+            <br> Pour rappel : <img src="IMC.jpg" class="img-fluid" style="width:20em">
+        </div>
+
+        <p>Si votre IMC est supérieur à 24, il faut calculer un coefficient correcteur. <br>
+                     Coefficient correcteur = 1 - (22-IMC) x 0,01 : <input id="" type="" name="" value=""> </p> <!-- afficher ssi IMC > 24 -->
+
+        <nav classe="boutons">
+          <br>
+          <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
+        </nav>

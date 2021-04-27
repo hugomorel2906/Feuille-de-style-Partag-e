@@ -19,13 +19,24 @@ p {
   margin-bottom: 0.5em;
 }
 
-/* encadrés */
+/********** Header **********/
+.titre-header {
+  font-size: 550%;
+  color : #ffffff
+}
+
+.header {
+  background-color: #F2B705;
+  height:10%;
+}
+
+/********** Encadrés **********/
 .card-custom-text {
   margin : 2%;
   padding: 2%;
 }
 
-/* boutons */
+/********** Boutons **********/
 .btn-custom {
   background-color: #52591D;
   outline-color: #52591D;
@@ -60,8 +71,7 @@ p {
   color : #000000;
 }
 
-/* tableaux*/
+/********** Tableaux **********/
 .table-custom{
   text-align: justify;
 }
-
