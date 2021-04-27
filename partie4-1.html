@@ -23,20 +23,15 @@
     <p> Après avoir choisi la journée à analyser, vous devrez remplir les tableaux suivants. Si les cases remplies sont correctes, les autres cases seront complétées automatiquement. Les six autres jours de la semaine seront calculées automatiquement également.</p>
     <br>
     
-    <div class="row">
-        <div class="col-2">
-        </div>
-        <div class="col-8"> <!-- CODE: mettre les boutons d'une certaine couleur en fonction de si oui ou non, le tableau est analysable-->
-            <button type="button" class="btn btn-outline-success m-3">Lundi</button> <!--bouton vert-->
-            <button type="button" class="btn btn-outline-success m-3">Mardi</button> <!--bouton vert-->
-            <button type="button" class="btn btn-outline-success m-3">Mercredi</button> <!--bouton vert-->
-            <button type="button" class="btn btn-outline-danger m-3">Jeudi</button> <!--bouton rouge-->
-            <button type="button" class="btn btn-outline-success m-3">Vendredi</button> <!--bouton vert-->
-            <button type="button" class="btn btn-outline-success m-3">Samedi</button> <!--bouton vert-->
-            <button type="button" class="btn btn-outline-success m-3">Dimanche</button> <!--bouton vert-->
-        <div class="col-2">
-        </div>
-    </div>   
+    <div class="d-md-block text-center boutons"> <!-- CODE: mettre les boutons d'une certaine couleur en fonction de si oui ou non, le tableau est analysable-->
+            <button type="button" class="btn btn-outline-success m-2">Lundi</button> <!--bouton vert-->
+            <button type="button" class="btn btn-outline-success m-2">Mardi</button> <!--bouton vert-->
+            <button type="button" class="btn btn-outline-success m-2">Mercredi</button> <!--bouton vert-->
+            <button type="button" class="btn btn-outline-danger m-2">Jeudi</button> <!--bouton rouge-->
+            <button type="button" class="btn btn-outline-success m-2">Vendredi</button> <!--bouton vert-->
+            <button type="button" class="btn btn-outline-success m-2">Samedi</button> <!--bouton vert-->
+            <button type="button" class="btn btn-outline-success m-2">Dimanche</button> <!--bouton vert--> 
+    </div>
     <br>
 
     <!--CODE: la suite s'affiche uniquement si un bouton a été selectionné (isset)-->
@@ -55,6 +50,8 @@
           <!--</tr>-->
     <br><br>
 
+    <p> Dans ce tableau, calculez les cases manquantes: il vous suffit de calculez l'apport en Kcal en fonction du nombre de g de Glucides/Protéines et Lipides par 100g de produit.</p>
+
     <nav classe="boutons">
     <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider le tableau </button>
     </nav>
@@ -67,24 +64,91 @@
         REPONSE(S) FAUSSE(S): Il faut prendre en compte l'énergie pour 100g et la quantité consommée, et donc faire un produit en croix ! 
     </div>
 
-    <p>Commencez par compléter les colonnes Glucides, Protéines et Lipides pour le déjeuner. Ensuite, compléter l'énergie correspondante au déjeuner en kcal. Calculer le % de répartition énergétique par repas, saisissez la valeur correspondant au déjeuner.</p>
-    <p>Cliquez ensuite sur valider le tableau.</p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <p> Dans le tableau ci-dessous: Commencez par compléter les colonnes Glucides, Protéines et Lipides pour le déjeuner. Ensuite, compléter l'énergie correspondante au déjeuner en kcal. Calculer le % de répartition énergétique par repas, saisissez la valeur correspondant au déjeuner.</p>
+    <p>Cliquez ensuite sur valider la ligne.</p>
     <p>Si toutes les valeurs saisies sont correctes, le reste du tableau sera complété automatiquement.</p>
     
-    <small class="fs-6" style="color:#4B75F9"><em>Veuillez entrer votre valeur au dixième près (=1 chiffre après la virgule)</em></small>
+    <small class="fs-6" style="color:#4B75F9"><em>Entrez vos valeurs au dixième près (=1 chiffre après la virgule)</em></small>
     
     <br><br>
-
- 
-    <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider le tableau </button>
-
-    <br><br><br><br>
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
-        <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
-    </svg>
-    <p class="fs-6" style="color:#2f7721"> <em>EN SAVOIR PLUS</em></p>
     
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <th scope="col"> </th>
+                    <th scope="col">Glucides</th>
+                    <th scope="col">Protéines</th>
+                    <th scope="col">Lipides</th>
+                    <th scope="col">Kcal</th>
+                    <th scope="col">% répartition de l'énergie par repas</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="false">Petit-déjeuner</td>
+                        <td contenteditable="true" name="tab[1][1]" type="int"></td>
+                        <td contenteditable="true" name="tab[1][2]" type="int"></td>
+                        <td contenteditable="true" name="tab[1][3]" type="int"></td>
+                        <td contenteditable="true" name="tab[1][4]" type="int"></td>
+                        <td contenteditable="true" name="tab[1][5]" type="int"></td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="false">Déjeuner</td>
+                        <td contenteditable="true" name="tab[2][1]" type="int"></td>
+                        <td contenteditable="true" name="tab[2][2]" type="int"></td>
+                        <td contenteditable="true" name="tab[2][3]" type="int"></td>
+                        <td contenteditable="true" name="tab[2][4]" type="int"></td>
+                        <td contenteditable="true" name="tab[2][5]" type="int"></td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="false">Collation</td>
+                        <td contenteditable="true" name="tab[3][1]" type="int"></td>
+                        <td contenteditable="true" name="tab[3][2]" type="int"></td>
+                        <td contenteditable="true" name="tab[3][3]" type="int"></td>
+                        <td contenteditable="true" name="tab[3][4]" type="int"></td>
+                        <td contenteditable="true" name="tab[3][5]" type="int"></td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="false">Apéro</td>
+                        <td contenteditable="true" name="tab[4][1]" type="int"></td>
+                        <td contenteditable="true" name="tab[4][2]" type="int"></td>
+                        <td contenteditable="true" name="tab[4][3]" type="int"></td>
+                        <td contenteditable="true" name="tab[4][4]" type="int"></td>
+                        <td contenteditable="true" name="tab[4][5]" type="int"></td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="false">Dîner</td>
+                        <td contenteditable="true" name="tab[5][1]" type="int"></td>
+                        <td contenteditable="true" name="tab[5][2]" type="int"></td>
+                        <td contenteditable="true" name="tab[5][3]" type="int"></td>
+                        <td contenteditable="true" name="tab[5][4]" type="int"></td>
+                        <td contenteditable="true" name="tab[5][5]" type="int"></td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="false"><b>Total</b></td>
+                        <td contenteditable="true" name="tab[6][1]" type="int"></td>
+                        <td contenteditable="true" name="tab[6][2]" type="int"></td>
+                        <td contenteditable="true" name="tab[6][3]" type="int"></td>
+                        <td contenteditable="true" name="tab[6][4]" type="int"></td>
+                        <td contenteditable="true" name="tab[6][5]" type="int"></td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="false"><b>%AET</b></td>
+                        <td contenteditable="true" name="tab[6][1]" type="int"></td>
+                        <td contenteditable="true" name="tab[6][2]" type="int"></td>
+                        <td contenteditable="true" name="tab[6][3]" type="int"></td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+
 
 </div>
 
