@@ -82,3 +82,10 @@ p {
   border-right-style: solid;
   border-right-color: #000000;
 }
+
+/********* Menu ********/
+.element_menu ul li
+{
+  display:inline;
+  margin:0 5px 0 5px; /* décalage a gauche et a droite des liens du menu de 5 px */
+}
