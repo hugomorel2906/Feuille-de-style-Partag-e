@@ -7,7 +7,7 @@
       <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
-    <link rel="stylesheet" href="style1.css" /> 
+    <link rel="stylesheet" href="style1.css"> 
 
     <?php include("script1.php");?>
 
@@ -59,9 +59,9 @@
 
     <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
 
-    
+
 	<div class="example-parent">
-		
+
 			<div class="example-origin">
 				 <div class="example-draggable" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
 					draggable1
@@ -71,9 +71,9 @@
 					draggable2
 				</div>
 			</div>
-	
-	
-	
+
+
+
 	</div>
 
 
