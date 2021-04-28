@@ -80,6 +80,9 @@
     </div>
   </div>
 
+  <div class="btn btn-lg text-center btn-custom-valider" onclick = "dragend_handler(event)"> Réinitialiser
+
+  </div>
 
 
     <!-- CODE : 2e version si la case collation est cochée en haut -->
