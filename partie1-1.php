@@ -7,9 +7,12 @@
       <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="style1.css"> 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 06a427cf9f9483378d9f087cbddb69fad7a54605
     
 >>>>>>> f83de42b4db6eeb2ff0263f1c80a725e34baf870
 
@@ -86,7 +89,7 @@
 
     <!-- CODE : zone avec les étiquettes à placer -->
     
-  <div class="example-parent">
+ 
 		<div class="example-origin">
 			<div class="example-draggable" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
 				10%
@@ -95,8 +98,12 @@
         40%
 			</div>
 		</div>
+<<<<<<< HEAD
 >>>>>>> f83de42b4db6eeb2ff0263f1c80a725e34baf870
 	</div>
+=======
+
+>>>>>>> 06a427cf9f9483378d9f087cbddb69fad7a54605
 
 
 

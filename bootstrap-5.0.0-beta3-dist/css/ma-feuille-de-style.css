@@ -98,15 +98,9 @@ p {
 }
 
 
-/******* Etiquettes****/
 
 .example-parent {
-  border: 2px solid #DFA612;
-  color: black;
-  display: flex;
-  font-family: sans-serif;
-  font-weight: bold;
-}
+/******* Etiquettes ****/
 
 .example-origin {
   flex-basis: auto;
