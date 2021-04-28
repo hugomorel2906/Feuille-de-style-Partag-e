@@ -102,7 +102,7 @@ p {
 
 .example-origin {
   flex-basis: auto;
-  flex-grow: 1;
+  flex-grow: 2;
   padding: 10px;
 }
 
@@ -130,4 +130,11 @@ p {
   flex-basis: content;
   flex-grow: 1;
   padding: 10px;
+}
+
+.example-parent {
+  color: black;
+  display: flex;
+  font-family: sans-serif;
+  font-weight: bold;
 }
