@@ -7,17 +7,18 @@ body, html {
 }
 
 body {
-max-width:100%;
-min-width:10%;
-line-height:1.33em;
-margin:0.01em;
-color:#000000;
+  max-width:100%;
+  min-width:10%;
+  line-height:1.33em;
+  padding:0.01em;
+  color:#000000;
 }
 
 p {
   text-align: justify;
   margin-bottom: 0.5em;
 }
+
 
 /********** Header **********/
 .titre-header {
