@@ -107,12 +107,12 @@ p {
 }
 
 .example-draggable {
-  background-color: #3913a1;
+  background-color: #6fa113e1;
   font-weight: normal;
   margin-bottom: 10px;
   margin-top: 10px;
-  padding: 10px;
-  border: 2px solid #000000;
+  padding: 2px;
+  border: 2px solid #6fa113e1;
  
 }
 
