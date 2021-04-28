@@ -59,17 +59,26 @@
 
     <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
 
-
-	<div class="example-parent">
-
-			<div class="example-origin">
-				 <div class="example-draggable" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-					10%
-				</div>
-				<div class="example-draggable" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-         40%
-				</div>
-			</div>
+  <div class="example-parent ">
+		<div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+			10%
+		</div>
+		<div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      40%
+    </div>
+    <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      40%
+    </div>
+    <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      40%
+    </div>
+    <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      40%
+    </div>
+    <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      40%
+    </div>
+  </div>
 
 
 
