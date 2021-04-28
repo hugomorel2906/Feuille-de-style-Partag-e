@@ -52,10 +52,21 @@
 
   <div> <!-- choix de l'étudiant -->
       <p class="card-text mx-2 mb-2"> Nom de l'étudiant : </p>
-      <select id="nom_etudiant" class="form-select form-select-sm" aria-label=".form-select-sm example" name="" value=""> <!-- lier avec la liste des étudiants-->
+      <div class="row align-items-center">
+        <div class="col-5">
+
+          <select id="nom_etudiant" class="form-select form-select-sm" aria-label=".form-select-sm example" name="" value=""> <!-- dans value, mettre la liste des étudiants-->
             <option selected="">Choisir le nom de l'étudiant</option>
           </select>
+        </div>
+        <div class="col-7">
+          <nav class="boutons">
+        <!-- CODE : inclure une requête pour valider si seulement une question a été choisie-->
+            <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
+          </nav>
+        </div>
     </div>
+  </div>
 
     <br>
       <p class="mx-2 fs-6"><A HREF=#>Télécharger le PDF</A></p> <!-- lier au CR enseignant -->
