@@ -1,7 +1,5 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -11,25 +9,12 @@
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js">
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
 
+<title>Banque de questions</title>
+
 </head>
 
 <body>
-  <!-- Entête - mettre un "include" de l'entête enseignant -->
-  <header class="container-fluid header">
-
-
-  </header>
-    <!-- fin de l'entête -->
-    <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
-      <title>Gestion de TD</title>
-
-      <!-- Header-->
+  <!-- Header-->
       <div class="container-fluid">
         <div class="row header align-items-center py-2">
           <div class="col d-none d-sm-block">
@@ -43,8 +28,9 @@
           </div>
         </div>
       </div>
+  <!-- Fin de Header -->
 
-      <!-- MENU -->
+  <!-- MENU -->
       <div id="menu">
         <div class="container-fluid">
           <div class="mx-2 mt-2">
@@ -56,40 +42,51 @@
                    <li><A HREF=#>Gestion du TD</A></li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
       <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
     </svg>
-                   <li><A HREF=#>Date et durée du TD</A></li><!-- insérer à la place de # et banque de questions, l'onglet ouvert-->
+                   <li><A HREF=#>Banque de questions</A></li><!-- insérer à la place de # et banque de questions, l'onglet ouvert-->
                  </ul>
                </div>
              </div>
            </div>
         </div>
-
-
-
-    </head>
-
-    <!-- Contenu du site-->
-
-
-        <!-- content-->
+    <!-- Fin de MENU -->
+    <!-- Entête Enseignant - mettre un "include" de l'entête enseignant -->
         <div class="container-fluid">
-          <div class="card card-custom-text">
+          <div class="card py-2">
             <h2 class="card-title text-center"> Gestion de TD </h2>
-
-          <div class="d-grid gap-2 d-md-block text-center boutons">
+            <div class="d-grid gap-2 d-md-block text-center boutons">
               <button type="button" class="btn btn-lg text-center btn-custom mx-2"> <a href=#> Date et durée du TD </a></button>
               <button type="button" class="btn btn-lg text-center btn-custom mx-2"> <a href=#> Banque de questions </a></button>
               <button type="button" class="btn btn-lg text-center btn-custom mx-2"> <a href=#> Paramétrage du test </a></button>
-
-          </div>
+            </div>
           </div>
         </div>
+        <br><br>
+    <!-- Fin de Entête Enseignant - mettre un "include" de l'entête enseignant -->
 
     <!-- Début du corps -->
+    <button type="button" class="btn btn-lg text-center btn-custom mx-2" onclick="Creer_question">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+      </svg>
+</button>
+
+<script>
+function myFunction() {
+  var btn = document.createElement("BUTTON");
+  btn.innerHTML = "CLICK ME";
+  document.body.appendChild(btn);
+}
+</script>
+    <div class="d-grid gap-2 d-md-block text-center boutons">
+        <button type="button" class="btn btn-lg text-center btn-custom mx-2"> <a href=#> Date et durée du TD </a></button>
+        <button type="button" class="btn btn-lg text-center btn-custom mx-2"> <a href=#> Banque de questions </a></button>
+        <button type="button" class="btn btn-lg text-center btn-custom mx-2"> <a href=#> Paramétrage du test </a></button>
+
   <div class="container-fluid">
 
     <!-- découpage dans des cadres -->
     <div class="card card-custom-text"> <br>
-      <h3 class="card-title"> Date et durée du TD </h3>
       <br>
 
       <form class="row g-3 needs-validation" novalidate>
@@ -163,12 +160,13 @@
         <label for="id_etudiant" class="form-label"> Identifiant de l'étudiant </label>
         <input type="text" class="form-control" id="id_etudiant" value="" required>
       </div>
+
       <div class="col-md-4">
         <nav class="boutons">
-          <button class="btn btn-lg btn-custom" style="margin-top: 5%" type="button"> Ajouter l'étudiant à la liste des P.A.I. </button>
+          <button class="btn btn-lg btn-custom" style="margin-top: 7%" type="button"> Ajouter l'étudiant à la liste des P.A.I. </button>
         </nav>
       </div>
-    </form>
+
     <br>
     <div class="row">
 
