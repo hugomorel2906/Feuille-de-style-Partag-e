@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 echo '<script language=javascript>
 
@@ -17,7 +17,6 @@ function dragover_handler(ev) {
  console.log("dragOver");
  // Change the target element s border to signify a drag over event
  // has occurred
- ev.currentTarget.style.background = "lightblue";
  ev.preventDefault();
 }
 function drop_handler(ev) {
@@ -44,5 +43,5 @@ function dragend_handler(ev) {
   ev.dataTransfer.clearData();
 }
 
-</script>'; 
-?> 
+</script>';
+?>
