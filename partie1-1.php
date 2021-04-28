@@ -53,9 +53,9 @@
     <!-- CODE : lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
     <p> Il est conseillé de prendre 3 repas par jour. <br><br> </p>
 
-    <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <em>Veuillez glisser l'étiquette</em></div> % pour le petit déjeuner,
-     de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <em>Veuillez glisser l'étiquette</em></div> % pour le déjeuner 
-    et de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <em>Veuillez glisser l'étiquette</em></div> % pour le dîner. </p>
+    <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
+    de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le déjeuner 
+    et de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
 
     <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
 
