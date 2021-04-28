@@ -1,0 +1,39 @@
+.example-parent {
+  border: 2px solid #DFA612;
+  color: black;
+  display: flex;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.example-origin {
+  flex-basis: auto;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.example-draggable {
+  background-color: #4AAE9B;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #000000;
+ 
+}
+
+.example-draggable2 {
+  background-color: #4A0000;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+
+.example-dropzone {
+  background-color: #6DB65B;
+  flex-basis: content;
+  flex-grow: 1;
+  padding: 10px;
+}
