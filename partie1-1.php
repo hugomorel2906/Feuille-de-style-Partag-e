@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
     <link rel="stylesheet" href="style1.css"> 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> f83de42b4db6eeb2ff0263f1c80a725e34baf870
 
     <?php include("script1.php");?>
 
@@ -53,6 +57,7 @@
     <br> </p>
     <!-- CODE : lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
     <p> Il est conseillé de prendre 3 repas par jour. <br><br> </p>
+<<<<<<< HEAD
     <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
 		dropzone
 		</div> % pour le petit déjeuner, de <input type="" name="" value="" onclick=""> % pour le déjeuner et de <input type="" name="" value="" onclick=""> % pour le dîner. </p>
@@ -74,6 +79,23 @@
 
 
 
+=======
+    <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> dropzone</div> % pour le petit déjeuner, 
+    de <div class= "example-dropzone" style="background-color:#FF3366;" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> dropzone</div> % pour le déjeuner 
+    et de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> dropzone</div> % pour le dîner. </p>
+
+    <!-- CODE : zone avec les étiquettes à placer -->
+    
+  <div class="example-parent">
+		<div class="example-origin">
+			<div class="example-draggable" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+				10%
+			</div>
+			<div class="example-draggable" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        40%
+			</div>
+		</div>
+>>>>>>> f83de42b4db6eeb2ff0263f1c80a725e34baf870
 	</div>
 
 
