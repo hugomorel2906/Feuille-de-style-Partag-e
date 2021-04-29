@@ -127,7 +127,11 @@ p {
 }
 
 .example-dropzone {
+<<<<<<< HEAD
   background-color: #FFFFFF;
+=======
+  background-color: #db1414;
+>>>>>>> 7092f9051a1404ba967016f570e727c1fa226c71
   flex-basis: content;
   flex-grow: 1;
   padding: 17px;

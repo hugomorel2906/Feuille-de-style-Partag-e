@@ -2,6 +2,8 @@
 
 echo '<script language=javascript>
 
+var pere ;
+var fils;
 
 function dragstart_handler(ev) {
  console.log("dragStart");
@@ -41,6 +43,10 @@ function dragend_handler(ev) {
   ev.target.style.border = "solid black";
   // Remove all of the drag data
   ev.dataTransfer.clearData();
+}
+
+function remove() {
+  pere.removeChild(fils);
 }
 
 </script>';

@@ -8,7 +8,10 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js">
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
+  
 
   <title>Page de Connexion</title>
 </head>
@@ -22,7 +25,7 @@
       <title> </title>
     </head>
 
-  </html>
+ 
 
   <!-- header-->
   <div class="container-fluid">
@@ -65,13 +68,57 @@
             Vous pourrez ensuite télécharger un compte rendu personnalisé où figureront votre note et les détails apports/dépenses de votre semaine type.
           </p>
         </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <nav class="d-grid gap-2 d-md-block text-center boutons">
       <button type="button" class="btn btn-lg text-center btn-custom"> <a href="./menu-saisies-donnees.html">Saisir mes données</a></button>
-      <button type="button" class="btn btn-lg text-center btn-custom"> Commencer le TD </button>
+      <button type="button" class="btn btn-lg text-center btn-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Commencer le TD </button>
+            <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
       <button type="button" class="btn btn-lg text-center btn-custom"> <a href="./Compte_rendu_et_notes.html">Accéder à mon compte rendu et mes notes</button>
     </nav>
+
+
 
     </section>
 
