@@ -57,6 +57,15 @@ p {
   font-size : 85%;
 }
 
+.btn-custom-effacer {
+  background-color: #FF9900;
+  color : #ffffff ;
+  margin-left: 20px;
+  text-align: center;
+  outline-color: ##FF9900;
+  font-size : 85%;
+}
+
 .boutons {
   justify-content: center;
   align-items: center;
@@ -118,7 +127,7 @@ p {
 }
 
 .example-dropzone {
-  background-color: #E6E6E6;
+  background-color: #FFFFFF;
   flex-basis: content;
   flex-grow: 1;
   padding: 17px;
