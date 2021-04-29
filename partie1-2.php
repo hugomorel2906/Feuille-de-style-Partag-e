@@ -107,10 +107,17 @@
       </div>
 
     <br>
-    <nav classe="boutons">
-      <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
-      <button type="button" class="btn btn-lg text-center btn-custom-valider" value="" onclick=""> Valider </button>
-    </nav>
+
+    <div class="align-items-center">
+      <nav classe="boutons">
+        <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
+        <button type="button" class="btn btn-lg text-center btn-custom-valider" value="" onclick=""> Valider </button>
+      </nav>
+
+      <nav classe="boutons">
+        <button type="button" class="btn btn-lg text-center btn-custom-effacer" onclick=""> Effacer </button>
+      </nav>
+    </div>
 
     <br>
     <!-- CODE : faire apparaître si erreur -->
