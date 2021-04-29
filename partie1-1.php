@@ -81,7 +81,6 @@
   </div>
 
   <div class="btn btn-lg text-center btn-custom-valider" onclick = "remove()"> Réinitialiser
-
   </div>
 
 

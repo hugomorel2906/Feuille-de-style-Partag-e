@@ -2,8 +2,9 @@
 
 echo '<script language=javascript>
 
-var pere ;
-var fils;
+
+var tfils=new Array();
+var tpere=new Array();
 
 function dragstart_handler(ev) {
  console.log("dragStart");
@@ -22,6 +23,8 @@ function dragover_handler(ev) {
  ev.preventDefault();
 }
 function drop_handler(ev) {
+  var pere;
+  var fils;
   console.log("Drop");
   ev.preventDefault();
   // Get the id of drag source element (that was added to the drag data
@@ -38,6 +41,8 @@ function drop_handler(ev) {
    pere=ev.target;
    fils=nodeCopy;
    ev.target.appendChild(nodeCopy);
+   tfils.push(fils);
+   tpere.push(pere);
   }
 }
 function dragend_handler(ev) {
@@ -49,7 +54,10 @@ function dragend_handler(ev) {
 }
 
 function remove() {
-  pere.removeChild(fils);
+  for (var i = 0; i <= tpere.length; i++) {
+    var pere=tpere[i];
+    var fils=tfils[i];
+    pere.removeChild(fils);}
 }
 
 </script>';

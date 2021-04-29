@@ -49,7 +49,7 @@ p {
 }
 
 .btn-custom-valider {
-  background-color: #a9009b;
+  background-color: #00A917;
   color : #ffffff ;
   margin-left: 20px;
   text-align: center;
@@ -127,12 +127,8 @@ p {
 }
 
 .example-dropzone {
-<<<<<<< HEAD
   background-color: #E6E6E6;
-=======
-  background-color: #db1414;
->>>>>>> dee18ad69a3d93a5a77a865fc363433fc5cd2f45
-  flex-basis: content;
+  flex-basis: content;  
   flex-grow: 1;
   padding: 17px;
   margin-bottom: 2px;
