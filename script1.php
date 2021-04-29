@@ -29,13 +29,14 @@ function drop_handler(ev) {
   var id = ev.dataTransfer.getData("text");
   // Only Move the element if the source and destination ids are both "move"
   if (id == "src_move" && ev.target.id == "dest_move"){
-    pere=ev.target;
-    fils=document.getElementById(id);
+
     ev.target.appendChild(document.getElementById(id));}
   // Copy the element if the source and destination ids are both "copy"
   if (id.substr(0,8) == "src_copy" && ev.target.id == "dest_copy") {
    var nodeCopy = document.getElementById(id).cloneNode(true);
    nodeCopy.id = "newId";
+   pere=ev.target;
+   fils=nodeCopy;
    ev.target.appendChild(nodeCopy);
   }
 }
