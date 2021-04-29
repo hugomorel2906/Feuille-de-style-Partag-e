@@ -80,7 +80,7 @@
     </div>
   </div>
 
-  <div class="btn btn-lg text-center btn-custom-valider" onclick = "dragend_handler(event)"> Réinitialiser
+  <div class="btn btn-lg text-center btn-custom-valider" onclick = "remove()"> Réinitialiser
 
   </div>
 
