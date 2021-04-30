@@ -89,7 +89,9 @@
     <nav class="boutons">
       <br>
       <!-- CODE : bouton qui enregistre les données -->
-      <button type="button" class="btn btn-lg text-center btn-custom-valider" value="<?php "> Valider </button>
+      <button type="button" class="btn btn-lg text-center btn-custom-valider" value="<?php 
+      
+      ?>"> Valider </button>
     </nav>
     <br>
     <p> A l'aide de l'article suivant : <a href="https://fr.wikipedia.org/wiki/Article"> Lien vers l'article </a></p>
