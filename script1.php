@@ -5,6 +5,7 @@ echo '<script language=javascript>
 
 var tfils=new Array();
 var tpere=new Array();
+//var tab_rep=new Array();
 
 function dragstart_handler(ev) {
  console.log("dragStart");
@@ -43,6 +44,7 @@ function drop_handler(ev) {
    ev.target.appendChild(nodeCopy);
    tfils.push(fils);
    tpere.push(pere);
+   //tab_rep.push(pere.id, nodeCopy.innerText);
   }
 }
 function dragend_handler(ev) {
@@ -54,11 +56,14 @@ function dragend_handler(ev) {
 }
 
 function remove() {
-  for (var i = 0; i <= tpere.length; i++) {
-    var pere=tpere[i];
-    var fils=tfils[i];
+  var l = tpere.length
+  for (var i = 0; i <= l; i++) {
+    var pere=tpere.pop();
+    var fils=tfils.pop();
     pere.removeChild(fils);}
 }
+
+
 
 </script>';
 ?>
