@@ -3,21 +3,20 @@
 	<meta charset= "UTF-8">
 </head>
 
+
 <body>	
 	<?php
 	// déclaration des données
-	$poids=$_GET["poids"];
-    $taille=$_GET["taille"];
-    $sexe=$_GET["sexe"];
-    $age=$_GET["age"];
-    $IMC=$_GET["IMC"];
+	$supp_repas=$_GET["supp_repas"];
+    $test=5;
 	
     $IMC_corrige =$poids/($taille)^2;
 	
-    if ($IMC==$IMC_corrige) {
-        echo "c bon";
+    if(isset ($GET["btn_continuer"]==TRUE)) {
+        unlink($test);
+        echo "test";
     } else {
-        echo "non";
+        echo "test";
     }
 	
 	?>
