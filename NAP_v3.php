@@ -11,21 +11,12 @@ $login=6;
 	include ("connexion_bdd.php");
 	include ("Recherche_bdd.php");
 	include ("Verif_Saisie_NAP.php");
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
 	// Création d'un tableau de 0, en parcourant les lignes et les colonnes
 	$val=Cptetab($link,"NAP","id_utilisateur=$login");
 	$liste_ligne=array('A','B','C','D','E','F','Total (h)');		// On créé la liste des intitulés des lignes
 	if ($val==0){		// Si aucune valeur n'est remplie
 		for ($ligne=0;$ligne<count($liste_ligne)-1 ;$ligne++) {		// On parcourt les lignes du tableau
-<<<<<<< HEAD
 			for ($col=0;$col<=6 ; $col++) {						// On parcourt les colonnes du tableau
-=======
-			for ($col=0;$col<=6 ; $col++) {						// On parcourt les colonnes du tableau 
->>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
 				$duree_NAP=0;									// On remplit la case avec un 0
 				$requete= "insert into NAP(duree_NAP,id_jour,id_type_NAP, id_utilisateur) values($duree_NAP, $col,'$liste_ligne[$ligne]', $login)";
 				$result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est érronnée. Merci de les corriger");
