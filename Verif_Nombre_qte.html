@@ -1,0 +1,32 @@
+<!-- Fonction vérification saisie numérique-->
+<!-- Agathe et Oriane	26/04/21-->
+<!-- Prend en entrée une saisie et vérifie si elle est numérique
+On renvoie un message d'erreur si non
+IL FAUT MODIFIER LE CONTENU DU IF EN FONCTION DU CODE (JUSTE LAISSER DOCUMMENT ET CHANGER LA SUITE)
+Mettre ce script dans le head de la page et faire la vérification sur le onsubmit du form-->
+
+<script type="text/javascript">
+	function Verif_Nombre_Qte(){
+			var i=0;
+			var Malert="";
+		  // si la valeur du champ n'est pas numérique
+		 if(isNaN(document.form_selec_alim.quantite.value)){
+			i=i+1;
+			Malert=Malert+"Rentrez une valeur numérique";
+			}
+		if (document.form_selec_alim.quantite.value ==""){
+				i=i+1;
+				Malert=Malert+"Saisir une quantité.\n";
+		  }
+		if (i==0){
+		// les données sont ok, on peut envoyer le formulaire    
+		return true;
+		}
+		else{
+		// sinon on affiche un message
+			alert(Malert);
+		// et on indique de ne pas envoyer le formulaire
+			return false;
+		}
+	}
+		</script>

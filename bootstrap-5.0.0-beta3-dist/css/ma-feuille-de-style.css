@@ -3,7 +3,6 @@
 body, html {
   padding : 0;
   margin : 0;
-  font-size:
 }
 
 body {
@@ -62,7 +61,7 @@ p {
   color : #ffffff ;
   margin-left: 20px;
   text-align: center;
-  outline-color: ##FF9900;
+  outline-color: #FF9900;
   font-size : 85%;
 }
 
@@ -128,11 +127,7 @@ p {
 
 .example-dropzone {
   background-color: #E6E6E6;
-<<<<<<< HEAD
   flex-basis: content;
-=======
-  flex-basis: content;  
->>>>>>> b070f286d045a1f3b4e7587d7523e64e901ed08c
   flex-grow: 1;
   padding: 17px;
   margin-bottom: 2px;
