@@ -115,9 +115,13 @@
       </nav>
 
       <nav classe="boutons">
-        <button type="button" class="btn btn-lg text-center btn-custom-effacer" onclick=""> Effacer </button>
+        <button type="button" class="btn btn-lg text-center btn-custom-effacer" onclick="remove()"> Réinitialiser </button>
       </nav>
     </div>
+
+    <script language=javascript>
+      console.table(tab_rep);
+    </script>
 
     <br>
     <!-- CODE : faire apparaître si erreur -->

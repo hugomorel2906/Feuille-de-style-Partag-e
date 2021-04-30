@@ -15,7 +15,7 @@
 
 <body>
 
-  <!-- CODE : insérer "header" sur cahque page (include?)-->
+  <!-- CODE : insérer "header" sur cahque page (include?) oui-->
   <div class="container-fluid">
     <div class="row header align-items-center py-2">
       <div class="col d-none d-sm-block">
@@ -36,71 +36,144 @@
 
   <br>
   <!-- CODE : dans le value, mettre du code pour que quand la case est cochée, la case collation apparaît dans la q1 -->
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Prenez-vous habituellement une collation dans la journée ?
+  <div class="row align-items-center">
+      <form action="partie1-1.php" method="GET">
+        <div class="col-7">
+          Prenez-vous habituellement une collation dans la journée ?
+          <input type="radio" id="collationoui" name="collation" value="oui" <?php if(isset($_GET['valider_collation']) && $_GET['collation']=="oui") echo ' checked="checked"';?>>
+          <label for="collationoui">Oui</label>
+          <input type="radio" id="collationnon" name="collation" value="non" <?php if(isset($_GET['valider_collation']) && $_GET['collation']=="non") echo ' checked="checked"';?>>
+          <label for="collationnon">Non</label>
+          <nav classe="boutons">
+        <!-- CODE : inclure une requête pour valider-->
+            <input type="submit" class="btn btn-lg text-center btn-custom-valider" name="valider_collation" value="Valider"></input>
+          </nav>
+        </div>
+
+        <div class="col-5">
+          <nav classe="boutons">
+        <!-- CODE : inclure une requête pour valider-->
+            <input type="submit" class="btn btn-lg text-center btn-custom-valider" name="valider_collation" value="Valider"></input>
+          </nav>
+        </div>
       <br>
-    </label>
-    </div>
-
-    <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
-    <p class="fs-6" style="color:#4B75F9"> Chercher sur internet les informations suivantes : </p>
-
-    <!-- CODE : ce paragraphe apparaît si la case collation n'est pas cochée-->
-    <p> <br><b>Question 1 : Répartition des apports énergétiques au cours des différents repas de la journée, selon les recommendations nutritionnelles </b>
-    <br> </p>
-    <!-- CODE : lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
-    <p> Il est conseillé de prendre 3 repas par jour. <br><br> </p>
-
-    <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
-    de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le déjeuner
-    et de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
-
-    <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
-
-  <div class="example-parent ">
-		<div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
-		<div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-      40%
-    </div>
-    <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-      40%
-    </div>
-    <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-      40%
-    </div>
-    <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-      40%
-    </div>
-    <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-      40%
-    </div>
+    </form>
   </div>
+    <?php
+    if(isset($_GET["valider_collation"])){
+       $collation=$_GET["collation"];
+       if ($collation == "non"){
+       ?>
+       <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
+       <p class="fs-6" style="color:#4B75F9"> Chercher sur internet les informations suivantes : </p>
 
-  <div class="btn btn-lg text-center btn-custom-valider" onclick = "remove()"> Réinitialiser
-  </div>
+       <!-- CODE : ce paragraphe apparaît si la case collation n'est pas cochée-->
+       <p> <br><b>Question 1 : Répartition des apports énergétiques au cours des différents repas de la journée, selon les recommendations nutritionnelles </b>
+       <br> </p>
+       <!-- CODE : lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
+       <p> Il est conseillé de prendre 3 repas par jour. <br><br> </p>
 
- <!--
-  <script language=javascript>
-    console.table(tab_rep);
-  </script>-->
+       <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
+       de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le déjeuner
+       et de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
 
-    <!-- CODE : 2e version si la case collation est cochée en haut -->
-    <br> </p>
-    <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
-    <p> Il est conseillé de prendre 3 repas par jour. <br><br> La part moyenne des apports énergétiques conseillés est de <input id="" type="" name="" value="" onclick=""> % pour le petit déjeuner, de <input type="" name="" value="" onclick=""> % pour le déjeuner, <input type="" name="" value="" onclick=""> % pour le goûter et de <input type="" name="" value="" onclick=""> % pour le dîner. </p>
+       <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
 
-    <nav classe="boutons">
-      <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
-      <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
-    </nav>
+     <div class="example-parent ">
+   		<div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
+   		<div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+         40%
+       </div>
+       <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+         40%
+       </div>
+       <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+         40%
+       </div>
+       <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+         40%
+       </div>
+       <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+         40%
+       </div>
+     </div>
 
-    <nav classe="boutons">
-      <button type="button" class="btn btn-lg text-center btn-custom-valider"> Effacer </button>
-    </nav>
+     <br>
 
-    <br>
+     <div class= "row">
+       <div class="col-1">
+         <nav classe="boutons">
+       <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
+        <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
+        </nav>
+      </div>
+      <div class="col-11">
+        <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()"> Réinitialiser</div>
+      </div>
+    </div>
+
+     <br>
+
+       <?php        }
+       if($collation =="oui"){
+       ?>
+       <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
+       <p class="fs-6" style="color:#4B75F9"> Chercher sur internet les informations suivantes : </p>
+
+       <!-- CODE : ce paragraphe apparaît si la case collation n'est pas cochée-->
+       <p> <br><b>Question 1 : Répartition des apports énergétiques au cours des différents repas de la journée, selon les recommendations nutritionnelles </b>
+       <br>
+
+       <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
+
+       <!-- CODE : 2e version si la case collation est cochée en haut -->
+       <br> </p>
+       <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
+       <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
+       de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le déjeuner, de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le goûter,
+       et de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
+
+       <br>
+
+       <div class="example-parent ">
+         <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+           40%
+         </div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+           40%
+         </div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+           40%
+         </div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+           40%
+         </div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+           40%
+         </div>
+       </div></p>
+
+       <br>
+
+       <div class= "row">
+         <div class="col-1">
+           <nav classe="boutons">
+         <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
+          <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
+          </nav>
+        </div>
+        <div class="col-11">
+          <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()"> Réinitialiser</div>
+        </div>
+      </div>
+
+       <br>
+       <?php
+       }
+    }
+       ?>
+
     <!-- CODE : faire apparaître si erreur -->
     <div class="alert alert-danger" role="alert" id ="" value="">
       REPONSE(S) FAUSSE(S) : Attention vous avez fait une (ou des) erreur(s) !
