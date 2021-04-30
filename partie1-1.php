@@ -60,9 +60,7 @@
     <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
 
   <div class="example-parent ">
-		<div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-			10%
-		</div>
+		<div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
 		<div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
       40%
     </div>
@@ -81,9 +79,12 @@
   </div>
 
   <div class="btn btn-lg text-center btn-custom-valider" onclick = "remove()"> Réinitialiser
-
   </div>
 
+ <!--
+  <script language=javascript>
+    console.table(tab_rep);
+  </script>-->
 
     <!-- CODE : 2e version si la case collation est cochée en haut -->
     <br> </p>
