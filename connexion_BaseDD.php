@@ -1,3 +1,10 @@
+<html>
+<head>
+	<!-- informations sur le type et la version du fichier hltm et informations diverses à destination notament des robos -->
+	<meta charset="UTF-8">
+</head>
+
+<body>
 
 <?php
 
@@ -10,11 +17,8 @@ $link = mysqli_connect('localhost', 'root', '');
 mysqli_set_charset($link, "utf8mb4");
 
 // Choix d'une BDD et message d'erreur si connexion impossible
-mysqli_select_db($link, 'bdd') or die('Impossible de sélectionner la base de données'. mysqli_error($link));
+mysqli_select_db($link, 'base_copie_copie') or die('Impossible de sélectionner la base de données oiseaudb'. mysqli_error($connexion));
 
 ?>
-
-<br>
-
-
-<!--include "../fonctions/connexion_bdd.php";-->
+</body>
+</html>
