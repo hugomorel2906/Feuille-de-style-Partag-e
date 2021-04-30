@@ -46,7 +46,7 @@
       </div>
       
 
-      <?php include "PiedDePageTD.php";?>    
+      <?php include "PiedDePageTD.php"?>    
 
     </div>
   </body>
