@@ -1,3 +1,13 @@
+<?php
+// session_start() //accède àla session
+// $login = $_SESSION["login"] //récupère le login stocké dans la session
+$login=6;
+// ?>
+
+$requete= "insert into NAP(duree_NAP,id_jour,id_type_NAP, id_utilisateur) values($duree_NAP, $col,'$liste_ligne[$ligne]', $login)";
+$result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est érronnée. Merci de les corriger");
+			
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,7 +18,8 @@
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
 
-    <?php include("script1.php");?>
+    <?php include("script1.php");
+    include ("connexion_bdd.php");?>
 
     <title>TD q1</title>
   </head>
@@ -79,24 +90,14 @@
 
        <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
 
-     <div class="example-parent ">
-   		<div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
-   		<div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-         40%
-       </div>
-       <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-         40%
-       </div>
-       <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-         40%
-       </div>
-       <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-         40%
-       </div>
-       <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-         40%
-       </div>
-     </div>
+       <div class="example-parent ">
+         <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+       </div></p>
 
      <br>
 
@@ -130,28 +131,19 @@
        <br> </p>
        <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
        <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="drop1" ondrop="drop_handler(event,drop1);" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
-       de <div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, drop2);" ondragover="dragover_handler(event);"></div> % pour le déjeuner, de <div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> % pour le goûter,
-       et de <div class= "example-dropzone" id="drop3" ondrop="drop_handler(event,drop3);" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
+       de <div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, drop2);" ondragover="dragover_handler(event);"></div> % pour le déjeuner, 
+       de <div class= "example-dropzone" id="drop3" ondrop="drop_handler(event, drop3);" ondragover="dragover_handler(event);"></div> % pour le goûter,
+       et de <div class= "example-dropzone" id="drop4" ondrop="drop_handler(event,drop4);" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
 
        <br>
 
        <div class="example-parent ">
          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-           40%
-         </div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-           40%
-         </div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-           40%
-         </div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-           40%
-         </div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-           40%
-         </div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+         <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
        </div></p>
 
        <br>

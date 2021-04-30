@@ -6,6 +6,7 @@ echo '<script language=javascript>
 var tfils=new Array();
 var tpere=new Array();
 var tab_rep=new Array();
+var dest_copy;
 
 function dragstart_handler(ev) {
  console.log("dragStart");
