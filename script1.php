@@ -20,7 +20,7 @@ function dragstart_handler(ev) {
 function dragover_handler(ev) {
  console.log("dragOver");
  // Change the target element s border to signify a drag over event
- // has occurred
+ // has occurred.
  ev.preventDefault();
 }
 function drop_handler(ev) {

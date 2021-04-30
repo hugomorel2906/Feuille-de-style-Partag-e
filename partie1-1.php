@@ -15,7 +15,7 @@
 
 <body>
 
-  <!-- CODE : insérer "header" sur cahque page (include?)-->
+  <!-- CODE : insérer "header" sur cahque page (include?) oui-->
   <div class="container-fluid">
     <div class="row header align-items-center py-2">
       <div class="col d-none d-sm-block">
