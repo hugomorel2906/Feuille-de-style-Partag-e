@@ -1,55 +1,31 @@
 <!doctype html>
 <html lang="en">
 
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
-  
-  <title>Page de Connexion</title>
-</head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
+    
+    <title>Page de Connexion</title>
+  </head>
 
 <!-- Contenu du site-->
 
-<body>
-  <html lang="en" dir="ltr">
-    <head>
-      <meta charset="utf-8">
-      <title> </title>
-    </head> 
-
-  <!-- header-->
-  <div class="container-fluid">
-    <div class="row header align-items-center py-2">
-      <div class="col d-none d-sm-block">
-        <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
-      </div>
-      <div class="col text-center titre-header mx-4 my-4">
-        NumTrition
-      </div>
-      <div class="col d-none d-sm-block my-4 text-end">
-        <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
-      </div>
-    </div>
-  </div>
-    <!-- end header-->
+  <body>
+    <?php include "header.php" ?>
 
     <!-- content-->
-    <section class="container-fluid">
+    <div class="container-fluid mb-5">
 
-      <div class="container-fluid text-center">
-        <h2 class="mt-4"> TD n°2 : Alimentation et Santé de l'Homme </h2>
-        <h2 class="mt-7"> "Calcul du besoin et analyse d'une ration alimentaire" </h2>
-        <br>
-      </div>
+      <h2 class="mt-4 mb-4 text-center"> TD n°2 : Alimentation et Santé de l'Homme
+      <br> "Calcul du besoin et analyse d'une ration alimentaire" </h2>
 
       <div class="card card-custom-text">
-        <h4 class="card-title">Voici les règles du jeu </h4>
-        <br>
+        <h4 class="card-title mb-2">Voici les règles du jeu </h4>
+        
         <p class="card-text" style="text-align: justify;"> <br>
           Vous avez jusqu’au début du TD, soit environ trois semaines, pour saisir vos Données dans l’onglet « Saisir mes données », cela permettra d’avoir des données plus fiables et de gagner du temps sur la réalisation du TD. <br><br>
           Vous pourrez ensuite commencer le TD avec les données préalablement fournies. Attention : lorsque vous cliquez sur "Commencer le TD", le chronomètre est lancé, et vous avez 2 heures pour effectuer le TD. Vous aurez 3 essais par question. <br><br>
@@ -57,9 +33,10 @@
         </p>
       </div>
     
-      <nav class="d-grid gap-2 d-md-block text-center boutons">
-        <button type="button" class="btn btn-lg text-center btn-custom"> <a href="./menu-saisies-donnees.html">Saisir mes données</a></button>
-        <button type="button" class="btn btn-lg text-center btn-custom" data-bs-toggle="modal" data-bs-target="#commencer_td"> Commencer le TD </button>
+      <div class="d-grid gap-2 d-md-block text-center boutons">
+        <a class="btn btn-lg text-center btn-custom" href="./menu-saisies-donnees.html">Saisir mes données</a>
+        <a class="btn btn-lg text-center btn-custom" data-bs-toggle="modal" data-bs-target="#commencer_td"> Commencer le TD </a>
+        
         <!-- Modal, permet d'afficher une fenetre js pour confirmer le choix-->
         <div class="modal fade" id="commencer_td" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -78,20 +55,18 @@
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-lg text-center btn-custom"> <a href="./Compte_rendu_et_notes.html">Accéder à mon compte rendu et mes notes</button>
-      </nav>
-    </section>
-    
-    <!-- end of content -->
+        
+        <a class="btn btn-lg text-center btn-custom" href="./Compte_rendu_et_notes.html">Accéder à mon compte rendu et mes notes</a>
+      </div>
+    </div>
 
 
     <!-- Bas de page -->
-    <section class="container-fluid footer">
+    <?php include "PiedDePageTD.php"?>
+   
+   <!-- end Bas de page -->
 
-    </section>
-    <!-- end Bas de page -->
 
-    <br><br>
     <!-- Appel des feuilles de style js (ne pas déplacer dans /head) -->
     <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
     <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>

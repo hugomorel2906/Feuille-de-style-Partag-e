@@ -8,8 +8,6 @@
   </head>
 
 
-
-
 <!-- PIED DE PAGE GENERAL (à insérer avec un include) -->
   <div class="container-fluid" id="footer">
     <p class="text-right small">
@@ -20,7 +18,7 @@
     </p>
 
     <p class="text-right small">
-		         Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
+		    Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
     </p>
   </div>
 
