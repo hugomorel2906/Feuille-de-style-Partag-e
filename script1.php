@@ -23,7 +23,7 @@ function dragover_handler(ev) {
  // has occurred.
  ev.preventDefault();
 }
-function drop_handler(ev) {
+function drop_handler(ev, dest_copy) {
   var pere;
   var fils;
   console.log("Drop");
@@ -45,6 +45,7 @@ function drop_handler(ev) {
    tfils.push(fils);
    tpere.push(pere);
    tab_rep.push(pere.id, nodeCopy.innerText);
+   alert(tab_rep);
   }
 }
 function dragend_handler(ev) {
