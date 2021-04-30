@@ -5,7 +5,7 @@ echo '<script language=javascript>
 
 var tfils=new Array();
 var tpere=new Array();
-//var tab_rep=new Array();
+var tab_rep=new Array();
 
 function dragstart_handler(ev) {
  console.log("dragStart");
@@ -44,7 +44,7 @@ function drop_handler(ev) {
    ev.target.appendChild(nodeCopy);
    tfils.push(fils);
    tpere.push(pere);
-   //tab_rep.push(pere.id, nodeCopy.innerText);
+   tab_rep.push(pere.id, nodeCopy.innerText);
   }
 }
 function dragend_handler(ev) {
