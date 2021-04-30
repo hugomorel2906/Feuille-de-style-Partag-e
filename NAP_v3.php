@@ -11,13 +11,21 @@ $login=6;
 	include ("connexion_bdd.php");
 	include ("Recherche_bdd.php");
 	include ("Verif_Saisie_NAP.php");
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
 	// Création d'un tableau de 0, en parcourant les lignes et les colonnes
 	$val=Cptetab($link,"NAP","id_utilisateur=$login");
 	$liste_ligne=array('A','B','C','D','E','F','Total (h)');		// On créé la liste des intitulés des lignes
 	if ($val==0){		// Si aucune valeur n'est remplie
 		for ($ligne=0;$ligne<count($liste_ligne)-1 ;$ligne++) {		// On parcourt les lignes du tableau
+<<<<<<< HEAD
 			for ($col=0;$col<=6 ; $col++) {						// On parcourt les colonnes du tableau
+=======
+			for ($col=0;$col<=6 ; $col++) {						// On parcourt les colonnes du tableau 
+>>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
 				$duree_NAP=0;									// On remplit la case avec un 0
 				$requete= "insert into NAP(duree_NAP,id_jour,id_type_NAP, id_utilisateur) values($duree_NAP, $col,'$liste_ligne[$ligne]', $login)";
 				$result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est érronnée. Merci de les corriger");
@@ -76,6 +84,7 @@ $login=6;
 		 for ($ligne=0;$ligne<count($liste_ligne)-1 ;$ligne++) {    // Réalisation d'une boucle qui parcourt toutes les valeurs entrées
 			 for ($col=0;$col<=6 ; $col++) {
 					$duree_NAP = $_GET["NAP$ligne$col"];
+<<<<<<< HEAD
 
 					$requete = "UPDATE NAP SET duree_NAP =$duree_NAP WHERE id_utilisateur=$login AND id_jour=$col AND id_type_NAP='$liste_ligne[$ligne]'";		// On met à jour les données dans la base de données
 					$result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est érronnée. Merci de les corriger");
@@ -87,6 +96,19 @@ $login=6;
 	// Vérification que la somme des heures d'activité d'une journée soit égale à 24h
 	$ligne_total=array();
 	for ($col=0;$col<=6 ; $col++) {
+=======
+					
+					$requete = "UPDATE NAP SET duree_NAP =$duree_NAP WHERE id_utilisateur=$login AND id_jour=$col AND id_type_NAP='$liste_ligne[$ligne]'";		// On met à jour les données dans la base de données 
+					$result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est érronnée. Merci de les corriger");
+
+			}
+		
+		}
+	}	
+	// Vérification que la somme des heures d'activité d'une journée soit égale à 24h
+	$ligne_total=array();
+	for ($col=0;$col<=6 ; $col++) { 
+>>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
 				$rech=rechdom($link,'sum(duree_NAP)', 'NAP', "id_utilisateur=".$login . " and  id_jour= '".$col."'");
 				$ligne_total[]=$rech;
 			}
@@ -103,7 +125,11 @@ $login=6;
 		echo "</div>";
 	}
   ?>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
   <!--	création des intitulés des colonnes (jours de la semaine, puis total et moyenne par type d'activité -->
   <div class="table-responsive">
   <FORM method="get" name="Formulaire_NAP" >
@@ -127,15 +153,23 @@ $login=6;
     <section class="table table-bordered">
       <tbody>
          <!--faire des boucles pour les input, faire des if isset-->
+<<<<<<< HEAD
 
 
 		   <?php     // Codes pour garder les valeurs remplies affichées
 
+=======
+          
+		  
+		   <?php     // Codes pour garder les valeurs remplies affichées
+		  
+>>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
 		  $liste_ligne=array('A','B','C','D','E','F','Total (h)');
 
 		  for ($ligne=0;$ligne<count($liste_ligne)-1 ;$ligne++) {
 			  echo "<tr>";
 			  echo "<td scope='row'>".$liste_ligne[$ligne]."</td>";
+<<<<<<< HEAD
 
 			  for ($col=0;$col<=6 ; $col++) {
 				$valeur=rechdom ($link,"duree_NAP", "NAP", "id_utilisateur=$login and id_jour=$col and id_type_NAP='$liste_ligne[$ligne]'");  // récupération de la donnée
@@ -151,33 +185,72 @@ $login=6;
 				$rech=rechdom($link,'avg(duree_NAP)', 'NAP', "id_utilisateur=".$login . " and  id_type_NAP= '".$liste_ligne[$ligne]."'");
 				echo "<td>".$rech."</td>";
 
+=======
+			  
+			  for ($col=0;$col<=6 ; $col++) {	
+				$valeur=rechdom ($link,"duree_NAP", "NAP", "id_utilisateur=$login and id_jour=$col and id_type_NAP='$liste_ligne[$ligne]'");  // récupération de la donnée
+				echo " <td><input name='NAP".$ligne."".$col."' value='".$valeur."' type='int'></td> ";
+			  }
+			  
+				// colonne 7 : total
+				$rech=rechdom($link,'sum(duree_NAP)', 'NAP', "id_utilisateur=".$login . " and  id_type_NAP= '".$liste_ligne[$ligne]."'");
+				echo "<td>".$rech."</td>";
+				
+				// colonne 8 : moyenne
+				
+				$rech=rechdom($link,'avg(duree_NAP)', 'NAP', "id_utilisateur=".$login . " and  id_type_NAP= '".$liste_ligne[$ligne]."'");
+				echo "<td>".$rech."</td>";	
+			
+>>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
 			  echo "</tr>";
 		  }
 		  // dernière ligne
 		   echo "<td scope='row'>".$liste_ligne[count($liste_ligne)-1]."</td>";
+<<<<<<< HEAD
 			for ($col=0;$col<=6 ; $col++) {
 				$rech=rechdom($link,'sum(duree_NAP)', 'NAP', "id_utilisateur=".$login . " and  id_jour= '".$col."'");
 				echo "<td>".$rech."</td>";
 			}
 
+=======
+			for ($col=0;$col<=6 ; $col++) { 
+				$rech=rechdom($link,'sum(duree_NAP)', 'NAP', "id_utilisateur=".$login . " and  id_jour= '".$col."'");
+				echo "<td>".$rech."</td>";	
+			}
+		 
+>>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
 
 
     echo"</tbody>";
     echo"</section>";
     echo"</table>";
+<<<<<<< HEAD
 
 // Création d'un bouton "Valider"
+=======
+	
+// Création d'un bouton "Valider" 
+>>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
 	echo "<INPUT TYPE='SUBMIT' name='Valider' value='Valider'>";
 
 echo "</FORM>";
 
 
+<<<<<<< HEAD
 ?>
 
 
   </div>
   <br>
 
+=======
+?>		
+	
+	
+  </div>
+  <br>
+ 
+>>>>>>> ef7be6690f25e19f3362f7af8c77381c107acf21
     <!-- CODE : fonction qui permet de sauvegarder les données quand on click sur le retour au menu -->
   <nav class="boutons text-center">
     <button type="button" class="btn btn-lg text-center btn-custom"> <a href="./page-accueil.html"> retour au menu </a></button>
