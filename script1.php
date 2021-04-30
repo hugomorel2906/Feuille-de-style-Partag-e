@@ -6,7 +6,7 @@ echo '<script language=javascript>
 var tfils=new Array();
 var tpere=new Array();
 var tab_rep=new Array();
-var dest_copy;
+
 
 function dragstart_handler(ev) {
  console.log("dragStart");
@@ -37,7 +37,7 @@ function drop_handler(ev, dest_copy) {
 
     ev.target.appendChild(document.getElementById(id));}
   // Copy the element if the source and destination ids are both "copy"
-  if (id.substr(0,8) == "src_copy" && ev.target.id == "dest_copy") {
+  if (id.substr(0,8) == "src_copy" && ev.target.id == dest_copy) {
    var nodeCopy = document.getElementById(id).cloneNode(true);
    nodeCopy.id = "newId";
    pere=ev.target;
@@ -62,7 +62,8 @@ function remove() {
   for (var i = 0; i <= l; i++) {
     var pere=tpere.pop();
     var fils=tfils.pop();
-    pere.removeChild(fils);}
+    pere.removeChild(fils);
+    tab_rep=new Array();}
 }
 
 

@@ -1,11 +1,11 @@
 <?php
-// session_start() //accède àla session
+// session_start() //accède à la session
 // $login = $_SESSION["login"] //récupère le login stocké dans la session
 $login=6;
 // ?>
 
-$requete= "insert into NAP(duree_NAP,id_jour,id_type_NAP, id_utilisateur) values($duree_NAP, $col,'$liste_ligne[$ligne]', $login)";
-$result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est érronnée. Merci de les corriger");
+<!--$requete= "insert into NAP(duree_NAP,id_jour,id_type_NAP, id_utilisateur) values($duree_NAP, $col,'$liste_ligne[$ligne]', $login)";
+$result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est érronnée. Merci de les corriger");-->
 			
 
 <!DOCTYPE html>
@@ -47,9 +47,9 @@ $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données e
 
   <br>
   <!-- CODE : dans le value, mettre du code pour que quand la case est cochée, la case collation apparaît dans la q1 -->
-  <div class="row align-items-center">
+  <div class="row justify-content-center">
       <form action="partie1-1.php" method="GET">
-        <div class="col-7">
+        
           Prenez-vous habituellement une collation dans la journée ?
           <input type="radio" id="collationoui" name="collation" value="oui" <?php if(isset($_GET['valider_collation']) && $_GET['collation']=="oui") echo ' checked="checked"';?>>
           <label for="collationoui">Oui</label>
@@ -57,19 +57,17 @@ $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données e
           <label for="collationnon">Non</label>
           <nav classe="boutons">
         <!-- CODE : inclure une requête pour valider-->
-            <input type="submit" class="btn btn-lg text-center btn-custom-valider" name="valider_collation" value="Valider"></input>
-          </nav>
-        </div>
-
-        <div class="col-5">
+          <br>
+        
           <nav classe="boutons">
         <!-- CODE : inclure une requête pour valider-->
             <input type="submit" class="btn btn-lg text-center btn-custom-valider" name="valider_collation" value="Valider"></input>
           </nav>
-        </div>
+        
       <br>
     </form>
   </div>
+
     <?php
     if(isset($_GET["valider_collation"])){
        $collation=$_GET["collation"];
@@ -84,9 +82,9 @@ $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données e
        <!-- CODE : lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
        <p> Il est conseillé de prendre 3 repas par jour. <br><br> </p>
 
-       <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="drop1" ondrop="drop_handler(event, drop1);" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
-       de <div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, drop2);" ondragover="dragover_handler(event);"></div> % pour le déjeuner
-       et de <div class= "example-dropzone" id="drop3" ondrop="drop_handler(event, drop3);" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
+       <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="drop1" ondrop="drop_handler(event, 'drop1');" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
+       de <div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> % pour le déjeuner
+       et de <div class= "example-dropzone" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
 
        <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
 
@@ -109,7 +107,7 @@ $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données e
         </nav>
       </div>
       <div class="col-11">
-        <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()"> Réinitialiser</div>
+        <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()" name="recharge"> Réinitialiser</div>
       </div>
     </div>
 
@@ -130,10 +128,10 @@ $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données e
        <!-- CODE : 2e version si la case collation est cochée en haut -->
        <br> </p>
        <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
-       <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="drop1" ondrop="drop_handler(event,drop1);" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
-       de <div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, drop2);" ondragover="dragover_handler(event);"></div> % pour le déjeuner, 
-       de <div class= "example-dropzone" id="drop3" ondrop="drop_handler(event, drop3);" ondragover="dragover_handler(event);"></div> % pour le goûter,
-       et de <div class= "example-dropzone" id="drop4" ondrop="drop_handler(event,drop4);" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
+       <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="drop1" ondrop="drop_handler(event,'drop1');" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
+       de <div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> % pour le déjeuner, 
+       de <div class= "example-dropzone" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div> % pour le goûter,
+       et de <div class= "example-dropzone" id="drop4" ondrop="drop_handler(event,'drop4');" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
 
        <br>
 
@@ -156,7 +154,7 @@ $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données e
           </nav>
         </div>
         <div class="col-11">
-          <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()"> Réinitialiser</div>
+          <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()" name="recharge"> Réinitialiser</div>
         </div>
       </div>
 
@@ -164,6 +162,8 @@ $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données e
        <?php
        }
     }
+
+   
        ?>
 
     <!-- CODE : faire apparaître si erreur -->
