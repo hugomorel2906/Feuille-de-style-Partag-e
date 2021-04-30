@@ -92,7 +92,7 @@ p {
 }
 
 /****** Pied de page ******/
-.footer {
+#footer {
   background-color: #F2B705;
   height:5%;
 }
