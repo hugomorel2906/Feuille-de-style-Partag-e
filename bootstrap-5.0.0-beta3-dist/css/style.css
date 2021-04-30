@@ -1,0 +1,152 @@
+
+body, html {
+  padding : 0;
+  margin : 0;
+  font-size:
+}
+
+body {
+max-width:100%;
+min-width:10%;
+line-height:1.33em;
+margin:0.01em;
+color:#000000;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 0.5em;
+}
+
+.container-fluid {
+  margin : 0;
+  padding : 0;
+}
+
+a, a:hover {
+  text-decoration:none;
+}
+
+/* navbar */
+
+.navbar-brand{
+  text-align: center;
+}
+
+/* header */
+.header {
+  background-color: #F2B705;
+  height : 10rem;
+  text-align : center;
+  margin: 0;
+}
+
+
+.titre {
+  font-size:3em;
+  color : #ffffff;
+  letter-spacing: 1px;
+  float : center;
+  text-align : center;
+}
+
+.logo{
+  width:5%;
+  float: right;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  padding-right: 1%;
+}
+
+.logo2{
+  width: 20%;
+  height:auto;
+  float: left;
+  padding-left: 1%;
+}
+
+
+/* content */
+.accueil a{
+  margin-left : 5%;
+  text-decoration: none;
+  color : #52591D ;
+}
+
+.accueil a:hover {
+  color : #000000;
+}
+
+.mef{
+  margin : 30em;
+  margin-right: 30em;
+  text-align: justify;
+}
+
+.btn-custom {
+  height : 2.5em;
+  background-color: #52591D;
+  color : #ffffff ;
+  margin-left: 5%;
+  text-align: center;
+  outline-color: #52591D;
+  font-size : 85%;
+}
+
+.btn-custom-valider {
+  background-color: #00A917;
+  color : #ffffff ;
+  margin-left: 20px;
+  text-align: center;
+  outline-color: #00A917;
+  font-size : 85%;
+}
+
+.btn-custom-annuler {
+  background-color: #E62719;
+  color : #ffffff ;
+  margin-left: 20px;
+  text-align: center;
+  outline-color: #E62719;
+  font-size : 85%;
+}
+
+.boutons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+.boutons a{
+  text-decoration: none;
+  color : #ffffff;
+}
+
+.boutons a:hover {
+  color : #000000;
+}
+
+/* end content */
+.cadre {
+  border-width : 2px;
+  border-style: solid;
+  border-color: #000000;
+  margin: 2% 2%;
+
+}
+.contenu h1 {
+  font-size: 25px;
+  text-decoration:underline;
+  color : #52591D;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+/*
+.deux-colonnes {
+  margin : 2% 2%;
+
+} */
+
+
+/* footer */

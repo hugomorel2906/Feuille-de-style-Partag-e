@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
+
+    <title></title>
+  </head>
+
+  <body>
+
+    <!-- CODE : insérer "header" sur cahque page (include?)-->
+    <div class="container-fluid">
+      <div class="row header align-items-center py-2">
+        <div class="col d-none d-sm-block">
+          <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
+        </div>
+        <div class="col text-center titre-header mx-4 my-4">
+          NumTrition
+        </div>
+        <div class="col d-none d-sm-block my-4 text-end">
+          <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
+        </div>
+      </div>
+    </div>
+    <!-- fin entête-->
+
+    <!-- Contenu de page-->
+  <div class="container-fluid">
+
+  <br>
+
+    <h2  style="color:#E62719"> <br> II. Estimation de vos besoins nutritionnels </h2>
+    <p> <br><b>Question 4 : Calcul de votre Dépense Énergétique Journalière (DEJ) </b>
+    <br> </p>
+    <p> Vous avez saisie les données suivantes : <br></p>
+
+    <div class="row g-2 align-items-center">
+
+    <!-- CODE : remplir le tableau automatiquement avec les informations de la page 2.1-->
+      <div class="col-auto">
+        <!-- CODE : récupérer le tableau pour le ressortir à la page "partie4.2.html" -->
+        <table class="table table-bordered table-custom" style="text-align:center" value="" id="" onload="">
+          <section class="table table-bordered ">
+            <tbody>
+              <tr>
+                <th scope="row">Âge</th>
+                <td contenteditable="false" name="age" type="" id="" value="" > </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Taille</th>
+              <td contenteditable="false" name="taille" type="" id=""> </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Poids</th>
+              <td contenteditable="false" name="poids" type="" id=""> </td>
+            </tr>
+
+          </tbody>
+        </section>
+        </table>
+      </div>
+    </div>
+
+        <p>A l'aide de vos connaissances ou en retrouvant la formule sur internet, calculez votre IMC : </p>
+        <p class="fs-6" style="color:#4B75F9"> <em> Saisir votre IMC au dixième près (1 chiffre après la virgule) </em></p>
+        <p>Votre IMC :<input id="" type="" name="" value=""> </p> <!-- CODE : mettre des tests pour vérifier qu'il s'agit d'un chiffre-->
+        <br>
+
+        <!-- CODE : vérifier que la valeur entrée est la bonne -->
+        <nav classe="boutons">
+          <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
+        </nav>
+
+        <!-- CODE : si la formule est fausse -->
+        <br><div class="alert alert-danger" role="alert" id="" value="">
+          REPONSE FAUSSE : Attention aux unités et aux parenthèses </div>
+
+        <!-- CODE : Si calcul bon -->
+        <br><div class="alert alert-success" role="alert" id="" value="">
+          La formule de calcul de l'IMC est à connaître
+            <br> Pour rappel : <img src="IMC.jpg" class="img-fluid" style="width:20em">
+        </div>
+
+        <!-- CODE : Ne faire apparaitre la division que si l'imc est suppérieur à 24 -->
+        <div class="" value="" id="">
+          <p class="fs-6" style="color:#4B75F9"> <em> Saisir votre valeur au dixième près (1 chiffre après la virgule) </em></p>
+          <p>Si votre IMC est supérieur à 24, il faut calculer un coefficient correcteur. <br>
+                     Coefficient correcteur = 1 - (22-IMC) x 0,01 : <input id="" type="" name="" value=""> </p> <!-- afficher ssi IMC > 24 -->
+
+          <nav classe="boutons">
+             <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
+           </nav>
+         </div>
+
+        <br>
+        <p>À l'aide de la formule ci-dessous et du tableau récapitulatif de votre NAP (Niveau d'activité physique) calculez votre DEJ.</p>
+        <p class="fs-6" style="color:#4B75F9"> <em> Pensez à multiplier ce résultat par le coefficient correcteur si votre IMC est supérieur à 24. </em></p>
+
+        <!-- DEJ sous forme d'image-->
+        <img src="DEJ.55.19.png" class="img-fluid" style="width:30em">
+        <br><br>
+
+
+        <!-- CODE : Afficher dans le tableau les NAP saisis dans l'onglet "Tableau-NAP"-->
+        <p></p>
+        <p>Faites le calcul pour la journée du lundi les autres jours se remplieront automatiquement</p>
+        <p class="fs-6" style="color:#4B75F9"> <em> Saisir votre valeur au dixième près (1 chiffre après la virgule) </em></p>
+
+        <div class="table-responsive">
+              <table class="table table-bordered table-custom" style="text-align:center">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Niveau d'activité</th>
+                    <th scope="col">Lundi</th>
+                    <th scope="col">Mardi</th>
+                    <th scope="col">Mercredi</th>
+                    <th scope="col">Jeudi</th>
+                    <th scope="col">Vendredi</th>
+                    <th scope="col">Samedi</th>
+                    <th scope="col">Dimanche</th>
+                    <th scope="col">Total (nb h/sem)</th>
+                    <th scope="col">Moyenne (nb h /sem)</th>
+                  </tr>
+                </thead>
+
+                <section class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <!-- Le tableau se rempli ligne par ligne -->
+                      <th scope="row">A</th>
+                      <td contenteditable="false" name="NAP[0][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[6][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[7][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[8][0]" value="" type="int" id=""> </td>
+                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">B</th>
+                      <td contenteditable="false" name="NAP[0][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[6][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[7][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[8][1]" value="" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">C</th>
+                      <td contenteditable="false" name="NAP[0][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[6][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[7][2]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[8][2]" value="" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">D</th>
+                      <td contenteditable="false" name="NAP[0][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[6][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[7][3]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[8][3]" value="" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">E</th>
+                      <td contenteditable="false" name="NAP[0][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[6][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[7][4]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[8][4]" value="" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">F</th>
+                      <td contenteditable="false" name="NAP[0][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[1][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[2][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[3][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[4][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[5][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[6][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[7][5]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="NAP[8][5]" value="" type="int" id=""> </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                    <!-- Tableau DEJ ou l'étudiant saisi ses calculs -->
+                      <th scope="row">DEJ en kcal/jour</th>
+                      <td contenteditable="true" name="DEJ[0][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[1][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[2][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[3][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[4][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[5][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[6][0]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="DEJ[7][0]" value="" type="int" id=""> N.C. </td>
+                      <td contenteditable="false" name="DEJ[8][0]" value="" type="int" id=""> N.C. </td>                      <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+
+                    <tr>
+                      <th scope="row">DEJ en MJ/jour</th>
+                      <td contenteditable="true" name="DEJ[0][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[1][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[2][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[3][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[4][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[5][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="true" name="DEJ[6][1]" value="" type="int" id=""> </td>
+                      <td contenteditable="false" name="DEJ[7][1]" value="" type="int" id=""> N.C. </td>
+                      <td contenteditable="false" name="DEJ[8][1]" value="" type="int" id=""> N.C. </td>                       <!-- faire un lien php pour que les données préceddement saisies soient affichées ici en rappel-->
+                    </tr>
+                  </tbody>
+                </section>
+              </table>
+            </div>
+
+
+
+            <!-- CODE : doit vérifier que les valeurs saisies en DEJ sont les bonnes -->
+            <nav classe="boutons">
+              <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
+            </nav>
+            <br>
+
+
+          <div class="alert alert-danger" role="alert" id="" value=""> <!-- CODE : faire apparaître si une ou des réponses est ou sont fausses -->
+            RÉPONSE FAUSSE : Pensez à multiplier le DEJ par le coefficient correcteur calculé plus haut si votre IMC est supérieur à 24 !
+          </div>
+
+          <div class="alert alert-success" role="alert" id="" value=""> <!-- CODE : faire apparaître si tout bon -->
+            Bonnes réponses !
+          </div>
+
+        </div>
+
+
+
+          <!-- CODE : insérer "Pied de page général" sur chacune des pages (via include?)-->
+          <br><br>
+          <div class="row align-items-center">
+
+            <div class="col text-center" >  <!-- chronomètre -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
+                <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
+                <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
+                <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+              <!-- CODE : insérer fonction chrono -->
+              </svg>
+            </div>
+
+            <div class="col text-center"> <!-- question suivante-->
+              <nav class="boutons">
+                <button type="button" class="btn btn-lg text-center btn-custom" value=""> <a href="fonction question suivante"> Question suivante <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          <!-- CODE : insérer fonction question suivante -->
+          </svg> </a></button>
+              </nav>
+            </div>
+            <div class="col text-center"> <!-- progression -->
+              Progression
+              <!-- CODE : insérer fonction progression -->
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+            <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item" value=""><a class="page-link" href="#">Page 1</a></li> <!-- insérer à la place du "Page 1" la fonction page -->
+            </ul>
+          </nav>
+          </div>
+
+          <br>
+          <div class="row navbar container-fluid footer" style="margin:0">
+            <div class="row">
+              <p class="text-right small">
+                Contact : <A HREF="mailto:patrick.sauvant@agro-bordeaux.fr">Patrick SAUVANT</A>
+              </p>
+            </div>
+            <div class="row">
+              <p class="text-left small">
+                     Bordeaux Sciences Agro &mdash; Projet NumTrition &mdash; <A HREF="mentionslegales.html">Mentions légales</A>
+              </p>
+            </div>
+            <div class="row">
+              <p class="text-right small">
+                     Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
+              </p>
+            </div>
+          </div>
+          <!-- fin du pied de page-->
+
+  </body>
+</html>

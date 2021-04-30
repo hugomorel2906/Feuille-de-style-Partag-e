@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
+
+    <title> Saisie menu </title>
+  </head>
+
+<body>
+
+  <!-- CODE : insérer "header" sur cahque page (include?)-->
+  <div class="container-fluid">
+    <div class="row header align-items-center py-2">
+      <div class="col d-none d-sm-block">
+        <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
+      </div>
+      <div class="col text-center titre-header mx-4 my-4">
+        NumTrition
+      </div>
+      <div class="col d-none d-sm-block my-4 text-end">
+        <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
+      </div>
+    </div>
+  </div>
+  <!-- fin entête-->
+
+
+
+  <!-- Contenu du site-->
+    <section class="container-fluid">
+
+  <!-- titre-->
+      <div class="container-fluid text-center">
+        <h2 class="mt-4"> TD n°2 : Alimentation et Santé de l'Homme </h2>
+        <h2 class="mt-7"> "Calcul du besoin et analyse d'une ration alimentaire" </h2>
+        <br>
+      </div>
+
+  <!-- boutons de navigation selon les jours de la semaine -->
+      <div class="text-center">
+           <!-- CODE: mettre les boutons d'une certaine couleur (rouge si séléctionné) pour ensuite afficher le menu correspondant -->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Lundi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Mardi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Mercredi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-danger m-3" id="" name="" value="">Jeudi</button> <!--bouton rouge-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Vendredi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Samedi</button> <!--bouton vert-->
+              <button type="button" class="btn btn-outline-success m-3" id="" name="" value="">Dimanche</button> <!--bouton vert-->
+      </div>
+
+
+  <!-- Insérer le pdf d'aide dans le href-->
+      <p style="text-align:right"><a href="" >Besoin d'aide pour estimer les quantités ?</a></p> <!-- lien à ajouter une fois al base de données créée-->
+
+
+          <br>
+      <div class="alert alert-danger" role="alert">
+            ATTENTION : Pensez à saisir vos boissons (eau du robinet, eau minérale, alcool etc..). <br>
+            Toutes les quantités sont à saisir en grammes (pour rappel : 33 cl = 330 g)
+      </div><br>
+
+      <!-- Lignes pour les case cochables -->
+      <p></p>
+      <!-- CODE : inclure une condition pour ne pouvoir cocher qu'un seul élément et le faire apparître dans le tableau -->
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        petit-déjeuner </label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        déjeuner </label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        collation </label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        apéro </label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id=""> <!-- dans le value, mettre du code sur ce qu'il se passe une fois coché -->
+      <label class="form-check-label" for="flexCheckDefault">
+        dîner </label>
+      </div>
+
+
+      <p><br><br></p>
+      <div class="row vertical-align-center">
+
+        <!-- CODE : lier avec la table ciqual-->
+        <div class="col-3 cadre_droite">
+          <p>Choix de l'aliment ou de la boisson</p>
+          <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="" name="" value="">
+            <option selected>Open this select menu</option>
+          </select>
+        </div>
+
+        <!-- CODE : garder la quantité et l'insérer dans le tableau -->
+        <div class="col-3 text-center">
+          <p class="fs-6 text-center" style="color:#4B75F9"> <em> Saisir la quantité en grammes, à l'unité</em></p>
+          <p class="text-center">Quantité :<input type="" name="quantite" value=""> g </p>
+
+          <p><br></p><nav class="boutons">
+            <!-- CODE : Quand on valide : insère dans le tableau l'élément -->
+            <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Valider </button>
+          </nav>
+        </div>
+
+      <!-- CODE : fonction qui rempli ligne par ligne -->
+        <div class="col-6 text-center">
+          <table class="table table-bordered table-custom">
+            <thead class="thead-dark">
+              <tr style="text-align:center">
+                <th scope="col">Repas</th>
+                <th scope="col">aliment</th>
+                <th scope="col">quantité</th>
+              </tr>
+            </thead>
+
+            <section class="table table-bordered ">
+              <tbody>
+                <tr name="" value="" > <!-- inclure une fonction qui ajoute une ligne remplie et en créé une nouvelle vide-->
+                  <td name="" value=""> <!-- (rempli les colonnes ligne par ligne) fonction qui reprend les données saisies juste avant-->
+                </tr>
+
+              </tbody>
+            </section>
+          </table>
+
+        <!-- CODE : Enregitrer le tableau propre à l'élève pour une journée -->
+          <br><p class="fs-6 text-center" style="color:#4B75F9"> <em> Une fois que vous avez fini de remplir un repas, pensez à enregistrer avant de séléctionner un autre repas</em></p>
+          <br>
+          <nav class="boutons">
+            <button type="button" class="btn btn-lg text-center btn-custom-valider" value=""> Enregistrer </button>
+          </nav>
+
+        </div>
+
+        <!-- Navigation permettant de revenir aux pages suivantes (peut-etre afficher un message si les infos d'avant ne sont pas enregistrées)-->
+        <p><br></p>
+        <nav class="boutons text-center">
+          <button type="button" class="btn btn-lg text-center btn-custom" value=""> <a href="./menu-saisies-donnees.html"> Retour</a></button>
+          <button type="button" class="btn btn-lg text-center btn-custom" value=""> <a href="./page-accueil.html">Accueil </a></button>
+        </nav>
+        <p><br></p>
+
+      </div>
+    </section>
+
+      <!-- CODE : insérer "Pied de page général" sur chacune des pages (via include?)-->
+      <div class="row navbar container-fluid footer" style="margin:0">
+        <div class="row">
+          <p class="text-right small">
+            Contact : <A HREF="mailto:patrick.sauvant@agro-bordeaux.fr">Patrick SAUVANT</A>
+          </p>
+        </div>
+        <div class="row">
+          <p class="text-left small">
+                 Bordeaux Sciences Agro &mdash; Projet NumTrition &mdash; <A HREF="mentionslegales.html">Mentions légales</A>
+          </p>
+        </div>
+        <div class="row">
+          <p class="text-right small">
+                 Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
+          </p>
+        </div>
+      </div>
+      <!-- fin du pied de page-->
+
+    </body>
+  </html>

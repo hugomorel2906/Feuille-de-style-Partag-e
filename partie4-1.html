@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
+
+
+<!-- Header (à ajouter avec un include par l'équipe Bootstrap)-->
+<div class="container-fluid">
+    <div class="row header align-items-center py-2">
+      <div class="col d-none d-sm-block">
+        <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
+      </div>
+      <div class="col text-center titre-header mx-4 my-4">
+        NumTrition
+      </div>
+      <div class="col d-none d-sm-block my-4 text-end">
+        <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
+      </div>
+    </div>
+  </div>
+
+<!-- Contenu du site-->
+
+<div class="container-fluid">
+
+<br>
+  <h2  style="color:#E62719"> <br> IV. Adéquation entre vos "menus hebdomadaires" et vos besoins</h2>
+
+  <!-- Affichage question + consignes -->
+  <br>
+  <p> <br><b>Question 7 : Analyse d'une ration alimentaire au cours d'une journée</b>
+  <br> </p>
+
+  <p> Vous avez entré les informations relatives à vos repas et vous allez maintenant les analyser. </p>
+  <p> Après avoir choisi la journée à analyser, vous devrez remplir les tableaux suivants. Si les cases remplies sont correctes, les autres cases seront complétées automatiquement. Les six autres jours de la semaine seront calculées automatiquement également.</p>
+  <br>
+    
+  <!-- Affichage des boutons de la semaine-->
+  <!-- CODE: mettre les boutons d'une certaine couleur en fonction de si oui ou non, le tableau est analysable-->
+  <div class="d-md-block text-center boutons"> 
+    <button type="button" class="btn btn-outline-success m-2">Lundi</button> <!--bouton vert-->
+    <button type="button" class="btn btn-outline-success m-2">Mardi</button> <!--bouton vert-->
+    <button type="button" class="btn btn-outline-success m-2">Mercredi</button> <!--bouton vert-->
+    <button type="button" class="btn btn-outline-danger m-2">Jeudi</button> <!--bouton rouge-->
+    <button type="button" class="btn btn-outline-success m-2">Vendredi</button> <!--bouton vert-->
+    <button type="button" class="btn btn-outline-success m-2">Samedi</button> <!--bouton vert-->
+    <button type="button" class="btn btn-outline-success m-2">Dimanche</button> <!--bouton vert--> 
+  </div>
+  <br>
+
+  <!--CODE: la suite s'affiche uniquement si un bouton a été selectionné (isset)-->
+  <p> Vous avez choisi d'analyser vos menus pour la journée du ****</p>  <!-- CODE: à la place des **, mettre le code pour retrouver la journée selected-->
+  <p><u> Vous avez indiqué avoir consommé les aliments suivants: </u></p>
+
+  <p>TABLEAU</p>
+  <!-- CODE: Afficher le tableau d'aliments du jour et dans le tableau, mettre des zones à modifier / des zones à trous-->
+  <!--<table class="table table-bordered table-responsive">
+      <thead>
+      </thead>
+      <tbody>
+        <tr>   tr signifie nouvelle ligne
+          <th scope="row">nom_de_la_ligne</th>
+          <td contenteditable="true" name="tab[1][1]" type="int"> </td>   contenteditable = cette case là va être vide et on va pouvoir entrer une valeur
+        </tr>-->
+  
+  <br><br>
+
+  <p> Dans ce tableau, calculez les cases manquantes: il vous suffit de calculez l'apport en Kcal en fonction du nombre de g de Glucides/Protéines et Lipides par 100g de produit.</p>
+  
+  <!-- Bouton qui permet de valider le tableau menu de la journée selectionnée-->
+  <nav classe="boutons">
+  <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider le tableau </button>
+  </nav>
+
+  <br><br><br><br>
+
+  <!--CODE: Si la réponse est fausse, voici le message d'alerte à afficher-->
+
+  <div class="alert alert-danger mx-4" role="alert">
+      REPONSE(S) FAUSSE(S): Il faut prendre en compte l'énergie pour 100g et la quantité consommée, et donc faire un produit en croix ! 
+  </div>
+
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <!-- DEUXIEME PARTIE: 2e tableau-->
+  <p> Dans le tableau ci-dessous: Commencez par compléter les colonnes Glucides, Protéines et Lipides pour le déjeuner. Ensuite, compléter l'énergie correspondante au déjeuner en kcal. Calculer le % de répartition énergétique par repas, saisissez la valeur correspondant au déjeuner.</p>
+  <p>Cliquez ensuite sur valider la ligne.</p>
+  <p>Si toutes les valeurs saisies sont correctes, le reste du tableau sera complété automatiquement.</p>
+    
+  <small class="fs-6" style="color:#4B75F9"><em>Entrez vos valeurs au dixième près (=1 chiffre après la virgule)</em></small>
+    
+  <br><br>
+  
+  <!-- Tableau moche, mais j'ai pas mieux-->
+  <div class="row">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <th scope="col"> </th>
+          <th scope="col">Glucides</th>
+          <th scope="col">Protéines</th>
+          <th scope="col">Lipides</th>
+          <th scope="col">Kcal</th>
+          <th scope="col">% répartition de l'énergie par repas</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td contenteditable="false">Petit-déjeuner</td>
+            <td contenteditable="false" name="AET[1][1]" type="int"></td>
+            <td contenteditable="false" name="AET[2][1]" type="int"></td>
+            <td contenteditable="false" name="tab[3][1]" type="int"></td>
+            <td contenteditable="false" name="tab[4][1]" type="int"></td>
+            <td contenteditable="false" name="tab[5][1]" type="int"></td>
+          </tr>
+          <tr>
+            <td contenteditable="false">Déjeuner</td>
+            <td contenteditable="true" name="tab[1][2]" type="int"></td>
+            <td contenteditable="true" name="tab[2][2]" type="int"></td>
+            <td contenteditable="true" name="tab[3][2]" type="int"></td>
+            <td contenteditable="true" name="tab[4][2]" type="int"></td>
+            <td contenteditable="true" name="tab[5][2]" type="int"></td>
+          </tr>
+          <tr>
+            <td contenteditable="false">Collation</td>
+            <td contenteditable="false" name="tab[1][3]" type="int"></td>
+            <td contenteditable="false" name="tab[2][3]" type="int"></td>
+            <td contenteditable="false" name="tab[3][3]" type="int"></td>
+            <td contenteditable="false" name="tab[4][3]" type="int"></td>
+            <td contenteditable="false" name="tab[5][3]" type="int"></td>
+          </tr>
+          <tr>
+            <td contenteditable="false">Apéro</td>
+            <td contenteditable="false name="tab[1][4]" type="int"></td>
+            <td contenteditable="false" name="tab[2][4]" type="int"></td>
+            <td contenteditable="false" name="tab[3][4]" type="int"></td>
+            <td contenteditable="false" name="tab[4][4]" type="int"></td>
+            <td contenteditable="false" name="tab[5][4]" type="int"></td>
+          </tr>
+          <tr>
+            <td contenteditable="false">Dîner</td>
+            <td contenteditable="false" name="tab[1][5]" type="int"></td>
+            <td contenteditable="false" name="tab[2][5]" type="int"></td>
+            <td contenteditable="false" name="tab[3][5]" type="int"></td>
+            <td contenteditable="false" name="tab[4][5]" type="int"></td>
+            <td contenteditable="false" name="tab[5][5]" type="int"></td>
+          </tr>
+          <tr>
+            <td contenteditable="false"><b>Total</b></td>
+            <td contenteditable="false" name="tab[1][6]" type="int"></td>
+            <td contenteditable="false" name="tab[2][6]" type="int"></td>
+            <td contenteditable="false" name="tab[3][6]" type="int"></td>
+            <td contenteditable="false" name="tab[4][6]" type="int"></td>
+            <td contenteditable="false" name="tab[5][6]" type="int"></td>
+          </tr>
+          <tr>
+            <td contenteditable="false"><b>%AET</b></td>
+            <td contenteditable="true" name="tab[1][7]" type="int"></td>
+            <td contenteditable="true" name="tab[2][7]" type="int"></td>
+            <td contenteditable="true" name="tab[3][7]" type="int"></td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CODE: pour faire quelquechose de très propre, il faudrait d'abord afficher uniquement le bouton valider la ligne du Déjeuner-->
+  <!-- Puis, une fois la ligne juste, le tableau entier se remplie sauf la ligne % AET et le 2e bouton "valider %AET" apparaît à la place du bouton "valider ligne déjeuner"-->
+
+
+  <small class="fs-6" style="color:#4B75F9"><em>Entrez vos valeurs au dixième près (=1 chiffre après la virgule)</em></small>
+  
+  <br><br>
+
+  <!-- Valider la ligne Déjeuner-->
+  <nav classe="boutons">
+  <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider la ligne du déjeuner </button>
+  </nav>
+
+  <!-- CODE: Si la ligne déjeuner est juste, tout le tableau se remplie automatiquement, à part la ligne % AET-->
+
+  <br><br><br>
+
+  <!-- Valider la ligne %AET-->
+  <nav classe="boutons">
+  <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider la ligne des % AET </button>
+  </nav>
+
+
+  <br><br><br>
+
+  <!-- CODE: Si la ligne % AET est fausse, afficher l'alerte suivante:-->
+  <div class="alert alert-danger mx-4" role="alert">
+    REPONSE(S) FAUSSE(S): Relis la définition du % d'apports énergétiques totaux! 
+  </div>
+
+</div>
+
+<!-- insérer le pied de page (équipe Bootstrap)-->

@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+body, html {
+  padding : 0;
+  margin : 0;
+  font-size:
+}
+
+body {
+  max-width:100%;
+  min-width:10%;
+  line-height:1.33em;
+  padding:0.01em;
+  color:#000000;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 0.5em;
+}
+
+
+/********** Header **********/
+.titre-header {
+  font-size: 550%;
+  color : #ffffff
+}
+
+.header {
+  background-color: #F2B705;
+  height:10%;
+}
+
+/********** Encadrés **********/
+.card-custom-text {
+  margin : 2%;
+  padding: 2%;
+}
+
+/********** Boutons **********/
+.btn-custom {
+  background-color: #52591D;
+  outline-color: #52591D;
+  height : 2.5em;
+  color : #ffffff ;
+  text-align: center;
+  outline-color: #52591D;
+  font-size : 100%;
+}
+
+.btn-custom-valider {
+  background-color: #00A917;
+  color : #ffffff ;
+  margin-left: 20px;
+  text-align: center;
+  outline-color: #00A917;
+  font-size : 85%;
+}
+
+.btn-custom-effacer {
+  background-color: #FF9900;
+  color : #ffffff ;
+  margin-left: 20px;
+  text-align: center;
+  outline-color: ##FF9900;
+  font-size : 85%;
+}
+
+.boutons {
+  justify-content: center;
+  align-items: center;
+
+  }
+
+.boutons a{
+  text-decoration: none;
+  color : #ffffff;
+}
+
+.boutons a:hover {
+  color : #000000;
+}
+
+/********** Tableaux **********/
+.table-custom{
+  text-align: justify;
+}
+
+/********** Encadrés **********/
+.cadre_droite{
+  border-right-width : 2px;
+  border-right-style: solid;
+  border-right-color: #000000;
+}
+
+/********* Menu ********/
+.element_menu ul li
+{
+  display:inline;
+  margin:0 5px 0 5px; /* décalage a gauche et a droite des liens du menu de 5 px */
+}
+
+/****** Pied de page ******/
+.footer {
+  background-color: #F2B705;
+  height:5%;
+}
+
+
+/******* Etiquettes ****/
+
+.example-origin {
+  flex-basis: auto;
+  flex-grow: 2;
+  padding: 10px;
+}
+
+.example-draggable {
+  background-color: #E6E6E6;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid #6fa113e1;
+  border-color: #E6E6E6;
+
+}
+
+.example-dropzone {
+  background-color: #E6E6E6;
+<<<<<<< HEAD
+  flex-basis: content;
+=======
+  flex-basis: content;  
+>>>>>>> b070f286d045a1f3b4e7587d7523e64e901ed08c
+  flex-grow: 1;
+  padding: 17px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.example-parent {
+  color: black;
+  display: flex;
+  font-family: sans-serif;
+  font-weight: bold;
+}
