@@ -32,22 +32,31 @@
           Dans ce TD, vous avez analysé la répartition de vos apports en macronutriments. Si vous voulez consulter et analyser la répartition de vos apports en vitamines et minéraux, vous pourrez y accéder dans votre compte rendu personnalisé !
           <br>
           Votre compte-rendu et votre note seront disponibles dès que l'ensemble des étudiants auront fini le TD. Pour télécharger votre compte-rendu, vous devrez retourner sur la page du TD et aller dans l'onglet <b>"Compte-rendu et Note"</b>.
-          </p>
+          </p>        
       </div>
 
+    <!-- insérer fonction chrono -->
+    <p class="mt-3 mb-2">Vous avez fini le TD en :  <input ></p>
       
-        <!-- insérer fonction chrono -->
-        <p class="text-left mb-5">Vous avez fini le TD en :<input value=""></p>
-        
-  
-
+       
       <div class="text-center">
         <a class="btn btn-lg text-center btn-custom mt-4 mb-4" href="Compte_rendu_et_notes.php"> Terminer </a>
       </div>
+    </div>
       
 
-      <?php include "PiedDePageTD.php"?>    
+      <div class="container-fluid" id="footer">
+        <p class="text-right small">
+            Contact : <A HREF="mailto:patrick.sauvant@agro-bordeaux.fr">Patrick SAUVANT</A>
+          </p>
+        <p class="text-left small">
+                Bordeaux Sciences Agro &mdash; Projet NumTrition &mdash; <A HREF="mentionslegales.html">Mentions légales</A>
+        </p>
 
-    </div>
+        <p class="text-right small">
+            Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
+        </p>
+      </div>    
+
   </body>
 </html>
