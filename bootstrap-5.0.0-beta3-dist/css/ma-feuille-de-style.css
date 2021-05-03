@@ -93,11 +93,11 @@ p {
 }
 
 /********* Menu ********/
-.element_menu ul li
+/* .element_menu ul li
 {
   display:inline;
-  margin:0 5px 0 5px; /* décalage a gauche et a droite des liens du menu de 5 px */
-}
+  margin:0 5px 0 5px; /* décalage a gauche et a droite des liens du menu de 5 px 
+} */
 
 /****** Pied de page ******/
 #footer {

@@ -35,8 +35,8 @@
           </p>        
       </div>
 
-    <!-- insérer fonction chrono -->
-    <p class="mt-3 mb-2">Vous avez fini le TD en :  <input ></p>
+      <!-- insérer fonction chrono -->
+      <p class="mt-3 mb-2">Vous avez fini le TD en :  <input ></p>
       
        
       <div class="text-center">
@@ -45,18 +45,8 @@
     </div>
       
 
-      <div class="container-fluid" id="footer">
-        <p class="text-right small">
-            Contact : <A HREF="mailto:patrick.sauvant@agro-bordeaux.fr">Patrick SAUVANT</A>
-          </p>
-        <p class="text-left small">
-                Bordeaux Sciences Agro &mdash; Projet NumTrition &mdash; <A HREF="mentionslegales.html">Mentions légales</A>
-        </p>
-
-        <p class="text-right small">
-            Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
-        </p>
-      </div>    
-
+      <?php include "PiedDePageTD.php"?>
+       
+  
   </body>
 </html>
