@@ -159,25 +159,19 @@ $envois4= mysqli_query($link, $queryinput4);
 }
 
 
-if(isset($_GET["bt_ajouter_question"])){
-		/* 		$recup_num_id="SELECT id_question FROM question";
-				$result_id= mysqli_query($link, $recup_num_id); 
-				$tab_id=mysqli_fetch_all($result_id); 
-				$count_id=count($tab_id); 
-				for ($i=0; $i<$count+'1'; $i++){ 
-					if($tab_id[$i] !=  */
+if(isset($_POST["bt_ajouter_question"])){
                 $querynewq="INSERT INTO question (id_page,id_type_question,id_categorie,numero_question,consigne_question,note_question,nombre_tentatives,nb_colonnes,nb_lignes,lien,nom_question,cplmt,reonse_question) VALUES ('1','1','1','QUESTION', '0', '10', '1', '0', '0', '0', '','','')";
                 $envoisnewq= mysqli_query($link, $querynewq);
 				}
 
 if(isset($_GET["bt_supprimer_question"])){
-                $val=$_GET['bouton1'];
-                $query200= "SELECT id_question FROM question WHERE numero_question='$val'"; 
+                $val=$_GET["bt_supprimer_question"];
+               /* $query200= "SELECT id_question FROM question WHERE id_question='$val'"; 
                 $result200= mysqli_query($link,$query200);
                 $tab200=mysqli_fetch_all($result200); 
-                $id= $tab200[0][0] ;
+                $id= $tab200[0][0] ;*/
                 $querysuppr="DELETE FROM question
-                WHERE id_question='".$id."'";
+                WHERE id_question='".$val."'";
                 $envoissuppr= mysqli_query($link, $querysuppr);
                 }
 ?> 
@@ -185,191 +179,219 @@ if(isset($_GET["bt_supprimer_question"])){
     //Sébastien
     //NAVIGATION QUESTION
     // on selectionne le texte de toutes les questions et on les met dans un tableau 
-      $query_liste= "SELECT numero_question FROM question";
+      $query_liste= "SELECT id_question FROM question";
       $result_liste= mysqli_query($link, $query_liste);
       $tab_liste= mysqli_fetch_all($result_liste);  
 
 
       // on compte le nombre de question dans la table
-      $query_n= "SELECT COUNT(numero_question) FROM question";
+      $query_n= "SELECT COUNT(id_question) FROM question";
       $result_n= mysqli_query($link, $query_n);
       $tab_n= mysqli_fetch_all($result_n);  
     ?>
     
-    <div class="container-fluid">
-        <div class="card py-2">
-          <div class="d-grid gap-2 d-md-block text-center boutons">
-          <?php
-       for($i=0 ; $i<$tab_n[0][0] ; $i=$i+1){
-         echo '<button type="button" class="btn btn-lg text-center btn-custom mx-2"> <a href="gestion_td.php?question_selec='.$tab_liste[$i][0].'bouton1='.$tab_liste[$i][0].'"></a></button>';
-        }?>
-      <!-- <?php
-      /*
-       for($i=0 ; $i<$tab_n[0][0] ; $i=$i+1){ 
-        echo '<form method="GET" action="gestion_td.php">' ;?>
-        <?php
-          echo '<input type="hidden" name="toto" value="'.$tab_liste[$i][0].'"> ' ;
-          echo '<input type="submit" name="bouton1" value="'.$tab_liste[$i][0].'" >' ;
-        echo'</form>';
-      }
-      */?> -->
-        </div>
-        </div>
-      </div
-
-      <?php
-       for($i=0 ; $i<$tab_n[0][0] ; $i=$i+1){ 
-        echo '<form method="GET" action="gestion_td.php">' ;?>
-        <?php
-          echo '<input type="hidden" question_selec="'.$tab_liste[$i][0].'"> ' ;
-          echo '<input type="submit" name="bouton1" value="'.$tab_liste[$i][0].'" >' ;
-        echo'</form>';
-      }?>
-      <div>
-    </div>
-    <form action="gestion_td.php" name="newquest" method="GET">
-    <INPUT type='submit' value='+' name='bt_ajouter_question'>
-    <INPUT type='submit' value='Supprimer' name='bt_supprimer_question'>              
+  <div class="card py-2">
+    <div class="d-md-block text-center boutons">
+            <?php
+            for($i=0 ; $i<$tab_n[0][0] ; $i=$i+1){
+            $j=$i+1;
+            echo '<a class="btn btn-lg text-center btn-custom mx-2" href="gestion_td.php?bouton1='.$tab_liste[$i][0].'" role="button">Question '.$j.' </a>';
+            }?>
+          <!-- Bouton permettant de créer une question -->
+    <div class="d-flex justify-content-center d-inline-block my-2 mx-2">
+      <form action="gestion_td.php" method="POST">
+      <button type="submit" class="btn text-center btn-primary" name="bt_ajouter_question">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+      </svg>
+      </button>
     </form>
-   -->
-
-
+          </div>
+    <!-- Bouton permettant de supprimer une question -->
+    <?php
+    if(isset($_GET["bouton1"])){?>
+     <div class="col-1 d-inline-block">
+    <form action="gestion_td.php" method="GET">
+      <?php $val=$_GET["bouton1"];?>
+      <button type="button" class="btn btn-danger text-center" data-bs-toggle="modal" data-bs-target="#Supprimer_activites">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+        </svg>
+      </button>
+          <!-- Modal, permet d'afficher une fenetre js pour confirmer le choix-->
+          <div class="modal fade" id="Supprimer_activites" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Supprimer_activitesLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title w-100 text-center" id="Supprimer_activitesLabel">Attention !</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                  Etes-vous vraiment certains de vouloir supprimer cette question ? 
+                </div>
+                <div class="modal-footer justify-content-center">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                  <button type="submit" value ='<?php echo $val;?>' class="btn text-center btn-danger" name="bt_supprimer_question">
+                   Supprimer la question 
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> 
+    </form>
+    </div>
+    </div>
+    <?php } ?>
+  </div>
+</div> 
 <br><br>
+
+
   <!--PREMIER CADRE-->
   
   
   <?php if(isset($_GET['bouton1'])){ ?>
-  <div class="card card-custom-text">
-    <?php $val=$_GET['bouton1']; ?>
-<div clas="row">
-    Identifiant : 
+<div class="card card-custom-text">
+      <?php $val=$_GET['bouton1']; ?>
+      
+      Identifiant : 
 
-    <?php $query= "SELECT id_question FROM question WHERE numero_question='$val'";
+      <?php $query= "SELECT id_question FROM question WHERE id_question='$val'";
 
-      $result= mysqli_query($link, $query);
-      $tab= mysqli_fetch_all($result);     
-      $nbligne = mysqli_num_rows($result);         
-      $nbcol = mysqli_num_fields($result) ;          
-      $i=0;     
-      while ($i< $nbligne)         {     
-      $j=0;         
-      while ($j< $nbcol)         {            
-      echo $tab[$i][$j];                           
-      $j++;         }    
-      $i++;
-      }
-    ?>
-	 <br>
-
-Catégorie:
-
-<?php	// Requète SQL pour récupérer toutes les catégories existantes dans une liste //
-	$nom_quest=$_GET["bouton1"]; //on recupère la valeur de bouton 1 (question que l'on veut modifier)//
-	$query2="	SELECT categorie.lib_categorie, question.id_categorie, categorie.id_categorie, question.numero_question 
-				FROM categorie, question 
-				WHERE question.numero_question='$nom_quest' 
-				AND question.id_categorie= categorie.id_categorie"; //on fait une requête SQL pour récupérer le nom de la ctégorie correspondant à la question choisi//
-	$result2= mysqli_query($link, $query2);
-	$tab_categorie_question_selec= mysqli_fetch_all($result2); //résultat de la première requête sous forme de tableau 
-	$query3="SELECT COUNT(*) FROM categorie"; //on compte le nb de catégories existantes // 
-	$result3= mysqli_query($link, $query3);
-	$tab_nb_categories= mysqli_fetch_all($result3); //résultat de la seconde requête 
-	$query4="SELECT lib_categorie FROM categorie"; //on récupère toute les catégories existantes dans la table catégorie//
-	$result4= mysqli_query($link, $query4);
-	$tab_toutes_categories= mysqli_fetch_all($result4);
-	$categorie_question_selec=$tab_categorie_question_selec[0][0];
-	$nb_categorie=$tab_nb_categories[0][0]; ?>
-<select name="categorie">
-	<?php for    ($i=0; $i<$nb_categorie; $i=$i+1){
-        if(isset($_GET["bt_valider_nouv_categorie"])){
-              if ($nouvelle_categorie==$tab_toutes_categories[$i][0]){
-            echo '<option value="'.$tab_toutes_categories[$i][0].'" selected>'.$nouvelle_categorie.'</option>' ; 
+        $result= mysqli_query($link, $query);
+        $tab= mysqli_fetch_all($result);     
+        $nbligne = mysqli_num_rows($result);         
+        $nbcol = mysqli_num_fields($result) ;          
+        $i=0;     
+        while ($i< $nbligne)         {     
+        $j=0;         
+        while ($j< $nbcol)         {            
+        echo $tab[$i][$j];                           
+        $j++;         }    
+        $i++;
         }
-        else{
-            echo '<option value="'.$tab_toutes_categories[$i][0].'"> '.$tab_toutes_categories[$i][0].' </option>' ;
-        }
-        }
-        else {
-        if ($categorie_question_selec==$tab_toutes_categories[$i][0]){
-            echo '<option value="'.$tab_toutes_categories[$i][0].'" selected>'.$categorie_question_selec.'</option>' ; 
-        }
-        else{
-            echo '<option value="'.$tab_toutes_categories[$i][0].'"> '.$tab_toutes_categories[$i][0].' </option>' ;
-        }
-        }
-        } ?>
-</select>
-<?php
+      ?>
+    <br>
+<div class="row align-items-center">
+<div class="col-md-1"> 
+  <label class="form-label">Catégorie:</label> 
+</div>
 
-
-//BOUTON AJOUT CATEGORIE
-
-echo "<FORM name='form_observateur' method='GET'>";
-            $value=$_GET["bouton1"];
+  <?php	// Requète SQL pour récupérer toutes les catégories existantes dans une liste //
+    $nom_quest=$_GET["bouton1"]; //on recupère la valeur de bouton 1 (question que l'on veut modifier)//
+    $query2="	SELECT categorie.lib_categorie, question.id_categorie, categorie.id_categorie, question.numero_question 
+          FROM categorie, question 
+          WHERE question.id_question='$nom_quest' 
+          AND question.id_categorie= categorie.id_categorie"; //on fait une requête SQL pour récupérer le nom de la ctégorie correspondant à la question choisi//
+    $result2= mysqli_query($link, $query2);
+    $tab_categorie_question_selec= mysqli_fetch_all($result2); //résultat de la première requête sous forme de tableau 
+    $query3="SELECT COUNT(*) FROM categorie"; //on compte le nb de catégories existantes // 
+    $result3= mysqli_query($link, $query3);
+    $tab_nb_categories= mysqli_fetch_all($result3); //résultat de la seconde requête 
+    $query4="SELECT lib_categorie FROM categorie"; //on récupère toute les catégories existantes dans la table catégorie//
+    $result4= mysqli_query($link, $query4);
+    $tab_toutes_categories= mysqli_fetch_all($result4);
+    $categorie_question_selec=$tab_categorie_question_selec[0][0];
+    $nb_categorie=$tab_nb_categories[0][0]; ?>
+  <div class="col-md-4">
+  <select class="form-select" aria-label="Default select example" name="categorie">
+    <?php for    ($i=0; $i<$nb_categorie; $i=$i+1){
+          if(isset($_GET["bt_valider_nouv_categorie"])){
+                if ($nouvelle_categorie==$tab_toutes_categories[$i][0]){
+              echo '<option value="'.$tab_toutes_categories[$i][0].'" selected>'.$nouvelle_categorie.'</option>' ; 
+          }
+          else{
+              echo '<option value="'.$tab_toutes_categories[$i][0].'"> '.$tab_toutes_categories[$i][0].' </option>' ;
+          }
+          }
+          else {
+          if ($categorie_question_selec==$tab_toutes_categories[$i][0]){
+              echo '<option value="'.$tab_toutes_categories[$i][0].'" selected>'.$categorie_question_selec.'</option>' ; 
+          }
+          else{
+              echo '<option value="'.$tab_toutes_categories[$i][0].'"> '.$tab_toutes_categories[$i][0].' </option>' ;
+          }
+          }
+          } ?>
+  </select>
+  <!--  BOUTON AJOUT CATEGORIE -->
+  <FORM name='form_observateur' method='GET'>
+            <?php $value=$_GET["bouton1"];
             // Bouton pour ajouter une catégorie
             
             echo " <input type='hidden' bouton1='".$value."'>";
             echo "<INPUT type='submit' value='+' name='bt_ajouter_categorie'>";
-            //echo "</FORM>";
-            //Formulaire d'ajout
-            if(isset($_GET["bt_ajouter_categorie"])){
-                //echo "<FORM name='form_observateur' method='GET'>";
-                Echo '<input type="text" name="nouv_categorie" size="30" value="Entrer une nouvelle catégorie..">';
-                echo '<input type="hidden" name="bouton1" value="'.$value.'" >' ;
-                echo '<INPUT type="submit" value="Valider" name="bt_valider_nouv_categorie">';
-
-                /* if(isset($_GET["bt_valider_nouv_categorie"])){
-                $nouvelle_categorie=$_GET["nouv_categorie"];
-                $querynew="INSERT INTO categorie (lib_categorie) VALUES ('".$nouvelle_categorie."')";
-                $envoisnew= mysqli_query($link, $querynew);
-                } */
-                echo "</form>"; 
-                echo "<br>";
-            }
-           
-?>
-<br><br>	
-
-<?php // TYPE DE QUESTION
-
-echo "Type de question :";
+            ?>
+  </FORM>"
+  </div>
+  <div class="col-md-7 text-center">
+  <?php
 
 
-	$query2bis="SELECT question.id_type_question, type_question.id_type_question, question.numero_question,type_question.type_question
-			FROM type_question, question 
-			WHERE question.id_type_question= type_question.id_type_question
-			AND question.numero_question='$nom_quest' ";
+ 
+              //Formulaire d'ajout
+              if(isset($_GET["bt_ajouter_categorie"])){
+                  //echo "<FORM name='form_observateur' method='GET'>";
+                  Echo '<input type="text" name="nouv_categorie" size="30" value="Entrer une nouvelle catégorie..">';
+                  echo '<input type="hidden" name="bouton1" value="'.$value.'" >' ;
+                  echo '<INPUT type="submit" value="Valider" name="bt_valider_nouv_categorie">';
 
-	$result2bis= mysqli_query($link, $query2bis);
-	$tab2bis= mysqli_fetch_all($result2bis);
+                  /* if(isset($_GET["bt_valider_nouv_categorie"])){
+                  $nouvelle_categorie=$_GET["nouv_categorie"];
+                  $querynew="INSERT INTO categorie (lib_categorie) VALUES ('".$nouvelle_categorie."')";
+                  $envoisnew= mysqli_query($link, $querynew);
+                  } */
+                  echo "</form>"; 
+                  echo "<br>";
+              }
+            
+  ?>
+  </div>
+  </div>
+  <br><br>	
 
-	$query3bis="SELECT COUNT(*) FROM type_question"; 
-	$result3bis= mysqli_query($link, $query3bis);
-	$tab3bis= mysqli_fetch_all($result3bis);
+  <?php // TYPE DE QUESTION
+
+  echo "Type de question :";
 
 
-	$query4bis="SELECT type_question FROM type_question";
-	$result4bis= mysqli_query($link, $query4bis);
-	$tab4bis= mysqli_fetch_all($result4bis);
+    $query2bis="SELECT question.id_type_question, type_question.id_type_question, question.numero_question,type_question.type_question
+        FROM type_question, question 
+        WHERE question.id_type_question= type_question.id_type_question
+        AND question.numero_question='$nom_quest' ";
+
+    $result2bis= mysqli_query($link, $query2bis);
+    $tab2bis= mysqli_fetch_all($result2bis);
+
+    $query3bis="SELECT COUNT(*) FROM type_question"; 
+    $result3bis= mysqli_query($link, $query3bis);
+    $tab3bis= mysqli_fetch_all($result3bis);
 
 
-	$type_question_selec_bis=$tab2bis[0][3];
-	$nb_catégorie_bis=$tab3bis[0][0]; 
-	echo '<select name="typequestion">' ;
-	for	($i=0; $i<$nb_catégorie_bis; $i=$i+1){
-		if ($type_question_selec_bis==$tab4bis[$i][0]){
-			echo '<option value="'.$tab4bis[$i][0].'" selected>'.$type_question_selec_bis.'</option>' ; 
-		}
-		else{
-			echo '<option value="'.$tab4bis[$i][0].'"> '.$tab4bis[$i][0].' </option>' ;
-		}
-	}
+    $query4bis="SELECT type_question FROM type_question";
+    $result4bis= mysqli_query($link, $query4bis);
+    $tab4bis= mysqli_fetch_all($result4bis);
 
-	echo '</select>';
-	echo "<input type='hidden' name='bouton1' value='".$_GET['bouton1']."'>" ;
-	echo "<input type='submit' name= 'test' value='valider' >";
-	echo "</form>"; 
-?>
+
+    $type_question_selec_bis=$tab2bis[0][3];
+    $nb_catégorie_bis=$tab3bis[0][0]; 
+    echo '<select name="typequestion">' ;
+    for	($i=0; $i<$nb_catégorie_bis; $i=$i+1){
+      if ($type_question_selec_bis==$tab4bis[$i][0]){
+        echo '<option value="'.$tab4bis[$i][0].'" selected>'.$type_question_selec_bis.'</option>' ; 
+      }
+      else{
+        echo '<option value="'.$tab4bis[$i][0].'"> '.$tab4bis[$i][0].' </option>' ;
+      }
+    }
+
+    echo '</select>';
+    echo "<input type='hidden' name='bouton1' value='".$_GET['bouton1']."'>" ;
+    echo "<input type='submit' name= 'test' value='valider' >";
+    echo "</form>"; 
+  ?>
 </div>
 <?php
 
@@ -704,6 +726,11 @@ $val=$_GET['bouton1'];
 
 			}
 ?>		
-		
+
+
+
+  <!-- Appel des feuilles de style js (ne pas déplacer dans /head) -->
+    <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>		
 </body>
 </html>

@@ -3,7 +3,6 @@
 body, html {
   padding : 0;
   margin : 0;
-  font-size:
 }
 
 body {
@@ -62,7 +61,7 @@ p {
   color : #ffffff ;
   margin-left: 20px;
   text-align: center;
-  outline-color: ##FF9900;
+  outline-color: #FF9900;
   font-size : 85%;
 }
 
