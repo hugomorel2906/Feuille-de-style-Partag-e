@@ -54,7 +54,7 @@ $id_utilisateur=1;
 	  </div>
 
 
-    <p style="text-align:right"><a href="aides_portions.php" target="_blank">Besoin d'aide pour estimer les quantités ?</a></p> <!-- lien à ajouter une fois al base de données créée-->
+    <p style="text-align:right"><a href="aides_portions.pdf" target="_blank">Besoin d'aide pour estimer les quantités ?</a></p> <!-- lien à ajouter une fois al base de données créée-->
           <br>
     <div class="alert alert-danger mb-5" role="alert" id="" value=""> <!-- faire apparaître si tout bon -->
             ATTENTION : Pensez à saisir vos boissons (eau du robinet, eau minérale, alcool etc..). <br>
