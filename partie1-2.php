@@ -54,15 +54,15 @@
           <tr>
       <!-- CODE : lier les étiquettes pour pouvoir les placer dans le tableau et onclick, pourvoir les enlever -->
             <th scope="row" > Protéines </th>
-            <td id="" name="" type="" onclick="" ><div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> </td>
+            <td><div class= "example-dropzone" id="drop1" ondrop="drop_handler(event, 'drop1');" ondragover="dragover_handler(event);"></div> </td>
           </tr>
           <tr>
             <th scope="row" > Glucides </th>
-            <td id="" name="" type="" onclick=""><div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div> </td>
+            <td><div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> </td>
           </tr>
           <tr>
             <th scope="row" > Lipides </th>
-            <td id="" name="" type="" onclick=""><div class= "example-dropzone" id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div></td>
+            <td><div class= "example-dropzone" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div></td>
           </tr>
         </tbody>
         </section>
