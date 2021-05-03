@@ -126,10 +126,10 @@ $login=6;
        <!-- CODE : 2e version si la case collation est cochée en haut -->
        <br> </p>
        <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
-       <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="drop1" ondrop="drop_handler(event,'drop1');" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
-       de <div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> % pour le déjeuner, 
-       de <div class= "example-dropzone" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div> % pour le goûter,
-       et de <div class= "example-dropzone" id="drop4" ondrop="drop_handler(event,'drop4');" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
+       <div class= align-items-center> La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone d-inline-flex"  id="drop1" ondrop="drop_handler(event,'drop1');" ondragover="dragover_handler(event);"></div> pour le petit déjeuner,
+       de <div class= "example-dropzone d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> pour le déjeuner, 
+       de <div class= "example-dropzone d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div> pour le goûter,
+       et de <div class= "example-dropzone d-inline-flex" id="drop4" ondrop="drop_handler(event,'drop4');" ondragover="dragover_handler(event);"></div> pour le dîner. </div>
 
        <br>
 
