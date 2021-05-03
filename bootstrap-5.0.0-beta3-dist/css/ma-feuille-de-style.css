@@ -144,3 +144,27 @@ p {
   font-family: sans-serif;
   font-weight: bold;
 }
+
+.example-draggable-tableau {
+  background-color: #E6E6E6;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 2px;
+  border: 1px solid #6fa113e1;
+  border-color: #E6E6E6;
+  height: auto;
+  width: 300px ;
+  text-align: center;
+
+}
+
+.example-dropzone-tableau {
+  background-color: #E6E6E6;
+  flex-basis: auto;
+  flex-grow: 3;
+  height: 44px;
+  text-align: center;
+  width:320px;
+  vertical-align: middle;
+}

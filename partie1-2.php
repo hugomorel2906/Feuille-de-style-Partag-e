@@ -54,15 +54,15 @@
           <tr>
       <!-- CODE : lier les étiquettes pour pouvoir les placer dans le tableau et onclick, pourvoir les enlever -->
             <th scope="row" > Protéines </th>
-            <td><div class= "example-dropzone" id="drop1" ondrop="drop_handler(event, 'drop1');" ondragover="dragover_handler(event);"></div> </td>
+            <td><div class= "example-dropzone-tableau d-inline-flex" id="drop1" ondrop="drop_handler(event, 'drop1');" ondragover="dragover_handler(event);"></div> </td>
           </tr>
           <tr>
             <th scope="row" > Glucides </th>
-            <td><div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> </td>
+            <td><div class= "example-dropzone-tableau d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> </td>
           </tr>
           <tr>
             <th scope="row" > Lipides </th>
-            <td><div class= "example-dropzone" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div></td>
+            <td><div class= "example-dropzone-tableau d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div></td>
           </tr>
         </tbody>
         </section>
@@ -71,37 +71,37 @@
       <br>
 
       <div class="example-parent ">
-    		<div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+    		<div class="example-draggable-tableau m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
     			0% à 5%
     		</div>
-    		<div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+    		<div class="example-draggable-tableau m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
           5% à 10%
         </div>
-        <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
           10% à 15%
         </div>
-        <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
           15% à 20%
         </div>
-        <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
           20% à 25%
         </div>
-        <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
           25% à 30%
         </div>
-        <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
           30% à 35%
         </div>
-        <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
             35% à 40%
         </div>
-        <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
           40% à 45%
         </div>
-        <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
           45% à 50%
         </div>
-        <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
           50% à 55%
         </div>
       </div>
