@@ -26,7 +26,7 @@
     <div class="row mb-5 mt-5">
       <div class="col-md-6">
         <div class="d-grid gap-2 float-md-end boutons">
-          <a class="btn btn-lg btn-custom" href="./saisie-menu.php">Saisir / Modifier mes repas </a>
+          <a class="btn btn-lg btn-custom" href="saisie-menu.php">Saisir / Modifier mes repas </a>
           <a class="btn btn-lg text-center btn-custom" data-bs-toggle="modal" data-bs-target="#Supprimer_repas"> Supprimer mes repas </a>
           
           <!-- Modal, permet d'afficher une fenetre js pour confirmer le choix-->
@@ -53,7 +53,7 @@
       </div>
     <div class="col-md-6">
         <div class="d-grid gap-2 float-md-start boutons">
-          <button type="button" class="btn btn-lg btn-custom"> <a href="./Tableau-NAP.html">Saisir / Modifier mes activités</a></button>
+          <button type="button" class="btn btn-lg btn-custom"> <a href="./Tableau-NAP.php">Saisir / Modifier mes activités</a></button>
           <button type="button" class="btn btn-lg text-center btn-custom" data-bs-toggle="modal" data-bs-target="#Supprimer_activites"> Supprimer mes activités </button>
           <!-- Modal, permet d'afficher une fenetre js pour confirmer le choix-->
           <div class="modal fade" id="Supprimer_activites" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Supprimer_activitesLabel" aria-hidden="true">
@@ -78,16 +78,14 @@
 
     </div>
 
-    <div class="text-center">
+    <div class="text-center mb-4">
       <a class="btn btn-lg btn-custom text-center" href="./page-accueil.php">Retour au menu</a>
     </div>
   </div>
 
-    <!-- Evolution du TD -->
-    <?php include "Evolution_TD.php" ?>
   
     <!-- pied de page-->
-    <?php include "PiedDePage.php" ?>
+    <?php include "PiedDePageTD.php" ?>
 
     <!-- Appel des feuilles de style js (ne pas déplacer dans /head) -->
     <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
