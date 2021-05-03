@@ -4,9 +4,7 @@
 $login=6;
 // ?>
 
-<!--$requete= "insert into NAP(duree_NAP,id_jour,id_type_NAP, id_utilisateur) values($duree_NAP, $col,'$liste_ligne[$ligne]', $login)";
-$result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est érronnée. Merci de les corriger");-->
-			
+		
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -163,8 +161,17 @@ $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données e
        }
     }
 
-   
+    $requete= "insert into Dropzone(contenu_dropzone,numero_dropzone) values('10%', '1')";
+    $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
+      
+
+
+
+
        ?>
+
+
+
 
     <!-- CODE : faire apparaître si erreur -->
     <div class="alert alert-danger" role="alert" id ="" value="">
