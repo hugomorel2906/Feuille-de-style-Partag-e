@@ -171,25 +171,39 @@ $login=6;
 
     $requete= "select question.reponse FROM question WHERE num_question='1'";
     $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
-    $tab_rep_php='<script type = "text/javascript">document.write(tab_rep_js);</script>';
+    $tab=mysqli_fetch_all($result);
 
     if(isset($_GET["Valider_rep1"])){
-      
-      if ($tab_rep== $result) {
+      $tab_rep=array();
+      $tab_rep[0]=substr("iddrop1",2,6);
+      $tab_rep[1]=substr($_GET['iddrop1'],0,3);
+      $tab_rep[2]=substr("iddrop2",2,6);
+      $tab_rep[3]=substr($_GET['iddrop2'],0,3);
+      $tab_rep[4]=substr("iddrop3",2,6);
+      $tab_rep[5]=substr($_GET['iddrop3'],0,3);
+      $tab_rep[6]=substr("iddrop4",2,6);
+      $tab_rep[7]=substr($_GET['iddrop4'],0,3);
+
+      $tab_fin="[".$tab_rep[0].','.$tab_rep[1].','.$tab_rep[2].','.$tab_rep[3].','.$tab_rep[4].','.$tab_rep[5].','.$tab_rep[6].','.$tab_rep[7].']'; // Tableau avec les valeurs des étiquettes placées
+      echo $tab_fin;
+
+      if ($tab_fin== $tab[0][0]) {
         ?>
-        <!-- CODE : faire apparaître aucune erreur -->
-        <div class="alert alert-success" role="alert" id="" value="">
+       <!-- CODE : faire apparaître aucune erreur -->
+       <div class="alert alert-success" role="alert" id="" value="">
         Vous avez les bonnes réponses ! Cette répartition est à connaître !
         </div>
       <?php
       }
       
       else{?>
-        <!-- CODE : faire apparaître si erreur -->
-        <div class="alert alert-danger" role="alert" id ="" value="">
+      <!-- CODE : faire apparaître si erreur -->
+      <div class="alert alert-danger" role="alert" id ="" value="">
         REPONSE(S) FAUSSE(S) : Attention vous avez fait une (ou des) erreur(s) !
         </div>
+       
       <?php
+        
       }
     }
     ?>
