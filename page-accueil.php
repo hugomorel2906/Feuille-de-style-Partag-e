@@ -34,7 +34,7 @@
       </div>
     
       <div class="d-grid gap-2 d-md-block text-center boutons">
-        <a class="btn btn-lg text-center btn-custom" href="./menu-saisies-donnees.html">Saisir mes données</a>
+        <a class="btn btn-lg text-center btn-custom" href="./menu-saisies-donnees.php">Saisir mes données</a>
         <a class="btn btn-lg text-center btn-custom" data-bs-toggle="modal" data-bs-target="#commencer_td"> Commencer le TD </a>
         
         <!-- Modal, permet d'afficher une fenetre js pour confirmer le choix-->
@@ -50,7 +50,7 @@
               </div>
               <div class="modal-footer justify-content-center">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
-                <button type="button" class="btn btn-primary"><a href="./partie1-1.html">Oui</a></button> <!--Bouton Oui, il faut rajouter le code pour démarer le chrono et il faut changer et mettre ./partie1-1.php -->
+                <button type="button" class="btn btn-primary"><a href="./partie1-1.php">Oui</a></button> <!--Bouton Oui, il faut rajouter le code pour démarer le chrono et il faut changer et mettre ./partie1-1.php -->
               </div>
             </div>
           </div>
