@@ -161,9 +161,9 @@ $login=6;
        }
     }
 
-    $requete= "select question.reponse FROM question WHERE num_question==1";
+    $requete= "select question.reponse FROM question WHERE num_question='1'";
     $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
-      
+    
 
 
 
