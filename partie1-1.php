@@ -4,7 +4,6 @@
 $login=6;
 // ?>
 
-		
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -96,7 +95,7 @@ $login=6;
        </div></p>
 
      <br>
-
+      
      <div class= "row">
        <div class="col-1">
          <nav classe="boutons">
@@ -114,6 +113,13 @@ $login=6;
        <?php        }
        if($collation =="oui"){
        ?>
+       <form method="GET">
+
+       <input type="hidden" name="iddrop1" id="iddrop1" value="">
+       <input type="hidden" name="iddrop2" id="iddrop2" value="">
+       <input type="hidden" name="iddrop3" id="iddrop3" value="">
+       <input type="hidden" name="iddrop4" id="iddrop4" value="">
+       
        <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
        <p class="fs-6" style="color:#4B75F9"> Chercher sur internet les informations suivantes : </p>
 
@@ -126,10 +132,10 @@ $login=6;
        <!-- CODE : 2e version si la case collation est cochée en haut -->
        <br> </p>
        <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
-       <div class= align-items-center> La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone d-inline-flex"  id="drop1" ondrop="drop_handler(event,'drop1');" ondragover="dragover_handler(event);"></div> pour le petit déjeuner,
-       de <div class= "example-dropzone d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> pour le déjeuner, 
-       de <div class= "example-dropzone d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div> pour le goûter,
-       et de <div class= "example-dropzone d-inline-flex" id="drop4" ondrop="drop_handler(event,'drop4');" ondragover="dragover_handler(event);"></div> pour le dîner. </div>
+       <div class= align-items-center> La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone d-inline-flex"  id="drop1" ondrop="drop_handler(event,'drop1','iddrop1');" ondragover="dragover_handler(event);"></div> pour le petit déjeuner,
+       de <div class= "example-dropzone d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2','iddrop2');" ondragover="dragover_handler(event);"></div> pour le déjeuner, 
+       de <div class= "example-dropzone d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3','iddrop3');" ondragover="dragover_handler(event);"></div> pour le goûter,
+       et de <div class= "example-dropzone d-inline-flex" id="drop4" ondrop="drop_handler(event,'drop4','iddrop4');" ondragover="dragover_handler(event);"></div> pour le dîner. </div>
 
        <br>
 
@@ -148,7 +154,9 @@ $login=6;
          <div class="col-1">
            <nav classe="boutons">
          <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
-          <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
+          
+          <button type="submit" name = "Valider_rep1" class="btn btn-lg text-center btn-custom-valider" > Valider </button>
+          </form>
           </nav>
         </div>
         <div class="col-11">
@@ -163,33 +171,29 @@ $login=6;
 
     $requete= "select question.reponse FROM question WHERE num_question='1'";
     $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
-    
+    $tab_rep_php='<script type = "text/javascript">document.write(tab_rep_js);</script>';
 
+    if(isset($_GET["Valider_rep1"])){
+      
+      if ($tab_rep== $result) {
+        ?>
+        <!-- CODE : faire apparaître aucune erreur -->
+        <div class="alert alert-success" role="alert" id="" value="">
+        Vous avez les bonnes réponses ! Cette répartition est à connaître !
+        </div>
+      <?php
+      }
+      
+      else{?>
+        <!-- CODE : faire apparaître si erreur -->
+        <div class="alert alert-danger" role="alert" id ="" value="">
+        REPONSE(S) FAUSSE(S) : Attention vous avez fait une (ou des) erreur(s) !
+        </div>
+      <?php
+      }
+    }
+    ?>
 
-
-
-       ?>
-
-
-
-
-    <!-- CODE : faire apparaître si erreur -->
-    <div class="alert alert-danger" role="alert" id ="" value="">
-      REPONSE(S) FAUSSE(S) : Attention vous avez fait une (ou des) erreur(s) !
-    </div>
-
-    <br>
-    <!-- CODE : faire apparaître aucune erreur -->
-    <div class="alert alert-success" role="alert" id="" value="">
-      Vous avez les bonnes réponses !
-    </div>
-
-
-    <br>
-    <!-- CODE : faire apparaître aucune erreur -->
-    <div class="alert alert-danger" role="alert" id="" value="">
-      Cette répartition est à connaître !
-    </div>
 
   </div>
 

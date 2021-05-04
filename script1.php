@@ -6,6 +6,7 @@ echo '<script language=javascript>
 var tfils=new Array();
 var tpere=new Array();
 var tab_rep=new Array();
+var tab_rep_js="<?php echo $tab_rep_php;?>";
 
 
 function dragstart_handler(ev) {
@@ -24,7 +25,8 @@ function dragover_handler(ev) {
  // has occurred.
  ev.preventDefault();
 }
-function drop_handler(ev, dest_copy) {
+function drop_handler(ev, dest_copy,iddest_copy) {
+  
   var pere;
   var fils;
   console.log("Drop");
@@ -47,8 +49,10 @@ function drop_handler(ev, dest_copy) {
    tpere.push(pere);
    tab_rep.push(pere.id, nodeCopy.innerText);
    alert(tab_rep);
+   document.getElementById(iddest_copy).value = nodeCopy.innerText;
   }
 }
+
 function dragend_handler(ev) {
   console.log("dragEnd");
   // Restore source s border
