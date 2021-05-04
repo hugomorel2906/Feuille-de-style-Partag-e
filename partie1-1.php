@@ -185,7 +185,6 @@ $login=6;
       $tab_rep[7]=substr($_GET['iddrop4'],0,3);
 
       $tab_fin="[".$tab_rep[0].','.$tab_rep[1].','.$tab_rep[2].','.$tab_rep[3].','.$tab_rep[4].','.$tab_rep[5].','.$tab_rep[6].','.$tab_rep[7].']'; // Tableau avec les valeurs des étiquettes placées
-      echo $tab_fin;
 
       if ($tab_fin== $tab[0][0]) {
         ?>
