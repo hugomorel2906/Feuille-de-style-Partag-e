@@ -41,7 +41,7 @@ $login=6;
 <div class="container-fluid">
 
 <br>
-<form action="partie1-1-bis.php" method="GET">
+<form action="partie1-1.php" method="GET">
 
 <!-- PREMIERE QUESTION: COLLATION OU NON-->
 <div>
