@@ -83,17 +83,28 @@
           $nom_quest_modif=$_GET["nom_question"]; 	//on récupère le nom de la question modifiée qui a été transmis par le bouton submit
           $tentative_modif=$_GET['tentatives'];
           $consigne_modif=$_GET['consigne'];
+          echo $consigne_modif;
           $lien_modif=$_GET['lien'];
           $intitule_modif=$_GET['intitule'];
-          $colonne_modif=$_GET['colonne'];
-          $ligne_modif=$_GET['ligne'];	
+          $choix_type_question=$_GET['typequestion'];
+          if($choix_type_question=='tableau'){
+            $colonne_modif=$_GET['colonne'];
+            $ligne_modif=$_GET['ligne'];	
           
-          $queryinput3="UPDATE question SET numero_question='$nom_quest_modif', 
-          nombre_tentatives='$tentative_modif', consigne_question='$consigne_modif',
-          lien='$lien_modif' , cplmt='$intitule_modif', nb_colonnes='$colonne_modif', nb_lignes='$ligne_modif' WHERE numero_question='$bouton'";
-          $envois3= mysqli_query($link, $queryinput3);
+            $queryinput3="UPDATE question SET numero_question='$nom_quest_modif', 
+            nombre_tentatives='$tentative_modif', consigne_question='$consigne_modif',
+            lien='$lien_modif' , cplmt='$intitule_modif', nb_colonnes='$colonne_modif', nb_lignes='$ligne_modif' WHERE id_question='$bouton'";
+            $envois3= mysqli_query($link, $queryinput3);
+          }
+          else{
+            $queryinput3="UPDATE question SET numero_question='$nom_quest_modif', 
+            nombre_tentatives='$tentative_modif', consigne_question='$consigne_modif',
+            lien='$lien_modif' , cplmt='$intitule_modif' WHERE id_question='$bouton'";
+            $envois3= mysqli_query($link, $queryinput3);
+          }
         }
 
+        
         if(isset($_GET["bt_valider_nouv_categorie"])){
           $value=$_GET["bouton1"];
           $nouvelle_categorie=$_GET["nouv_categorie"];
@@ -118,15 +129,15 @@
           if ($n_etiquette_fausses!='0'){
             $etiq_fausse_modif=$_GET['reponse_vrai'];//
             $queryinput4="UPDATE etiquette_prof,question SET ponderation_etiquette='$pourcentge', contenu_etiquette='$etiq_juste_modif', aide_bon='$info_bullr_modif',aide_mauvais='$info_bullech'
-            WHERE etiquette_prof.id_question=question.id_question AND question.numero_question='$nom_quest_modif2'AND id_etiquette_prof='$id_etiquette' AND etat_etiquette=TRUE ";
+            WHERE etiquette_prof.id_question=question.id_question AND question.id_question='$nom_quest_modif2'AND id_etiquette_prof='$id_etiquette' AND etat_etiquette=TRUE ";
             $queryinput5="UPDATE etiquette_prof,question SET ponderation_etiquette='$pourcentge', contenu_etiquette='$etiq_juste_modif'
-            WHERE etiquette_prof.id_question=question.id_question AND question.numero_question='$nom_quest_modif2'AND etiquette_prof.id_etiquette_prof='$id_etiquette' AND etiquette_prof.etat_etiquette=FALSE "; 
+            WHERE etiquette_prof.id_question=question.id_question AND question.id_question='$nom_quest_modif2'AND etiquette_prof.id_etiquette_prof='$id_etiquette' AND etiquette_prof.etat_etiquette=FALSE "; 
             $envois4= mysqli_query($link, $queryinput4);
             $envois5= mysqli_query($link, $queryinput5);
           }
           else { 
             $queryinput4="UPDATE etiquette_prof,question SET ponderation_etiquette='$pourcentge', contenu_etiquette='$etiq_juste_modif', aide_bon='$info_bullr_modif',aide_mauvais='$info_bullech'
-            WHERE etiquette_prof.id_question=question.id_question AND question.numero_question='$nom_quest_modif2'AND id_etiquette_prof='$id_etiquette' AND etat_etiquette=TRUE ";
+            WHERE etiquette_prof.id_question=question.id_question AND question.id_question='$nom_quest_modif2'AND id_etiquette_prof='$id_etiquette' AND etat_etiquette=TRUE ";
             $envois4= mysqli_query($link, $queryinput4);
           }
           $envois4= mysqli_query($link, $queryinput4);
@@ -146,7 +157,7 @@
       
         //NAVIGATION QUESTION
         // on selectionne le texte de toutes les questions et on les met dans un tableau 
-          $query_liste= "SELECT id_question FROM question";
+          $query_liste= "SELECT id_question FROM question ORDER BY id_question";
           $result_liste= mysqli_query($link, $query_liste);
           $tab_liste= mysqli_fetch_all($result_liste);  
           
@@ -164,10 +175,10 @@
               for($i=0 ; $i<$tab_n[0][0] ; $i=$i+1){
                 $j=$i+1;
                 if($val == $tab_liste[$i][0]){
-                  echo '<a class="btn btn-outline-success text-center mx-2 my-1 active" href="gestion_td.php?bouton1='.$tab_liste[$i][0].'" role="button">Question '.$j.' </a>';
-                  } //Si la question est sélectionné on affiche le bouton active
+                  echo '<a class="btn btn-outline-success text-center mx-2 my-1 active" href="gestion_td.php?bouton1='.$val.'" role="button">Question '.$j.' </a>';
+                } //Si la question est sélectionné on affiche le bouton active
                 else{
-                  echo '<a class="btn btn-outline-success text-center mx-2 my-1" href="gestion_td.php?bouton1='.$tab_liste[$i][0].'" role="button">Question '.$j.' </a>';
+                echo '<a class="btn btn-outline-success text-center mx-2 my-1" href="gestion_td.php?bouton1='.$tab_liste[$i][0].'" role="button">Question '.$j.' </a>';
                 }  // Si aucune question n'est sélectionnée on met les boutons normaux      
               }
             } 
@@ -229,22 +240,6 @@
         <div class="card card-custom-text">
           <form action="gestion_td.php" method="GET">
             <?php $val=$_GET['bouton1']; ?>
-            <!-- Identifiant : 
-              $query= "SELECT id_question FROM question WHERE id_question='$val'";
-              $result= mysqli_query($link, $query);
-              $tab= mysqli_fetch_all($result);     
-              $nbligne = mysqli_num_rows($result);         
-              $nbcol = mysqli_num_fields($result) ;          
-              $i=0;     
-              while ($i< $nbligne){     
-                $j=0;         
-              while ($j< $nbcol){            
-                echo $tab[$i][$j];                           
-                $j++;
-              }    
-                $i++;
-              }
-              -->
             <div class="row mb-2 g-3 align-items-center">
               <div class="col-md-2"> 
                 <label >Catégorie:</label> 
@@ -252,7 +247,7 @@
 
               <?php	// Requète SQL pour récupérer toutes les catégories existantes dans une liste //
                 $nom_quest=$_GET["bouton1"]; //on recupère la valeur de bouton 1 (question que l'on veut modifier)//
-                $query2="	SELECT categorie.lib_categorie, question.id_categorie, categorie.id_categorie, question.numero_question 
+                $query2="	SELECT categorie.lib_categorie, question.id_categorie, categorie.id_categorie, question.id_question 
                   FROM categorie, question 
                   WHERE question.id_question='$nom_quest' 
                   AND question.id_categorie= categorie.id_categorie"; //on fait une requête SQL pour récupérer le nom de la ctégorie correspondant à la question choisi//
@@ -293,7 +288,6 @@
                 </select>
              
                 <!--  BOUTON AJOUT CATEGORIE -->          
-                <form method="GET">
                   <?php 
                     $value=$_GET["bouton1"]; 
                     echo " <input type='hidden' bouton1='".$value."'>" 
@@ -314,7 +308,6 @@
                       <input type="text" class="form-control mx-3" placeholder="Entrez une nouvelle catégorie..." name="nouv_categorie" >
                       <?php echo '<input type="hidden" name="bouton1" value="'.$value.'" >'?>
                       <input type="submit" class="btn btn-success text-center" name="bt_valider_nouv_categorie" value="Valider"></input>
-                    </form>
                     <?php } ?>
                 <!-- Fin de Formulaire d'ajout -->
               </div>
@@ -326,7 +319,7 @@
                   <label >Type de question :</label> 
                 </div>
                 <?php 
-                  $query2bis="SELECT question.id_type_question, type_question.id_type_question, question.numero_question,type_question.type_question
+                  $query2bis="SELECT question.id_type_question, type_question.id_type_question, question.id_question,type_question.type_question
                     FROM type_question, question 
                     WHERE question.id_type_question= type_question.id_type_question
                     AND question.id_question='$nom_quest' ";
@@ -366,14 +359,14 @@
 
 
       <!--DEUXIEME CADRE-->
-        <?php if(isset($_GET["test"])){ ?>
+        <?php if(isset($_GET["test"]) || isset($_GET["cadre2"])){ ?>
           <div class="card card-custom-text">
             <form method="GET" action="gestion_td.php">
         
               <!-- NOM QUESTION --> 
                 <?php
                   $val=$_GET['bouton1'];
-                  $query5= "SELECT numero_question 
+                  $query5= "SELECT numero_question, id_question
                     FROM question 
                     WHERE id_question='$val'"; // il faudra changer dans la bdd le numero_question par le nom_question
                   $result5= mysqli_query($link, $query5);
@@ -384,7 +377,7 @@
                     <label >Nom de la question :</label> 
                   </div>
                   <div class="col-md-9 d-inline-flex">
-                    <input type="text" class="form-control mx-3" placeholder="Entrez un nom de question" name="nom_question"> <br>
+                    <?php echo'<input type="text" class="form-control mx-3" placeholder="Entrez un nom de question" name="nom_question" value="'.$tab5[0][0].'">' ?> <br>
                   </div>
                 </div>
                 
@@ -395,7 +388,7 @@
                 <?php
                   $val=$_GET["bouton1"]; // Récupération de la valeur de la question sélectionnée
                   // Requête pour afficher le nombrede tentatives pour la question sélectionnée 
-                  $querytenta="SELECT question.nombre_tentatives,question.numero_question 
+                  $querytenta="SELECT question.nombre_tentatives
                     FROM question 
                     WHERE question.id_question='$val'";
                   $resulttenta= mysqli_query($link, $querytenta);
@@ -437,12 +430,12 @@
                     <label >Consigne de la question :</label> 
                   </div>
                   <div class="col-md-9 d-inline-flex">
-                  <?php echo '<textarea class="form-control mx-3" name="consigne" rows="3" value="'.$tab6[0][0].'"></textarea>'?>
-                  <!-- echo '<input type="text" class="form-control mx-3" placeholder="Entrez une consigne" rows="3" name="consigne" size="100" value="'.$tab6[0][0].'">' -->
+          
+                  <?php echo '<input type="text" class="form-control mx-3" placeholder="Entrez une consigne" rows="3" name="consigne" size="100" value="'.$tab6[0][0].'">' ?>
                   </div>
                 </div>
               <!-- FIN CONSIGNE QUESTION -->
-              
+                    
               <!-- INSERER UN LIEN -->
                 <?php
                   $val=$_GET['bouton1'];
@@ -524,8 +517,8 @@
                     </div>
                     <!-- Affichage du nombre de ligne du tableau sous forme de liste déroulante -->
                     <?php
-                      $queryligne2="SELECT question.nb_lignes,question.numero_question 
-                        FROM question 
+                      $queryligne2="SELECT question.nb_lignes
+                        FROM question
                         WHERE question.id_question='$val'";
                       $resultligne2= mysqli_query($link, $queryligne2);
                       $tabligne2= mysqli_fetch_all($resultligne2);
@@ -557,14 +550,16 @@
                 <!-- FIN QUESTION ETIQUETTE SANS TABLEAU -->
                 <?php
                   echo "<input type='hidden' name='bouton1' value='".$_GET['bouton1']."'>" ;
+                  echo "<input type='hidden' name='typequestion' value='$choix_type_question'>" ;
                 ?>
                   <div class="d-flex justify-content-center my-3">
                     <input type='submit' class="btn btn-success text-center" name= 'cadre2' value='Valider' >
-                  </div>         
+                  </div>     
+                  
               <!-- AFFICHAGE DU TYPE DE QUESTION (TABLEAU OU AUTRES) -->
             </form>
           </div>
-        <?php } ?>	  
+        <?php }  ?>	  
       <!-- FIN DEUXIEME CADRE -->
       
       <!-- Appel des feuilles de style js (ne pas déplacer dans /head) -->
