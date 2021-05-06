@@ -1,144 +1,219 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-      <!-- Bootstrap C S S  -->
+    <!-- Bootstrap C S S  -->
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
 
-  <?php include("script1.php");?>
+  <?php include("script1.php");
+  include ("connexion_bdd.php");?>
 
-    <title></title>
-  </head>
+<title>TD q2</title>
 
-  <body>
+</head>
 
-    <!-- CODE : insérer "header" sur cahque page (include?)-->
-    <div class="container-fluid">
-      <div class="row header align-items-center py-2">
-        <div class="col d-none d-sm-block">
-          <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
-        </div>
-        <div class="col text-center titre-header mx-4 my-4">
-          NumTrition
-        </div>
-        <div class="col d-none d-sm-block my-4 text-end">
-          <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
-        </div>
-      </div>
-    </div>
-    <!-- fin entête-->
+<body>
 
-    <!-- Début de la page -->
-  <div class="container-fluid">
-
-    <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
-    <p> <br><b>Question 2 : L'énergie apportée quotidiennement lors des repas par les macronutriments doit, selon les recommandations nutritionnelles, se répartir idéalement entre les différents macronutriments apportés (protéines, glucides, lipides). </b>
-    <br> </p>
-
-
-
-
-    <!-- CODE : insérer les étiquettes à mettre dans le tableau-->
-    <table class="table table-custom table-bordered border-dark">
-      <thead>
-        <tr>
-          <th scope="col"> Macronutriments </th>
-          <th scope="col"> Pourcentage d'apports énergétiques totaux (% AET) </th>
-        </tr>
-      </thead>
-
-      <section class="table table-bordered">
-        <tbody>
-          <tr>
-      <!-- CODE : lier les étiquettes pour pouvoir les placer dans le tableau et onclick, pourvoir les enlever -->
-            <th scope="row" > Protéines </th>
-            <td><div class= "example-dropzone-tableau d-inline-flex" id="drop1" ondrop="drop_handler(event, 'drop1');" ondragover="dragover_handler(event);"></div> </td>
-          </tr>
-          <tr>
-            <th scope="row" > Glucides </th>
-            <td><div class= "example-dropzone-tableau d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> </td>
-          </tr>
-          <tr>
-            <th scope="row" > Lipides </th>
-            <td><div class= "example-dropzone-tableau d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div></td>
-          </tr>
-        </tbody>
-        </section>
-      </table>
-
-      <br>
-
-      <div class="example-parent ">
-    		<div class="example-draggable-tableau m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-    			0% à 5%
-    		</div>
-    		<div class="example-draggable-tableau m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-          5% à 10%
-        </div>
-        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-          10% à 15%
-        </div>
-        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-          15% à 20%
-        </div>
-        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-          20% à 25%
-        </div>
-        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-          25% à 30%
-        </div>
-        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-          30% à 35%
-        </div>
-        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-            35% à 40%
-        </div>
-        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-          40% à 45%
-        </div>
-        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-          45% à 50%
-        </div>
-        <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
-          50% à 55%
-        </div>
-      </div>
-
-    <br>
-
-    <div class="align-items-center">
-      <nav classe="boutons">
-        <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
-        <button type="button" class="btn btn-lg text-center btn-custom-valider" value="" onclick=""> Valider </button>
-      </nav>
-
-      <nav classe="boutons">
-        <button type="button" class="btn btn-lg text-center btn-custom-effacer" onclick="remove()"> Réinitialiser </button>
-      </nav>
-    </div>
-
-    <script language=javascript>
-      console.table(tab_rep);
-    </script>
-
-    <br>
-    <!-- CODE : faire apparaître si erreur -->
-    <div class="alert alert-danger" role="alert" id ="" value="">
-      REPONSE(S) FAUSSE(S) : Attention vous avez fait une (ou des) erreur(s) !
-    </div>
-
-    <br>
-    <!-- CODE : faire apparaître aucune erreur -->
-    <div class="alert alert-success" role="alert" id="" value="">
-      Vous avez les bonnes réponses !
-    </div>
-
-
+<!-- HEADER-->
+<div class="container-fluid">
+<div class="row header align-items-center py-2">
+  <div class="col d-none d-sm-block">
+    <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
   </div>
+  <div class="col text-center titre-header mx-4 my-4">
+    NumTrition
+  </div>
+  <div class="col d-none d-sm-block my-4 text-end">
+    <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
+  </div>
+</div>
+</div>
 
-  <!-- CODE : insérer "Pied de page général" sur chacune des pages (via include?)-->
+<!-- END HEADER-->
+
+<!-- CONTENU DE LA PAGE-->
+
+<form action="partie1-2.php" method="GET">
+
+<div class="container-fluid">
+
+  <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
+  <p> <br><b>Question 2 : L'énergie apportée quotidiennement lors des repas par les macronutriments doit, selon les recommandations nutritionnelles, se répartir idéalement entre les différents macronutriments apportés (protéines, glucides, lipides). </b>
+  <br> </p>
+
+<?php
+//SI DEJA FAIT DES TENTATIVES: récupère la valeur dans l'URL
+if(isset($_GET["tentatives"])){
+  $tentatives=$_GET["tentatives"];
+}
+    
+//SI PAS ENCORE COMMENCE: tentatives=0
+else{
+  $tentatives=0;
+}
+    
+// SI MOINS DE 3 TENTATIVES   
+if($tentatives<3){
+  $tentatives+=1;
+        
+
+echo "<input type='hidden' name='tentatives' value =". $tentatives.">";
+?>
+
+<!-- 3 CHAMPS A REMPLIR-->
+<!-- PAS DE COLLATION: 3 champs-->
+<input type="hidden" name="iddrop1" id="iddrop1" value="">
+<input type="hidden" name="iddrop2" id="iddrop2" value="">
+<input type="hidden" name="iddrop3" id="iddrop3" value="">
+
+<!-- TABLEAU-->
+<table class="table table-custom table-bordered border-dark">
+  <thead>
+    <tr>
+      <th scope="col"> Macronutriments </th>
+      <th scope="col"> Pourcentage d'apports énergétiques totaux (% AET) </th>
+    </tr>
+  </thead>
+
+  <section class="table table-bordered">
+  <tbody>
+    <tr>
+      <!-- DROPZONES-->
+      <th scope="row" > Protéines </th>
+      <td><div class= "example-dropzone-tableau d-inline-flex" id="drop1" ondrop="drop_handler(event, 'drop1','iddrop1');" ondragover="dragover_handler(event);"></div> </td>
+    </tr>
+    <tr>
+      <th scope="row" > Glucides </th>
+      <td><div class= "example-dropzone-tableau d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2','iddrop2');" ondragover="dragover_handler(event);"></div> </td>
+    </tr>
+    <tr>
+      <th scope="row" > Lipides </th>
+      <td><div class= "example-dropzone-tableau d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3','iddrop3');" ondragover="dragover_handler(event);"></div></td>
+    </tr>
+  </tbody>
+  </section>
+</table>
+
+<br>
+
+<div class="example-parent ">
+  <!-- ETIQUETTES -->
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+    	0% à 5%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      5% à 10%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      10% à 15%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      15% à 20%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      20% à 25%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      25% à 30%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      30% à 35%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      35% à 40%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      40% à 45%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      45% à 50%
+  </div>
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+      50% à 55%
+  </div>
+</div>
+
+<br>
+
+<!-- BOUTON VALIDER ET REINITIALISER--> 
+
+<div class="row">
+<div class="col-1">
+  <nav classe="boutons">
+  <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
+    <button type="submit" class="btn btn-lg text-center btn-custom-valider" name="Valider_rep2"> Valider </button>
+  </nav>
+</div>
+<div class="col-11">
+  <nav classe="boutons">
+    <button type="button" class="btn btn-lg text-center btn-custom-effacer" onclick="remove()"> Réinitialiser </button>
+  </nav>
+</div>
+</div>
+
+    
+<!-- CORRECTION DES REPONSES SAISIES-->
+<?php
+
+if(isset($_GET["Valider_rep2"])){
+$requete= "select question.reponse FROM question WHERE num_question='2' AND consigne is NULL";
+$result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
+$tab=mysqli_fetch_all($result);
+
+
+$tab_rep=array();
+$tab_rep[0]=substr("iddrop1",2,6);
+$tab_rep[1]=$_GET['iddrop1'];
+$tab_rep[2]=substr("iddrop2",2,6);
+$tab_rep[3]=$_GET['iddrop2'];
+$tab_rep[4]=substr("iddrop3",2,6);
+$tab_rep[5]=$_GET['iddrop3'];
+
+  
+$tab_fin="[".$tab_rep[0].','.$tab_rep[1].','.$tab_rep[2].','.$tab_rep[3].','.$tab_rep[4].','.$tab_rep[5].']'; // Tableau avec les valeurs des étiquettes placées
+
+
+// SI L'ELEVE A MIS LA BONNE REPONSE
+if ($tab_fin== $tab[0][0]) {
+?>
+<br>
+<div class="alert alert-success" role="alert" id="" value="">
+Vous avez les bonnes réponses ! Cette répartition est à connaître !
+</div>
+<?php
+}
+        
+// SI l'ELEVE N'A PAS MIS LA BONNE REPONSE
+else{?>
+<br>
+<div class="alert alert-danger" role="alert" id ="" value="">
+REPONSE(S) FAUSSE(S) : Attention vous avez fait une (ou des) erreur(s) !
+</div>
+<?php
+}
+
+?>
+  
+</div>
+<?php
+}
+}
+
+else{
+  ?>
+  <br>
+  <div class="alert alert-danger" role="alert" id ="" value="">
+  Vous avez effectué trop de tentatives: passez à la question suivante.
+  </div>
+  <?php
+  $tentatives+=1;
+}
+?>
+
+
+<!-- PIED DE PAGE-->
   <br><br>
   <div class="row align-items-center">
 

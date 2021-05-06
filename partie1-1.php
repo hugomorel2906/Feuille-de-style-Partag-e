@@ -7,11 +7,9 @@ $login=6;
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-
-    <meta charset="utf-8">
-
-      <!-- Bootstrap CSS -->
+<head>
+<meta charset="utf-8">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/ma-feuille-de-style.css">
 
@@ -19,196 +17,281 @@ $login=6;
     include ("connexion_bdd.php");?>
 
     <title>TD q1</title>
-  </head>
+</head>
 
 <body>
 
-  <!-- CODE : insérer "header" sur cahque page (include?) oui-->
-  <div class="container-fluid">
+<!-- HEADER-->
+<div class="container-fluid">
     <div class="row header align-items-center py-2">
-      <div class="col d-none d-sm-block">
-        <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
-      </div>
-      <div class="col text-center titre-header mx-4 my-4">
+        <div class="col d-none d-sm-block">
+            <img src="BSALOGO.png" alt="" width="100%"  class="img-fluid">
+        </div>
+        <div class="col text-center titre-header mx-4 my-4">
         NumTrition
-      </div>
-      <div class="col d-none d-sm-block my-4 text-end">
-        <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
-      </div>
+        </div>
+        <div class="col d-none d-sm-block my-4 text-end">
+            <img src="ANSLOGO.PNG" alt="" width="90%" class="img-fluid " >
+        </div>
     </div>
-  </div>
-  <!-- fin entête-->
+</div>
+<!-- END HEADER-->
 
-  <!-- Contenu de page-->
-  <div class="container-fluid">
+<!-- Contenu de page-->
+<div class="container-fluid">
 
-  <br>
-  <!-- CODE : dans le value, mettre du code pour que quand la case est cochée, la case collation apparaît dans la q1 -->
-  <div class="row justify-content-center">
-      <form action="partie1-1.php" method="GET">
-        
-          Prenez-vous habituellement une collation dans la journée ?
-          <input type="radio" id="collationoui" name="collation" value="oui" <?php if(isset($_GET['valider_collation']) && $_GET['collation']=="oui") echo ' checked="checked"';?>>
-          <label for="collationoui">Oui</label>
-          <input type="radio" id="collationnon" name="collation" value="non" <?php if(isset($_GET['valider_collation']) && $_GET['collation']=="non") echo ' checked="checked"';?>>
-          <label for="collationnon">Non</label>
-          <nav classe="boutons">
-        <!-- CODE : inclure une requête pour valider-->
-          <br>
-        
-          <nav classe="boutons">
-        <!-- CODE : inclure une requête pour valider-->
-            <input type="submit" class="btn btn-lg text-center btn-custom-valider" name="valider_collation" value="Valider"></input>
-          </nav>
-        
-      <br>
-    </form>
-  </div>
+<br>
+<form action="partie1-1-bis.php" method="GET">
 
+<!-- PREMIERE QUESTION: COLLATION OU NON-->
+<div>
+    Prenez-vous habituellement une collation dans la journée ?
+    <input type="radio" id="collationoui" name="collation" value="oui" <?php if(isset($_GET['collation'])) {if($_GET['collation']=="oui")echo ' checked="checked"';}?>>
+    <label for="collationoui">Oui</label>
+    <input type="radio" id="collationnon" name="collation" value="non" <?php if(isset($_GET['collation'])) {if($_GET['collation']=="non")echo ' checked="checked"';}?>>
+    <label for="collationnon">Non</label>
+</div>
+<br>
+
+<?php
+if(isset($_GET["tentatives"])){
+    echo "<br>";
+}
+
+else{
+    ?>
+    <!-- BOUTON POUR VALIDER-->
+    <nav classe="boutons">
+    <input type="submit" class="btn btn-lg text-center btn-custom-valider" name="valider_collation" value="Valider"></input>
+    </nav>
     <?php
-    if(isset($_GET["valider_collation"])){
-       $collation=$_GET["collation"];
-       if ($collation == "non"){
-       ?>
-       <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
-       <p class="fs-6" style="color:#4B75F9"> Chercher sur internet les informations suivantes : </p>
+}
 
-       <!-- CODE : ce paragraphe apparaît si la case collation n'est pas cochée-->
-       <p> <br><b>Question 1 : Répartition des apports énergétiques au cours des différents repas de la journée, selon les recommendations nutritionnelles </b>
-       <br> </p>
-       <!-- CODE : lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
-       <p> Il est conseillé de prendre 3 repas par jour. <br><br> </p>
 
-       <p>La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone" id="drop1" ondrop="drop_handler(event, 'drop1');" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
-       de <div class= "example-dropzone" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> % pour le déjeuner
-       et de <div class= "example-dropzone" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div> % pour le dîner. </p>
 
-       <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
+// LA SUITE S'AFFICHE SI LA PREMIERE QUESTION A ETE REALISEE
+if(isset($_GET["collation"])){
+    $collation=$_GET["collation"];
+    
+    //SI DEJA FAIT DES TENTATIVES: récupère la valeur dans l'URL
+    if(isset($_GET["tentatives"])){
+       $tentatives=$_GET["tentatives"];
+    }
+    
+    //SI PAS ENCORE COMMENCE: tentatives=0
+    else{
+    $tentatives=0;
+    }
+    
+    
+    if($tentatives<3){
+        $tentatives+=1;
+        
 
-       <div class="example-parent ">
-         <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-       </div></p>
+        echo "<input type='hidden' name='tentatives' value =". $tentatives.">";
 
-     <br>
-      
-     <div class= "row">
-       <div class="col-1">
-         <nav classe="boutons">
-       <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
-        <button type="button" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
-        </nav>
-      </div>
-      <div class="col-11">
-        <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()" name="recharge"> Réinitialiser</div>
-      </div>
-    </div>
 
-     <br>
+    //PAS DE COLLATION
+    if ($collation == "non"){
 
-       <?php        }
-       if($collation =="oui"){
-       ?>
-       <form method="GET">
+        // REQUETE SPECIFIQUE POUR PAS DE COLLATION
+        $requete= "select question.reponse FROM question WHERE num_question='1' AND consigne is NULL";
+        ?>
+        <input type="hidden" value=<?php $requete ?>>
 
-       <input type="hidden" name="iddrop1" id="iddrop1" value="">
-       <input type="hidden" name="iddrop2" id="iddrop2" value="">
-       <input type="hidden" name="iddrop3" id="iddrop3" value="">
-       <input type="hidden" name="iddrop4" id="iddrop4" value="">
-       
-       <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
-       <p class="fs-6" style="color:#4B75F9"> Chercher sur internet les informations suivantes : </p>
+        <!-- PAS DE COLLATION: 3 champs-->
+        <input type="hidden" name="iddrop1" id="iddrop1" value="">
+        <input type="hidden" name="iddrop2" id="iddrop2" value="">
+        <input type="hidden" name="iddrop3" id="iddrop3" value="">
+        
+        <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
+        <p class="fs-6" style="color:#4B75F9"> Chercher sur internet les informations suivantes : </p>
 
-       <!-- CODE : ce paragraphe apparaît si la case collation n'est pas cochée-->
-       <p> <br><b>Question 1 : Répartition des apports énergétiques au cours des différents repas de la journée, selon les recommendations nutritionnelles </b>
-       <br>
+        
+        <p><br><b>Question 1 : Répartition des apports énergétiques au cours des différents repas de la journée, selon les recommendations nutritionnelles </b><br></p>
+        <p> Il est conseillé de prendre 3 repas par jour.  </p>
 
-       <!-- CODE : insérer le code pour les visualiser les étiquettes à placer -->
+        <!-- 3 DROPZONES-->
+        <div class= align-items-center> La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone d-inline-flex" id="drop1" ondrop="drop_handler(event, 'drop1');" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
+        de <div class= "example-dropzone d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> % pour le déjeuner
+        et de <div class= "example-dropzone d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div> % pour le dîner. 
+        </div>
 
-       <!-- CODE : 2e version si la case collation est cochée en haut -->
-       <br> </p>
-       <!-- lier les input avec les étiquettes et faire des messages d'erreurs si pas la bonne étiquette-->
-       <div class= align-items-center> La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone d-inline-flex"  id="drop1" ondrop="drop_handler(event,'drop1','iddrop1');" ondragover="dragover_handler(event);"></div> pour le petit déjeuner,
-       de <div class= "example-dropzone d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2','iddrop2');" ondragover="dragover_handler(event);"></div> pour le déjeuner, 
-       de <div class= "example-dropzone d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3','iddrop3');" ondragover="dragover_handler(event);"></div> pour le goûter,
-       et de <div class= "example-dropzone d-inline-flex" id="drop4" ondrop="drop_handler(event,'drop4','iddrop4');" ondragover="dragover_handler(event);"></div> pour le dîner. </div>
+        <!-- LES ETIQUETTES -->
 
-       <br>
+        <div class="example-parent ">
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+        </div></p>
 
-       <div class="example-parent ">
-         <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-         <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-       </div></p>
-
-       <br>
-
-       <div class= "row">
-         <div class="col-1">
-           <nav classe="boutons">
-         <!-- CODE : inclure une requête pour valider et passer à la page suivante-->
-          
-          <button type="submit" name = "Valider_rep1" class="btn btn-lg text-center btn-custom-valider" > Valider </button>
-          </form>
-          </nav>
+        <br>
+        
+        <!-- BOUTON VALIDER ET REINITIALISER-->
+        <div class= "row">
+        <div class="col-1">
+            <nav classe="boutons">
+            <button type="submit" name = "Valider_rep1_non" class="btn btn-lg text-center btn-custom-valider" > Valider </button>
+            </nav>
         </div>
         <div class="col-11">
-          <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()" name="recharge"> Réinitialiser</div>
+            <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()" name="recharge"> Réinitialiser</div>
         </div>
-      </div>
+        </div>
 
-       <br>
-       <?php
-       }
+        <br>
+
+    <?php        }
+
+    //COLLATION
+    if($collation =="oui"){
+        $requete= "select question.reponse FROM question WHERE num_question='1' AND consigne is NOT NULL";
+        ?>
+        <input type=hidden value=<?php $requete ?>>
+
+        <!-- COLLATION: 4 champs-->
+        <input type="hidden" name="iddrop1" id="iddrop1" value="">
+        <input type="hidden" name="iddrop2" id="iddrop2" value="">
+        <input type="hidden" name="iddrop3" id="iddrop3" value="">
+        <input type="hidden" name="iddrop4" id="iddrop4" value="">
+        
+        <h2  style="color:#E62719"> <br> I. Connaissance des recommandations </h2>
+        <p class="fs-6" style="color:#4B75F9"> Chercher sur internet les informations suivantes : </p>
+
+        
+        <p> <br><b>Question 1 : Répartition des apports énergétiques au cours des différents repas de la journée, selon les recommendations nutritionnelles </b><br><br></p>
+        
+        <!-- 4 DROPZONES-->
+        <div class= align-items-center> La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone d-inline-flex"  id="drop1" ondrop="drop_handler(event,'drop1','iddrop1');" ondragover="dragover_handler(event);"></div> pour le petit déjeuner,
+        de <div class= "example-dropzone d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2','iddrop2');" ondragover="dragover_handler(event);"></div> pour le déjeuner, 
+        de <div class= "example-dropzone d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3','iddrop3');" ondragover="dragover_handler(event);"></div> pour le goûter,
+        et de <div class= "example-dropzone d-inline-flex" id="drop4" ondrop="drop_handler(event,'drop4','iddrop4');" ondragover="dragover_handler(event);"></div> pour le dîner. </div>
+
+        <br>
+
+        <!-- LES ETIQUETTES-->
+        <div class="example-parent ">
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+        </div></p>
+
+        <br>
+
+        <!-- BOUTON VALIDER ET REINITIALISER-->
+        
+        <div class= "row">
+        <div class="col-1">
+            <nav classe="boutons">
+            <button type="submit" name = "Valider_rep1_oui" class="btn btn-lg text-center btn-custom-valider"> Valider </button>
+            </nav>
+        </div>
+        <div class="col-11">
+        <div class="btn btn-lg text-center btn-custom-effacer" onclick = "remove()" name="recharge"> Réinitialiser</div>
+        </div>
+        </div>
+
+        <br>
+        <?php
+        
+      }
+
+      // TRANSFORME LA REPONSE ATTENDUE STOQUEE DANS LA BASE DE DONNEE EN TABLEAU: la réponse est stoquée dans $tab
+      $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
+      $tab=mysqli_fetch_all($result);
     }
 
-    $requete= "select question.reponse FROM question WHERE num_question='1'";
-    $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
-    $tab=mysqli_fetch_all($result);
-
-    if(isset($_GET["Valider_rep1"])){
-      $tab_rep=array();
-      $tab_rep[0]=substr("iddrop1",2,6);
-      $tab_rep[1]=substr($_GET['iddrop1'],0,3);
-      $tab_rep[2]=substr("iddrop2",2,6);
-      $tab_rep[3]=substr($_GET['iddrop2'],0,3);
-      $tab_rep[4]=substr("iddrop3",2,6);
-      $tab_rep[5]=substr($_GET['iddrop3'],0,3);
-      $tab_rep[6]=substr("iddrop4",2,6);
-      $tab_rep[7]=substr($_GET['iddrop4'],0,3);
-
-      $tab_fin="[".$tab_rep[0].','.$tab_rep[1].','.$tab_rep[2].','.$tab_rep[3].','.$tab_rep[4].','.$tab_rep[5].','.$tab_rep[6].','.$tab_rep[7].']'; // Tableau avec les valeurs des étiquettes placées
-
-      if ($tab_fin== $tab[0][0]) {
+    else{
         ?>
-       <!-- CODE : faire apparaître aucune erreur -->
-       <div class="alert alert-success" role="alert" id="" value="">
-        Vous avez les bonnes réponses ! Cette répartition est à connaître !
+        <br>
+        <div class="alert alert-danger" role="alert" id ="" value="">
+        Vous avez effectué trop de tentatives: passez à la question suivante.
         </div>
-      <?php
-      }
+        <?php
+        $tentatives+=1;
+    }
+}
+
+if(isset($_GET["tentatives"])){
+if($tentatives<=3){
+    // SI COLLATION: 4 valeurs dans $tab
+    if(isset($_GET["Valider_rep1_oui"])){
+        $tab_rep=array();
+        $tab_rep[0]=substr("iddrop1",2,6);
+        $tab_rep[1]=substr($_GET['iddrop1'],0,3);
+        $tab_rep[2]=substr("iddrop2",2,6);
+        $tab_rep[3]=substr($_GET['iddrop2'],0,3);
+        $tab_rep[4]=substr("iddrop3",2,6);
+        $tab_rep[5]=substr($_GET['iddrop3'],0,3);
+        $tab_rep[6]=substr("iddrop4",2,6);
+        $tab_rep[7]=substr($_GET['iddrop4'],0,3);
+
+        $tab_fin="[".$tab_rep[0].','.$tab_rep[1].','.$tab_rep[2].','.$tab_rep[3].','.$tab_rep[4].','.$tab_rep[5].','.$tab_rep[6].','.$tab_rep[7].']'; // Tableau avec les valeurs des étiquettes placées
+
+        // SI L'ELEVE A MIS LA BONNE REPONSE
+        if ($tab_fin== $tab[0][0]) {
+        ?>
+       
+        <div class="alert alert-success" role="alert" id="" value="">
+        Vous avez les bonnes réponses ! Vous pouvez passez à la question suivante. 
+        </div>
+        <?php
+        }
       
-      else{?>
-      <!-- CODE : faire apparaître si erreur -->
-      <div class="alert alert-danger" role="alert" id ="" value="">
+        // SI l'ELEVE N'A PAS MIS LA BONNE REPONSE
+        else{?>
+        <div class="alert alert-danger" role="alert" id ="" value="">
         REPONSE(S) FAUSSE(S) : Attention vous avez fait une (ou des) erreur(s) !
         </div>
        
-      <?php
+        <?php
         
       }
     }
+
+    
+    // SI PAS DE COLLATION: 3 valeurs dans $tab
+    if(isset($_GET["Valider_rep1_non"])){
+        $tab_rep=array();
+        $tab_rep[0]=substr("iddrop1",2,6);
+        $tab_rep[1]=substr($_GET['iddrop1'],0,3);
+        $tab_rep[2]=substr("iddrop2",2,6);
+        $tab_rep[3]=substr($_GET['iddrop2'],0,3);
+        $tab_rep[4]=substr("iddrop3",2,6);
+        $tab_rep[5]=substr($_GET['iddrop3'],0,3);
+  
+        $tab_fin="[".$tab_rep[0].','.$tab_rep[1].','.$tab_rep[2].','.$tab_rep[3].','.$tab_rep[4].','.$tab_rep[5].']'; // Tableau avec les valeurs des étiquettes placées
+        
+        // SI L'ELEVE A MIS LA BONNE REPONSE
+        if ($tab_fin== $tab[0][0]) {
+        ?>
+        <div class="alert alert-success" role="alert" id="" value="">
+        Vous avez les bonnes réponses ! Cette répartition est à connaître !
+        </div>
+        <?php
+        }
+        
+        // SI l'ELEVE N'A PAS MIS LA BONNE REPONSE
+        else{?>
+        <div class="alert alert-danger" role="alert" id ="" value="">
+        REPONSE(S) FAUSSE(S) : Attention vous avez fait une (ou des) erreur(s) !
+        </div>
+        <?php
+        }
+    }
+}
+}
     ?>
 
 
-  </div>
+</div>
+</form>
 
 
   <!-- CODE : insérer "Pied de page général" sur chacune des pages (via include?)-->
