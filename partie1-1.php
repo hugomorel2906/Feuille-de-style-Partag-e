@@ -120,12 +120,19 @@ if(isset($_GET["collation"])){
         <!-- LES ETIQUETTES -->
 
         <div class="example-parent ">
-          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">5%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">7%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">15%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">20%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">25%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">28%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">30%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">45%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">55%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">64%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">70%</div>
         </div></p>
 
         <br>
@@ -174,12 +181,19 @@ if(isset($_GET["collation"])){
 
         <!-- LES ETIQUETTES-->
         <div class="example-parent ">
-          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
-          <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">5%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy1" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">7%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">10%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">15%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">20%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">25%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">28%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy7" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">30%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy8" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">40%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy9" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">45%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy10" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">55%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy11" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">64%</div>
+          <div class="example-draggable m-2" draggable="true" id="src_copy12" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">70%</div>
         </div></p>
 
         <br>
@@ -211,7 +225,10 @@ if(isset($_GET["collation"])){
         ?>
         <br>
         <div class="alert alert-danger" role="alert" id ="" value="">
-        Vous avez effectué trop de tentatives: passez à la question suivante.
+        Vous avez effectué trop de tentatives: passez à la question suivante. <br>
+        La répartition attendue était: <br>
+        - si collation: Petit-déjeuner (25%), Déjeuner (40%), Goûter (5%), Dîner (30%).<br>
+        - sans collation: Petit-déjeuner (25%), Déjeuner (40%), Dîner (35%).
         </div>
         <?php
         $tentatives+=1;
