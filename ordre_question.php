@@ -40,8 +40,10 @@ $login=6;
 <!-- Contenu de page-->
 <div class="container-fluid">
 
+
 <h2  style="color:#E62719"> <br> Gestion de l'ordre des questions </h2><br>
 
+<form action="ordre_question.php" method="GET">
 
 <!-- PREMIERES QUESTIONS (collation OUI) -->
 <div class="row">
@@ -81,7 +83,6 @@ Nom de la question
 $total_question="SELECT COUNT(nom_question) FROM question WHERE num_question!='1'";
 $result_total_qst= mysqli_query($link,$total_question) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
 $tab2=mysqli_fetch_all($result_total_qst);
-echo $tab2[0][0];
 
 ?>
 
@@ -93,32 +94,45 @@ for($i=0;$i<$tab2[0][0];$i++){
     $requete= "SELECT nom_question FROM question WHERE num_question!='1' AND num_question=$i+2";
     $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
     $tab=mysqli_fetch_all($result);
-    echo $tab[0][0];
+   
     ?>
     <div class="row">
     <div class="col-2">
     </div>
     <div class = "col-5">
         <?php
-        echo "<input type='text' name='intitule_qst' value='' size='60px'>"
+        echo '<input type="text" name="intitule_qst" value="'.$tab[0][0].'" size="60px">';
+        ?>
     </div>
     <div class="col-5">
 
         <label> N° de question: </label>
-        <select name="numero_question" id="pet-select">
+        <?php
+        echo '<select name="numero_question'.$i.'">';
+        ?>
             <option value="">--Choisir un n° de question--</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
+            <?php
+            for($k=0;$k<$tab2[0][0];$k++){
+                $j=$k+2;
+                echo '<option value="'.$j.'">'.$j.'</option>';
+            }
+            ?>
         </select>
 
     </div>
     </div>
     <br>
+    
 
 <?php
+echo '<input type="hidden" name="numero_question'.$i.'">';
 }
 ?>
+
+<!-- BOUTON POUR VALIDER-->
+<br>
+<div class="row">
+<nav class="boutons">
+    <input type="submit" class="btn btn-lg text-center btn-custom-valider" name="valider_ordre" value="Valider"></input>
+</nav>
+</div>

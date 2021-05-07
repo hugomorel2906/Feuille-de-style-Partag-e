@@ -118,19 +118,19 @@ echo "<input type='hidden' name='tentatives' value =". $tentatives.">";
   <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
       25% à 30%
   </div>
-  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy7" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
       30% à 35%
   </div>
-  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy8" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
       35% à 40%
   </div>
-  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy9" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
       40% à 45%
   </div>
-  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy10" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
       45% à 50%
   </div>
-  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+  <div class="example-draggable-tableau m-2" draggable="true" id="src_copy11" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
       50% à 55%
   </div>
 </div>
@@ -205,7 +205,8 @@ else{
   ?>
   <br>
   <div class="alert alert-danger" role="alert" id ="" value="">
-  Vous avez effectué trop de tentatives: passez à la question suivante.
+  Vous avez effectué trop de tentatives: passez à la question suivante. <br>
+  La répartition attendue était: Protéines (10-15%), Glucides (50-55%), Lipides (35-40%).
   </div>
   <?php
   $tentatives+=1;
