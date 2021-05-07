@@ -144,7 +144,7 @@
         }
 
         if(isset($_POST["bt_ajouter_question"])){
-          $querynewq="INSERT INTO question (id_page,id_type_question,id_categorie,numero_question,consigne_question,note_question,nombre_tentatives,nb_colonnes,nb_lignes,lien,nom_question,cplmt,reonse_question) VALUES ('1','1','1','QUESTION', '0', '10', '1', '0', '0', '0', '','','')";
+          $querynewq="INSERT INTO question (id_page,id_type_question,id_categorie,numero_question,consigne_question,note_question,nombre_tentatives,nb_colonnes,nb_lignes,lien,nom_question,cplmt,reonse_question) VALUES ('1','1','1','', '', '10', '3', '0', '0', '', '','','')";
           $envoisnewq= mysqli_query($link, $querynewq);
         }
 
@@ -430,8 +430,7 @@
                     <label >Consigne de la question :</label> 
                   </div>
                   <div class="col-md-9 d-inline-flex">
-          
-                  <?php echo '<input type="text" class="form-control mx-3" placeholder="Entrez une consigne" rows="3" name="consigne" size="100" value="'.$tab6[0][0].'">' ?>
+                    <textarea class="form-control mx-3" placeholder="Entrez une consigne" rows="3" name="consigne"><?php echo $tab6[0][0]?></textarea>
                   </div>
                 </div>
               <!-- FIN CONSIGNE QUESTION -->
