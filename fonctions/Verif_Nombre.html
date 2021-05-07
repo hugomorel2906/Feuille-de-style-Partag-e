@@ -1,0 +1,25 @@
+<!-- Fonction vérification saisie numérique-->
+<!-- Agathe et Oriane	26/04/21-->
+<!-- Vérifie si une saisie est numérique (pas d'entrée, la saisie est à modifier dans la fonction)
+On renvoie un message d'erreur si non
+IL FAUT MODIFIER LE CONTENU DU IF EN FONCTION DU CODE (JUSTE LAISSER DOCUMMENT ET CHANGER LA SUITE)
+Faire la vérification sur le onsubmit du form-->
+
+<script type="text/javascript">
+
+		var texte="Rentrez une valeur numérique";		// texte modifiable selon ce qu'on veut afficher
+		function Verif_Nombre(){
+
+		  // si la valeur du champ n'est pas numérique
+		  if(isNaN(document.name(du form).name(imput).value)) {
+			alert(texte);
+			// et on indique de ne pas envoyer le formulaire
+			return false;
+		  }
+		  else {
+		  // les données sont ok, on peut envoyer le formulaire    
+			return true;
+		  }
+		}
+
+		</script>
