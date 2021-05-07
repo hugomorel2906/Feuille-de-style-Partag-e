@@ -9,7 +9,8 @@
 
 
 <!-- PIED DE PAGE GENERAL (à insérer avec un include) -->
-    <div class="container-fluid" id="footer">
+  <footer class="mt-auto py-3" >
+    <div class="container-fluid" style="position:fixed; bottom:0; background-color:#FF3366">
       <p class="text-right small">
           Contact : <A HREF="mailto:patrick.sauvant@agro-bordeaux.fr">Patrick SAUVANT</A>
         </p>
@@ -21,5 +22,6 @@
           Copyright &copy 2020-2021 | Promo NUMAG 2020-2021
       </p>
     </div>
+  </footer>
 
 </html>
