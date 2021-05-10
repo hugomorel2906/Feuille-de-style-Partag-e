@@ -112,9 +112,9 @@ if(isset($_GET["collation"])){
         <p> Il est conseillé de prendre 3 repas par jour.  </p>
 
         <!-- 3 DROPZONES-->
-        <div class= align-items-center> La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone d-inline-flex" id="drop1" ondrop="drop_handler(event, 'drop1');" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
-        de <div class= "example-dropzone d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2');" ondragover="dragover_handler(event);"></div> % pour le déjeuner
-        et de <div class= "example-dropzone d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3');" ondragover="dragover_handler(event);"></div> % pour le dîner. 
+        <div class= align-items-center> La part moyenne des apports énergétiques conseillés est de <div class= "example-dropzone d-inline-flex" id="drop1" ondrop="drop_handler(event, 'drop1','iddrop1');" ondragover="dragover_handler(event);"></div> % pour le petit déjeuner,
+        de <div class= "example-dropzone d-inline-flex" id="drop2" ondrop="drop_handler(event, 'drop2','iddrop2');" ondragover="dragover_handler(event);"></div> % pour le déjeuner
+        et de <div class= "example-dropzone d-inline-flex" id="drop3" ondrop="drop_handler(event, 'drop3','iddrop3');" ondragover="dragover_handler(event);"></div> % pour le dîner. 
         </div>
 
         <!-- LES ETIQUETTES -->

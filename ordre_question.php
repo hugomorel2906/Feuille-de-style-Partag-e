@@ -41,6 +41,46 @@ $login=6;
 <div class="container-fluid">
 
 
+
+<?php
+
+// Récupération du numéro des questions
+$total_question="SELECT num_question FROM question WHERE num_question!='1'";
+$result_total_qst= mysqli_query($link,$total_question) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
+$tab2=mysqli_fetch_all($result_total_qst);
+$nbquestion=count($tab2);
+
+// mise à jour de la BDD
+if(isset($_GET["valider_ordre"])){
+    $requete= "SELECT id_question FROM question WHERE num_question!='1'";
+        $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
+        $tab=mysqli_fetch_all($result);
+    $tab_ord=$_GET["ordre_question"];
+    for($i=0;$i<$nbquestion;$i++){
+        $val = $i+2;
+        $num=$tab_ord[$i];
+        
+        //var_dump($tab[0][0]);
+
+        $j=$i+1;
+        $identifiant=$tab[$i][0];
+
+        $queryordre="UPDATE question SET num_question='$num' WHERE id_question='$identifiant'";
+        echo "<br>";
+        mysqli_query($link,$queryordre) or die(mysqli_error($link));
+    }
+}
+
+
+// Remise à joure des numéros des questions
+$total_question="SELECT num_question FROM question WHERE num_question!='1'";
+$result_total_qst= mysqli_query($link,$total_question) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
+$tab2=mysqli_fetch_all($result_total_qst);
+$nbquestion=count($tab2);
+
+
+?>
+
 <h2  style="color:#E62719"> <br> Gestion de l'ordre des questions </h2><br>
 
 <form action="ordre_question.php" method="GET">
@@ -79,22 +119,19 @@ Nom de la question
 </div> <br>
 
 <!-- REQUETE SQL-->
-<?php
-$total_question="SELECT COUNT(nom_question) FROM question WHERE num_question!='1'";
-$result_total_qst= mysqli_query($link,$total_question) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
-$tab2=mysqli_fetch_all($result_total_qst);
 
-?>
 
 
 <!-- AUTRES QUESTIONS -->
 <?php 
-for($i=0;$i<$tab2[0][0];$i++){
-    
-    $requete= "SELECT nom_question FROM question WHERE num_question!='1' AND num_question=$i+2";
+
+
+
+
+for($i=0;$i<$nbquestion;$i++){
+    $requete= "SELECT nom_question,id_question FROM question WHERE num_question=".$tab2[$i][0];
     $result= mysqli_query($link,$requete) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
     $tab=mysqli_fetch_all($result);
-   
     ?>
     <div class="row">
     <div class="col-2">
@@ -107,25 +144,33 @@ for($i=0;$i<$tab2[0][0];$i++){
     <div class="col-5">
 
         <label> N° de question: </label>
+        
         <?php
-        echo '<select name="numero_question'.$i.'">';
-        ?>
-            <option value="">--Choisir un n° de question--</option>
-            <?php
-            for($k=0;$k<$tab2[0][0];$k++){
-                $j=$k+2;
+        
+        $identifiant=$tab[0][1];
+         $requete1= "SELECT num_question FROM question WHERE id_question=".$identifiant;
+         $result1= mysqli_query($link,$requete1) or die("ATTENTION, l'une de vos données est erronée. Merci de les corriger");
+         $tab1=mysqli_fetch_all($result1);
+         $numquestion= $tab1[0][0];
+         
+
+        echo "<select name='ordre_question[".$i."]'>" ;            
+        for($k=0;$k<$nbquestion;$k++){
+            $j=$k+2;
+            if($j==$numquestion)
+                echo '<option value="'.$j.'" selected>'.$j.'</option>';
+            else
                 echo '<option value="'.$j.'">'.$j.'</option>';
-            }
+
+        }
             ?>
         </select>
 
     </div>
     </div>
     <br>
-    
 
 <?php
-echo '<input type="hidden" name="numero_question'.$i.'">';
 }
 ?>
 
@@ -136,3 +181,9 @@ echo '<input type="hidden" name="numero_question'.$i.'">';
     <input type="submit" class="btn btn-lg text-center btn-custom-valider" name="valider_ordre" value="Valider"></input>
 </nav>
 </div>
+</form>
+
+
+
+</body>
+</html>
