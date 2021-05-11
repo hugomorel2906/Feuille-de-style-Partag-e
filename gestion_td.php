@@ -149,6 +149,7 @@
         }
 
         if(isset($_POST["bt_supprimer_question"])){
+          echo "ici";
           $val=$_POST["bt_supprimer_question"];
           $querysuppr="DELETE FROM question
           WHERE id_question='".$val."'";

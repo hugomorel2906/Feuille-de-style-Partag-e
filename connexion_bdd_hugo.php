@@ -10,7 +10,7 @@ $link = mysqli_connect('localhost', 'root', '');
 mysqli_set_charset($link, "utf8mb4");
 
 // Choix d'une BDD et message d'erreur si connexion impossible
-mysqli_select_db($link, 'base_copie_copie') or die('Impossible de sélectionner la base de données'. mysqli_error($link));
+mysqli_select_db($link, 'base_copie_copie_3') or die('Impossible de sélectionner la base de données'. mysqli_error($link));
 
 ?>
 
